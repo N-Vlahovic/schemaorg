@@ -1,18 +1,18 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.599490
+# Auto-generated on 2022-05-28T12:00:23.584372
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .creative_work import CreativeWork
-from .duration import Duration
-from .energy import Energy
-from .number import Number
-from .physical_activity import PhysicalActivity
-from .quantitative_value import QuantitativeValue
-from .text import Text
+from models.creative_work import CreativeWork
+from models.duration import Duration
+from models.energy import Energy
+from models.number import Number
+from models.physical_activity import PhysicalActivity
+from models.quantitative_value import QuantitativeValue
+from models.text import Text
 
 
 @dataclass

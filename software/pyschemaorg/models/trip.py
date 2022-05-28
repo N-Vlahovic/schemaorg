@@ -1,20 +1,20 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.601678
+# Auto-generated on 2022-05-28T12:00:23.585552
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .date_time import DateTime
-from .demand import Demand
-from .intangible import Intangible
-from .item_list import ItemList
-from .offer import Offer
-from .organization import Organization
-from .person import Person
-from .place import Place
-from .time import Time
+from models.date_time import DateTime
+from models.demand import Demand
+from models.intangible import Intangible
+from models.item_list import ItemList
+from models.offer import Offer
+from models.organization import Organization
+from models.person import Person
+from models.place import Place
+from models.time import Time
 
 
 @dataclass

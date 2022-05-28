@@ -1,21 +1,21 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.587387
+# Auto-generated on 2022-05-28T12:00:23.577397
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .creative_work import CreativeWork
-from .duration import Duration
-from .how_to_section import HowToSection
-from .how_to_step import HowToStep
-from .how_to_supply import HowToSupply
-from .how_to_tool import HowToTool
-from .item_list import ItemList
-from .monetary_amount import MonetaryAmount
-from .quantitative_value import QuantitativeValue
-from .text import Text
+from models.creative_work import CreativeWork
+from models.duration import Duration
+from models.how_to_section import HowToSection
+from models.how_to_step import HowToStep
+from models.how_to_supply import HowToSupply
+from models.how_to_tool import HowToTool
+from models.item_list import ItemList
+from models.monetary_amount import MonetaryAmount
+from models.quantitative_value import QuantitativeValue
+from models.text import Text
 
 
 @dataclass

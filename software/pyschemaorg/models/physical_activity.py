@@ -1,20 +1,20 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.602103
+# Auto-generated on 2022-05-28T12:00:23.585791
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .anatomical_structure import AnatomicalStructure
-from .anatomical_system import AnatomicalSystem
-from .category_code import CategoryCode
-from .lifestyle_modification import LifestyleModification
-from .physical_activity_category import PhysicalActivityCategory
-from .superficial_anatomy import SuperficialAnatomy
-from .text import Text
-from .thing import Thing
-from .url import URL
+from models.anatomical_structure import AnatomicalStructure
+from models.anatomical_system import AnatomicalSystem
+from models.category_code import CategoryCode
+from models.lifestyle_modification import LifestyleModification
+from models.physical_activity_category import PhysicalActivityCategory
+from models.superficial_anatomy import SuperficialAnatomy
+from models.text import Text
+from models.thing import Thing
+from models.url import URL
 
 
 @dataclass

@@ -1,17 +1,17 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.592363
+# Auto-generated on 2022-05-28T12:00:23.579860
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .date_time import DateTime
-from .organization import Organization
-from .person import Person
-from .product import Product
-from .service import Service
-from .structured_value import StructuredValue
+from models.date_time import DateTime
+from models.organization import Organization
+from models.person import Person
+from models.product import Product
+from models.service import Service
+from models.structured_value import StructuredValue
 
 
 @dataclass

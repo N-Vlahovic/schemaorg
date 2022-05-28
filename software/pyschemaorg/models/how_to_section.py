@@ -1,15 +1,15 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.617655
+# Auto-generated on 2022-05-28T12:00:23.595130
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .creative_work import CreativeWork
-from .item_list import ItemList
-from .list_item import ListItem
-from .text import Text
+from models.creative_work import CreativeWork
+from models.item_list import ItemList
+from models.list_item import ListItem
+from models.text import Text
 
 
 @dataclass

@@ -1,18 +1,18 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.608197
+# Auto-generated on 2022-05-28T12:00:23.589477
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .broadcast_channel import BroadcastChannel
-from .broadcast_frequency_specification import BroadcastFrequencySpecification
-from .language import Language
-from .organization import Organization
-from .place import Place
-from .service import Service
-from .text import Text
+from models.broadcast_channel import BroadcastChannel
+from models.broadcast_frequency_specification import BroadcastFrequencySpecification
+from models.language import Language
+from models.organization import Organization
+from models.place import Place
+from models.service import Service
+from models.text import Text
 
 
 @dataclass

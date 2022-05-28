@@ -1,31 +1,31 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.584703
+# Auto-generated on 2022-05-28T12:00:23.576098
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .alignment_object import AlignmentObject
-from .category_code import CategoryCode
-from .course import Course
-from .date import Date
-from .date_time import DateTime
-from .day_of_week import DayOfWeek
-from .defined_term import DefinedTerm
-from .demand import Demand
-from .duration import Duration
-from .educational_occupational_credential import EducationalOccupationalCredential
-from .intangible import Intangible
-from .integer import Integer
-from .monetary_amount_distribution import MonetaryAmountDistribution
-from .number import Number
-from .offer import Offer
-from .organization import Organization
-from .person import Person
-from .structured_value import StructuredValue
-from .text import Text
-from .url import URL
+from models.alignment_object import AlignmentObject
+from models.category_code import CategoryCode
+from models.course import Course
+from models.date import Date
+from models.date_time import DateTime
+from models.day_of_week import DayOfWeek
+from models.defined_term import DefinedTerm
+from models.demand import Demand
+from models.duration import Duration
+from models.educational_occupational_credential import EducationalOccupationalCredential
+from models.intangible import Intangible
+from models.integer import Integer
+from models.monetary_amount_distribution import MonetaryAmountDistribution
+from models.number import Number
+from models.offer import Offer
+from models.organization import Organization
+from models.person import Person
+from models.structured_value import StructuredValue
+from models.text import Text
+from models.url import URL
 
 
 @dataclass

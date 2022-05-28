@@ -1,17 +1,17 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.597656
+# Auto-generated on 2022-05-28T12:00:23.583234
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .music_album_production_type import MusicAlbumProductionType
-from .music_album_release_type import MusicAlbumReleaseType
-from .music_group import MusicGroup
-from .music_playlist import MusicPlaylist
-from .music_release import MusicRelease
-from .person import Person
+from models.music_album_production_type import MusicAlbumProductionType
+from models.music_album_release_type import MusicAlbumReleaseType
+from models.music_group import MusicGroup
+from models.music_playlist import MusicPlaylist
+from models.music_release import MusicRelease
+from models.person import Person
 
 
 @dataclass

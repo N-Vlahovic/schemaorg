@@ -1,17 +1,17 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.601253
+# Auto-generated on 2022-05-28T12:00:23.585328
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .country import Country
-from .episode import Episode
-from .language import Language
-from .tv_series import TVSeries
-from .text import Text
-from .url import URL
+from models.country import Country
+from models.episode import Episode
+from models.language import Language
+from models.tv_series import TVSeries
+from models.text import Text
+from models.url import URL
 
 
 @dataclass

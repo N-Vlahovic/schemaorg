@@ -1,27 +1,27 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.580165
+# Auto-generated on 2022-05-28T12:00:23.573613
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .boolean import Boolean
-from .claim import Claim
-from .creative_work import CreativeWork
-from .date import Date
-from .date_time import DateTime
-from .distance import Distance
-from .duration import Duration
-from .geo_shape import GeoShape
-from .media_subscription import MediaSubscription
-from .news_article import NewsArticle
-from .organization import Organization
-from .place import Place
-from .quantitative_value import QuantitativeValue
-from .text import Text
-from .time import Time
-from .url import URL
+from models.boolean import Boolean
+from models.claim import Claim
+from models.creative_work import CreativeWork
+from models.date import Date
+from models.date_time import DateTime
+from models.distance import Distance
+from models.duration import Duration
+from models.geo_shape import GeoShape
+from models.media_subscription import MediaSubscription
+from models.news_article import NewsArticle
+from models.organization import Organization
+from models.place import Place
+from models.quantitative_value import QuantitativeValue
+from models.text import Text
+from models.time import Time
+from models.url import URL
 
 
 @dataclass

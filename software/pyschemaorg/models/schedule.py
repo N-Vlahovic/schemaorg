@@ -1,19 +1,19 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.590852
+# Auto-generated on 2022-05-28T12:00:23.579088
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .date import Date
-from .date_time import DateTime
-from .day_of_week import DayOfWeek
-from .duration import Duration
-from .intangible import Intangible
-from .integer import Integer
-from .text import Text
-from .time import Time
+from models.date import Date
+from models.date_time import DateTime
+from models.day_of_week import DayOfWeek
+from models.duration import Duration
+from models.intangible import Intangible
+from models.integer import Integer
+from models.text import Text
+from models.time import Time
 
 
 @dataclass

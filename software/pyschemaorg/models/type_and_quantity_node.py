@@ -1,18 +1,18 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.608719
+# Auto-generated on 2022-05-28T12:00:23.589765
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .business_function import BusinessFunction
-from .number import Number
-from .product import Product
-from .service import Service
-from .structured_value import StructuredValue
-from .text import Text
-from .url import URL
+from models.business_function import BusinessFunction
+from models.number import Number
+from models.product import Product
+from models.service import Service
+from models.structured_value import StructuredValue
+from models.text import Text
+from models.url import URL
 
 
 @dataclass

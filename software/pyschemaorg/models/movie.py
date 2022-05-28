@@ -1,21 +1,21 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.601172
+# Auto-generated on 2022-05-28T12:00:23.585283
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .country import Country
-from .creative_work import CreativeWork
-from .duration import Duration
-from .language import Language
-from .music_group import MusicGroup
-from .organization import Organization
-from .person import Person
-from .text import Text
-from .url import URL
-from .video_object import VideoObject
+from models.country import Country
+from models.creative_work import CreativeWork
+from models.duration import Duration
+from models.language import Language
+from models.music_group import MusicGroup
+from models.organization import Organization
+from models.person import Person
+from models.text import Text
+from models.url import URL
+from models.video_object import VideoObject
 
 
 @dataclass

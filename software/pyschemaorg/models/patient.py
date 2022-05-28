@@ -1,15 +1,15 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.603310
+# Auto-generated on 2022-05-28T12:00:23.586497
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .drug import Drug
-from .medical_audience import MedicalAudience
-from .medical_condition import MedicalCondition
-from .person import Person
+from models.drug import Drug
+from models.medical_audience import MedicalAudience
+from models.medical_condition import MedicalCondition
+from models.person import Person
 
 
 @dataclass

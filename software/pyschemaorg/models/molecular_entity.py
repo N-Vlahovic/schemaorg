@@ -1,15 +1,15 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.617101
+# Auto-generated on 2022-05-28T12:00:23.594808
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .bio_chem_entity import BioChemEntity
-from .defined_term import DefinedTerm
-from .quantitative_value import QuantitativeValue
-from .text import Text
+from models.bio_chem_entity import BioChemEntity
+from models.defined_term import DefinedTerm
+from models.quantitative_value import QuantitativeValue
+from models.text import Text
 
 
 @dataclass

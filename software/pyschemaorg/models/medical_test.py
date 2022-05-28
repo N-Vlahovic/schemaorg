@@ -1,18 +1,18 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.604285
+# Auto-generated on 2022-05-28T12:00:23.587113
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .drug import Drug
-from .medical_condition import MedicalCondition
-from .medical_device import MedicalDevice
-from .medical_entity import MedicalEntity
-from .medical_enumeration import MedicalEnumeration
-from .medical_sign import MedicalSign
-from .text import Text
+from models.drug import Drug
+from models.medical_condition import MedicalCondition
+from models.medical_device import MedicalDevice
+from models.medical_entity import MedicalEntity
+from models.medical_enumeration import MedicalEnumeration
+from models.medical_sign import MedicalSign
+from models.text import Text
 
 
 @dataclass

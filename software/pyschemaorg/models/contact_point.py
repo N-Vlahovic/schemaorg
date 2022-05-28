@@ -1,20 +1,20 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.587528
+# Auto-generated on 2022-05-28T12:00:23.577457
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .administrative_area import AdministrativeArea
-from .contact_point_option import ContactPointOption
-from .geo_shape import GeoShape
-from .language import Language
-from .opening_hours_specification import OpeningHoursSpecification
-from .place import Place
-from .product import Product
-from .structured_value import StructuredValue
-from .text import Text
+from models.administrative_area import AdministrativeArea
+from models.contact_point_option import ContactPointOption
+from models.geo_shape import GeoShape
+from models.language import Language
+from models.opening_hours_specification import OpeningHoursSpecification
+from models.place import Place
+from models.product import Product
+from models.structured_value import StructuredValue
+from models.text import Text
 
 
 @dataclass

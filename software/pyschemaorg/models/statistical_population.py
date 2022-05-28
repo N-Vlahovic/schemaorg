@@ -1,18 +1,18 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.606723
+# Auto-generated on 2022-05-28T12:00:23.588634
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .class import Class
-from .intangible import Intangible
-from .integer import Integer
+from models.abstract_base import AbstractBase
+from models.intangible import Intangible
+from models.integer import Integer
 
 
 @dataclass
 class StatisticalPopulation(Intangible):
     constrainingProperty: Integer | None
     numConstraints: Integer | None
-    populationType: Class | None
+    populationType: AbstractBase | None

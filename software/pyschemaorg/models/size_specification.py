@@ -1,17 +1,17 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.609704
+# Auto-generated on 2022-05-28T12:00:23.590316
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .gender_type import GenderType
-from .qualitative_value import QualitativeValue
-from .quantitative_value import QuantitativeValue
-from .size_group_enumeration import SizeGroupEnumeration
-from .size_system_enumeration import SizeSystemEnumeration
-from .text import Text
+from models.gender_type import GenderType
+from models.qualitative_value import QualitativeValue
+from models.quantitative_value import QuantitativeValue
+from models.size_group_enumeration import SizeGroupEnumeration
+from models.size_system_enumeration import SizeSystemEnumeration
+from models.text import Text
 
 
 @dataclass

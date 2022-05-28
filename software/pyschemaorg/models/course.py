@@ -1,20 +1,20 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.612198
+# Auto-generated on 2022-05-28T12:00:23.592024
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .alignment_object import AlignmentObject
-from .course_instance import CourseInstance
-from .creative_work import CreativeWork
-from .educational_occupational_credential import EducationalOccupationalCredential
-from .integer import Integer
-from .learning_resource import LearningResource
-from .structured_value import StructuredValue
-from .text import Text
-from .url import URL
+from models.alignment_object import AlignmentObject
+from models.course_instance import CourseInstance
+from models.creative_work import CreativeWork
+from models.educational_occupational_credential import EducationalOccupationalCredential
+from models.integer import Integer
+from models.learning_resource import LearningResource
+from models.structured_value import StructuredValue
+from models.text import Text
+from models.url import URL
 
 
 @dataclass

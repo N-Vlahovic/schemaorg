@@ -1,19 +1,19 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.581887
+# Auto-generated on 2022-05-28T12:00:23.574521
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .boolean import Boolean
-from .drug_legal_status import DrugLegalStatus
-from .maximum_dose_schedule import MaximumDoseSchedule
-from .medical_enumeration import MedicalEnumeration
-from .organization import Organization
-from .recommended_dose_schedule import RecommendedDoseSchedule
-from .substance import Substance
-from .text import Text
+from models.boolean import Boolean
+from models.drug_legal_status import DrugLegalStatus
+from models.maximum_dose_schedule import MaximumDoseSchedule
+from models.medical_enumeration import MedicalEnumeration
+from models.organization import Organization
+from models.recommended_dose_schedule import RecommendedDoseSchedule
+from models.substance import Substance
+from models.text import Text
 
 
 @dataclass

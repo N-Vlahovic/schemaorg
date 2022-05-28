@@ -1,17 +1,17 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.598825
+# Auto-generated on 2022-05-28T12:00:23.583970
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .audience import Audience
-from .contact_point import ContactPoint
-from .delivery_method import DeliveryMethod
-from .organization import Organization
-from .person import Person
-from .transfer_action import TransferAction
+from models.audience import Audience
+from models.contact_point import ContactPoint
+from models.delivery_method import DeliveryMethod
+from models.organization import Organization
+from models.person import Person
+from models.transfer_action import TransferAction
 
 
 @dataclass

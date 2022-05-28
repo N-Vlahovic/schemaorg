@@ -1,16 +1,16 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.594926
+# Auto-generated on 2022-05-28T12:00:23.581570
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .image_object import ImageObject
-from .media_object import MediaObject
-from .music_group import MusicGroup
-from .person import Person
-from .text import Text
+from models.image_object import ImageObject
+from models.media_object import MediaObject
+from models.music_group import MusicGroup
+from models.person import Person
+from models.text import Text
 
 
 @dataclass

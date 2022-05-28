@@ -1,34 +1,34 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.595917
+# Auto-generated on 2022-05-28T12:00:23.582169
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .administrative_area import AdministrativeArea
-from .aggregate_rating import AggregateRating
-from .audience import Audience
-from .brand import Brand
-from .category_code import CategoryCode
-from .demand import Demand
-from .geo_shape import GeoShape
-from .government_benefits_type import GovernmentBenefitsType
-from .image_object import ImageObject
-from .intangible import Intangible
-from .offer import Offer
-from .offer_catalog import OfferCatalog
-from .opening_hours_specification import OpeningHoursSpecification
-from .organization import Organization
-from .person import Person
-from .physical_activity_category import PhysicalActivityCategory
-from .place import Place
-from .product import Product
-from .review import Review
-from .service_channel import ServiceChannel
-from .text import Text
-from .thing import Thing
-from .url import URL
+from models.administrative_area import AdministrativeArea
+from models.aggregate_rating import AggregateRating
+from models.audience import Audience
+from models.brand import Brand
+from models.category_code import CategoryCode
+from models.demand import Demand
+from models.geo_shape import GeoShape
+from models.government_benefits_type import GovernmentBenefitsType
+from models.image_object import ImageObject
+from models.intangible import Intangible
+from models.offer import Offer
+from models.offer_catalog import OfferCatalog
+from models.opening_hours_specification import OpeningHoursSpecification
+from models.organization import Organization
+from models.person import Person
+from models.physical_activity_category import PhysicalActivityCategory
+from models.place import Place
+from models.product import Product
+from models.review import Review
+from models.service_channel import ServiceChannel
+from models.text import Text
+from models.thing import Thing
+from models.url import URL
 
 
 @dataclass

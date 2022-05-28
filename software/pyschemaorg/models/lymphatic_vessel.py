@@ -1,14 +1,14 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.591091
+# Auto-generated on 2022-05-28T12:00:23.579223
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .anatomical_structure import AnatomicalStructure
-from .anatomical_system import AnatomicalSystem
-from .vessel import Vessel
+from models.anatomical_structure import AnatomicalStructure
+from models.anatomical_system import AnatomicalSystem
+from models.vessel import Vessel
 
 
 @dataclass

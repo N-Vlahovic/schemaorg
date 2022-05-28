@@ -1,20 +1,20 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.594266
+# Auto-generated on 2022-05-28T12:00:23.581119
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .contact_point import ContactPoint
-from .duration import Duration
-from .intangible import Intangible
-from .language import Language
-from .place import Place
-from .postal_address import PostalAddress
-from .service import Service
-from .text import Text
-from .url import URL
+from models.contact_point import ContactPoint
+from models.duration import Duration
+from models.intangible import Intangible
+from models.language import Language
+from models.place import Place
+from models.postal_address import PostalAddress
+from models.service import Service
+from models.text import Text
+from models.url import URL
 
 
 @dataclass

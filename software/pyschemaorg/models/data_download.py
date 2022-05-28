@@ -1,14 +1,14 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.618251
+# Auto-generated on 2022-05-28T12:00:23.595492
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .media_object import MediaObject
-from .text import Text
-from .url import URL
+from models.media_object import MediaObject
+from models.text import Text
+from models.url import URL
 
 
 @dataclass

@@ -9,6 +9,7 @@ import utils
 
 DEFAULT_CURRENT_ONLY: bool = False
 DEFAULT_FIELDS: dict = {}
+DEFAULT_FIELD_TYPE: list = ["AbstractBase"]
 DEFAULT_PARENT: list[str] = ["AbstractBase"]
 TAB: str = " " * 4
 MODELS_DIR_PATH: str = f"{utils.MODULE_PATH}/models"
@@ -70,7 +71,7 @@ def update_helper(data: dict, key: str, **kwargs) -> None:
 
 def includes_helper(include: list[dict] | dict) -> list[str]:
     include = include if isinstance(include, list) else [include]
-    return sorted(id_cleaner(_.get("@id")) for _ in include if _)
+    return list(filter(lambda _: _.lower() != "class", sorted(id_cleaner(_.get("@id")) for _ in include if _)))
 
 
 def id_cleaner(string: str) -> str:
@@ -92,19 +93,30 @@ def get_last_release_schema_definitions(current_only: bool = DEFAULT_CURRENT_ONL
         types = _type if isinstance(_type, list) else [_type]
         for t in types:
             if t == "rdfs:Class":
-                update_helper(classes, _id, name=label, id=_id, parents=includes_helper(d.get("rdfs:subClassOf")))
+                update_helper(
+                    classes,
+                    _id,
+                    name=label,
+                    id=_id,
+                    parents=includes_helper(d.get("rdfs:subClassOf"))
+                )
             elif t == "rdf:Property":
                 domain_includes = includes_helper(d.get("schema:domainIncludes"))
                 range_includes = includes_helper(d.get("schema:rangeIncludes"))
                 update_helper(
-                    properties, _id, name=label, id=_id, domain_includes=domain_includes, range_includes=range_includes
+                    properties,
+                    _id,
+                    name=label,
+                    id=_id,
+                    domain_includes=domain_includes,
+                    range_includes=range_includes
                 )
                 for di in domain_includes:
                     update_helper(
                         classes,
                         di,
                         id=di,
-                        fields={_id: range_includes}
+                        fields={_id: range_includes or DEFAULT_FIELD_TYPE}
                     )
             elif re.fullmatch(r"^schema:.*", t):
                 update_helper(
@@ -135,7 +147,6 @@ def get_genealogy(current_only: bool = DEFAULT_CURRENT_ONLY) -> dict:
                 tmp[_] = {}
             tmp = tmp[_]
         tmp[key] = {}
-    breakpoint()
     return genealogy
 
 
@@ -168,7 +179,7 @@ def generate_model(data: dict) -> None:
     if not name:
         raise NameError(f"Unsupported name {name}")
     fields = data.get("fields") or {}
-    parents = data.get("parents") or DEFAULT_PARENT
+    parents = [_ for _ in data.get("parents") or [] if _ not in ["rdfs:Class"]] or DEFAULT_PARENT
     file_name = f"{MODELS_DIR_PATH}/{_id}.py"
     to_import = set(parents) | {_ for _ in fields.values() for _ in _}
     body = f"@dataclass\nclass {name}(%s):\n" % ", ".join(parents)
@@ -181,7 +192,7 @@ def generate_model(data: dict) -> None:
         file_name=file_name,
         body=body,
         imports="from dataclasses import dataclass\n\n" + "\n".join(
-            f"from .{camel_to_snake(_)} import {_}" for _ in sorted(to_import.difference({name}))
+            f"from models.{camel_to_snake(_)} import {_}" for _ in sorted(to_import.difference({name}))
         )
     )
 
@@ -224,4 +235,5 @@ def save_schema_files(path: str, current_only: bool = DEFAULT_CURRENT_ONLY) -> N
 
 
 if __name__ == '__main__':
+    save_schema_files(os.path.expanduser("~"))
     generate_all_models()

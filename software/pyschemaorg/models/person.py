@@ -1,41 +1,41 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.579225
+# Auto-generated on 2022-05-28T12:00:23.573118
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .brand import Brand
-from .contact_point import ContactPoint
-from .country import Country
-from .creative_work import CreativeWork
-from .date import Date
-from .defined_term import DefinedTerm
-from .demand import Demand
-from .distance import Distance
-from .educational_occupational_credential import EducationalOccupationalCredential
-from .educational_organization import EducationalOrganization
-from .event import Event
-from .gender_type import GenderType
-from .grant import Grant
-from .interaction_counter import InteractionCounter
-from .language import Language
-from .monetary_amount import MonetaryAmount
-from .occupation import Occupation
-from .offer import Offer
-from .offer_catalog import OfferCatalog
-from .organization import Organization
-from .ownership_info import OwnershipInfo
-from .place import Place
-from .postal_address import PostalAddress
-from .price_specification import PriceSpecification
-from .product import Product
-from .program_membership import ProgramMembership
-from .quantitative_value import QuantitativeValue
-from .text import Text
-from .thing import Thing
-from .url import URL
+from models.brand import Brand
+from models.contact_point import ContactPoint
+from models.country import Country
+from models.creative_work import CreativeWork
+from models.date import Date
+from models.defined_term import DefinedTerm
+from models.demand import Demand
+from models.distance import Distance
+from models.educational_occupational_credential import EducationalOccupationalCredential
+from models.educational_organization import EducationalOrganization
+from models.event import Event
+from models.gender_type import GenderType
+from models.grant import Grant
+from models.interaction_counter import InteractionCounter
+from models.language import Language
+from models.monetary_amount import MonetaryAmount
+from models.occupation import Occupation
+from models.offer import Offer
+from models.offer_catalog import OfferCatalog
+from models.organization import Organization
+from models.ownership_info import OwnershipInfo
+from models.place import Place
+from models.postal_address import PostalAddress
+from models.price_specification import PriceSpecification
+from models.product import Product
+from models.program_membership import ProgramMembership
+from models.quantitative_value import QuantitativeValue
+from models.text import Text
+from models.thing import Thing
+from models.url import URL
 
 
 @dataclass

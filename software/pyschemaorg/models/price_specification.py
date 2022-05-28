@@ -1,18 +1,18 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.582504
+# Auto-generated on 2022-05-28T12:00:23.574851
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .boolean import Boolean
-from .date import Date
-from .date_time import DateTime
-from .number import Number
-from .quantitative_value import QuantitativeValue
-from .structured_value import StructuredValue
-from .text import Text
+from models.boolean import Boolean
+from models.date import Date
+from models.date_time import DateTime
+from models.number import Number
+from models.quantitative_value import QuantitativeValue
+from models.structured_value import StructuredValue
+from models.text import Text
 
 
 @dataclass

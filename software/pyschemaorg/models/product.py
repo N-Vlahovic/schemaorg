@@ -1,41 +1,41 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.585087
+# Auto-generated on 2022-05-28T12:00:23.576275
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .adult_oriented_enumeration import AdultOrientedEnumeration
-from .aggregate_rating import AggregateRating
-from .audience import Audience
-from .boolean import Boolean
-from .brand import Brand
-from .category_code import CategoryCode
-from .country import Country
-from .date import Date
-from .defined_term import DefinedTerm
-from .demand import Demand
-from .distance import Distance
-from .energy_consumption_details import EnergyConsumptionDetails
-from .grant import Grant
-from .image_object import ImageObject
-from .merchant_return_policy import MerchantReturnPolicy
-from .offer import Offer
-from .offer_item_condition import OfferItemCondition
-from .organization import Organization
-from .physical_activity_category import PhysicalActivityCategory
-from .product_group import ProductGroup
-from .product_model import ProductModel
-from .product_return_policy import ProductReturnPolicy
-from .property_value import PropertyValue
-from .quantitative_value import QuantitativeValue
-from .review import Review
-from .service import Service
-from .size_specification import SizeSpecification
-from .text import Text
-from .thing import Thing
-from .url import URL
+from models.adult_oriented_enumeration import AdultOrientedEnumeration
+from models.aggregate_rating import AggregateRating
+from models.audience import Audience
+from models.boolean import Boolean
+from models.brand import Brand
+from models.category_code import CategoryCode
+from models.country import Country
+from models.date import Date
+from models.defined_term import DefinedTerm
+from models.demand import Demand
+from models.distance import Distance
+from models.energy_consumption_details import EnergyConsumptionDetails
+from models.grant import Grant
+from models.image_object import ImageObject
+from models.merchant_return_policy import MerchantReturnPolicy
+from models.offer import Offer
+from models.offer_item_condition import OfferItemCondition
+from models.organization import Organization
+from models.physical_activity_category import PhysicalActivityCategory
+from models.product_group import ProductGroup
+from models.product_model import ProductModel
+from models.product_return_policy import ProductReturnPolicy
+from models.property_value import PropertyValue
+from models.quantitative_value import QuantitativeValue
+from models.review import Review
+from models.service import Service
+from models.size_specification import SizeSpecification
+from models.text import Text
+from models.thing import Thing
+from models.url import URL
 
 
 @dataclass

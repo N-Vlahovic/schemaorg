@@ -1,31 +1,31 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.580488
+# Auto-generated on 2022-05-28T12:00:23.573787
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .administrative_area import AdministrativeArea
-from .boolean import Boolean
-from .category_code import CategoryCode
-from .contact_point import ContactPoint
-from .date import Date
-from .date_time import DateTime
-from .defined_term import DefinedTerm
-from .educational_occupational_credential import EducationalOccupationalCredential
-from .intangible import Intangible
-from .integer import Integer
-from .monetary_amount import MonetaryAmount
-from .monetary_amount_distribution import MonetaryAmountDistribution
-from .number import Number
-from .occupation import Occupation
-from .occupational_experience_requirements import OccupationalExperienceRequirements
-from .organization import Organization
-from .place import Place
-from .price_specification import PriceSpecification
-from .text import Text
-from .url import URL
+from models.administrative_area import AdministrativeArea
+from models.boolean import Boolean
+from models.category_code import CategoryCode
+from models.contact_point import ContactPoint
+from models.date import Date
+from models.date_time import DateTime
+from models.defined_term import DefinedTerm
+from models.educational_occupational_credential import EducationalOccupationalCredential
+from models.intangible import Intangible
+from models.integer import Integer
+from models.monetary_amount import MonetaryAmount
+from models.monetary_amount_distribution import MonetaryAmountDistribution
+from models.number import Number
+from models.occupation import Occupation
+from models.occupational_experience_requirements import OccupationalExperienceRequirements
+from models.organization import Organization
+from models.place import Place
+from models.price_specification import PriceSpecification
+from models.text import Text
+from models.url import URL
 
 
 @dataclass

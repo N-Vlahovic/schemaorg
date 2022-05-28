@@ -1,22 +1,22 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.584427
+# Auto-generated on 2022-05-28T12:00:23.575962
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .car_usage_type import CarUsageType
-from .date import Date
-from .drive_wheel_configuration_value import DriveWheelConfigurationValue
-from .engine_specification import EngineSpecification
-from .number import Number
-from .product import Product
-from .qualitative_value import QualitativeValue
-from .quantitative_value import QuantitativeValue
-from .steering_position_value import SteeringPositionValue
-from .text import Text
-from .url import URL
+from models.car_usage_type import CarUsageType
+from models.date import Date
+from models.drive_wheel_configuration_value import DriveWheelConfigurationValue
+from models.engine_specification import EngineSpecification
+from models.number import Number
+from models.product import Product
+from models.qualitative_value import QualitativeValue
+from models.quantitative_value import QuantitativeValue
+from models.steering_position_value import SteeringPositionValue
+from models.text import Text
+from models.url import URL
 
 
 @dataclass

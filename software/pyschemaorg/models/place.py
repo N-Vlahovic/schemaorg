@@ -1,31 +1,31 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.593060
+# Auto-generated on 2022-05-28T12:00:23.580344
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .aggregate_rating import AggregateRating
-from .boolean import Boolean
-from .defined_term import DefinedTerm
-from .event import Event
-from .geo_coordinates import GeoCoordinates
-from .geo_shape import GeoShape
-from .geospatial_geometry import GeospatialGeometry
-from .image_object import ImageObject
-from .integer import Integer
-from .location_feature_specification import LocationFeatureSpecification
-from .map import Map
-from .number import Number
-from .opening_hours_specification import OpeningHoursSpecification
-from .photograph import Photograph
-from .postal_address import PostalAddress
-from .property_value import PropertyValue
-from .review import Review
-from .text import Text
-from .thing import Thing
-from .url import URL
+from models.aggregate_rating import AggregateRating
+from models.boolean import Boolean
+from models.defined_term import DefinedTerm
+from models.event import Event
+from models.geo_coordinates import GeoCoordinates
+from models.geo_shape import GeoShape
+from models.geospatial_geometry import GeospatialGeometry
+from models.image_object import ImageObject
+from models.integer import Integer
+from models.location_feature_specification import LocationFeatureSpecification
+from models.map import Map
+from models.number import Number
+from models.opening_hours_specification import OpeningHoursSpecification
+from models.photograph import Photograph
+from models.postal_address import PostalAddress
+from models.property_value import PropertyValue
+from models.review import Review
+from models.text import Text
+from models.thing import Thing
+from models.url import URL
 
 
 @dataclass

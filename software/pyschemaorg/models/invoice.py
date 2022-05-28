@@ -1,27 +1,27 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.582277
+# Auto-generated on 2022-05-28T12:00:23.574729
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .category_code import CategoryCode
-from .date import Date
-from .date_time import DateTime
-from .duration import Duration
-from .intangible import Intangible
-from .monetary_amount import MonetaryAmount
-from .order import Order
-from .organization import Organization
-from .payment_method import PaymentMethod
-from .payment_status_type import PaymentStatusType
-from .person import Person
-from .physical_activity_category import PhysicalActivityCategory
-from .price_specification import PriceSpecification
-from .text import Text
-from .thing import Thing
-from .url import URL
+from models.category_code import CategoryCode
+from models.date import Date
+from models.date_time import DateTime
+from models.duration import Duration
+from models.intangible import Intangible
+from models.monetary_amount import MonetaryAmount
+from models.order import Order
+from models.organization import Organization
+from models.payment_method import PaymentMethod
+from models.payment_status_type import PaymentStatusType
+from models.person import Person
+from models.physical_activity_category import PhysicalActivityCategory
+from models.price_specification import PriceSpecification
+from models.text import Text
+from models.thing import Thing
+from models.url import URL
 
 
 @dataclass

@@ -1,22 +1,22 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.592783
+# Auto-generated on 2022-05-28T12:00:23.580120
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .drug_legal_status import DrugLegalStatus
-from .grant import Grant
-from .medical_code import MedicalCode
-from .medical_enumeration import MedicalEnumeration
-from .medical_guideline import MedicalGuideline
-from .medical_specialty import MedicalSpecialty
-from .medical_study import MedicalStudy
-from .medicine_system import MedicineSystem
-from .organization import Organization
-from .text import Text
-from .thing import Thing
+from models.drug_legal_status import DrugLegalStatus
+from models.grant import Grant
+from models.medical_code import MedicalCode
+from models.medical_enumeration import MedicalEnumeration
+from models.medical_guideline import MedicalGuideline
+from models.medical_specialty import MedicalSpecialty
+from models.medical_study import MedicalStudy
+from models.medicine_system import MedicineSystem
+from models.organization import Organization
+from models.text import Text
+from models.thing import Thing
 
 
 @dataclass

@@ -1,37 +1,37 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-28T11:22:09.590641
+# Auto-generated on 2022-05-28T12:00:23.578971
 # For more info concerning Schema.org c.f. https://schema.org/
 # For more info concerning this script c.f. nikolai@nexup.com
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .aggregate_rating import AggregateRating
-from .audience import Audience
-from .boolean import Boolean
-from .creative_work import CreativeWork
-from .date import Date
-from .date_time import DateTime
-from .defined_term import DefinedTerm
-from .demand import Demand
-from .duration import Duration
-from .event_attendance_mode_enumeration import EventAttendanceModeEnumeration
-from .event_status_type import EventStatusType
-from .grant import Grant
-from .integer import Integer
-from .language import Language
-from .offer import Offer
-from .organization import Organization
-from .person import Person
-from .place import Place
-from .postal_address import PostalAddress
-from .review import Review
-from .schedule import Schedule
-from .text import Text
-from .thing import Thing
-from .time import Time
-from .url import URL
-from .virtual_location import VirtualLocation
+from models.aggregate_rating import AggregateRating
+from models.audience import Audience
+from models.boolean import Boolean
+from models.creative_work import CreativeWork
+from models.date import Date
+from models.date_time import DateTime
+from models.defined_term import DefinedTerm
+from models.demand import Demand
+from models.duration import Duration
+from models.event_attendance_mode_enumeration import EventAttendanceModeEnumeration
+from models.event_status_type import EventStatusType
+from models.grant import Grant
+from models.integer import Integer
+from models.language import Language
+from models.offer import Offer
+from models.organization import Organization
+from models.person import Person
+from models.place import Place
+from models.postal_address import PostalAddress
+from models.review import Review
+from models.schedule import Schedule
+from models.text import Text
+from models.thing import Thing
+from models.time import Time
+from models.url import URL
+from models.virtual_location import VirtualLocation
 
 
 @dataclass
