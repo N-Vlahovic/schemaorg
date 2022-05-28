@@ -224,5 +224,4 @@ def save_schema_files(path: str, current_only: bool = DEFAULT_CURRENT_ONLY) -> N
 
 
 if __name__ == '__main__':
-    save_schema_files(os.path.expanduser("~"))
     generate_all_models()
