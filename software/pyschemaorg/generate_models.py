@@ -13,6 +13,7 @@ DEFAULT_FIELD_TYPE: list = ["AbstractBase"]
 DEFAULT_PARENT: list[str] = ["AbstractBase"]
 TAB: str = " " * 4
 MODELS_DIR_PATH: str = f"{utils.MODULE_PATH}/models"
+SINGLE_MODELS_FILE: str = f"{MODELS_DIR_PATH}/all_models.py"
 HTTPS_JSON: str = "schemaorg-%s-https.jsonld"
 BUILTINS_MAPPING: dict = {
     "Boolean": bool,
@@ -80,7 +81,9 @@ def id_cleaner(string: str) -> str:
 
 def camel_to_snake(name: str) -> str:
     name = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
-    return re.sub(r'([a-z\d])([A-Z])', r'\1_\2', name).lower()
+    name = re.sub(r'([a-z\d])([A-Z])', r'\1_\2', name).lower()
+    # name = f"s_{name}"
+    return name
 
 
 def get_last_release_schema_definitions(current_only: bool = DEFAULT_CURRENT_ONLY) -> tuple[dict, dict, dict]:
@@ -165,14 +168,28 @@ def write_model_file(
 
 
 def generate_abstract_base() -> None:
+    name = "AbstractBase"
     write_model_file(
-        file_name=f"{MODELS_DIR_PATH}/abstract_base.py",
-        body=f"@dataclass\nclass AbstractBase(object):\n{TAB}pass\n",
+        file_name=f"{MODELS_DIR_PATH}/{camel_to_snake(name)}.py",
+        body=f"@dataclass\nclass {name}:\n{TAB}pass\n",
         imports="from dataclasses import dataclass"
     )
 
 
-def generate_model(data: dict) -> None:
+def generate_model_body(name: str, fields: dict, parents: list, single_file: bool = False) -> str:
+    def helper0(s: str) -> str:
+        return s if single_file is True else f"{camel_to_snake(s)}.{s}"
+
+    body = f"@dataclass\nclass {name}(%s):\n" % ", ".join(map(helper0, parents))
+    if fields:
+        for key, val in fields.items():
+            body += f"{TAB}{key}: %s | None = None\n" % " | ".join(helper0(_) if _ != name else _ for _ in val)
+    else:
+        body += f"{TAB}pass\n"
+    return body
+
+
+def get_model_file_data(data: dict, single_file: bool = False) -> tuple:
     _id = camel_to_snake(data["id"])
     name = data["name"]
     name = name.get("@value") if isinstance(name, dict) else name
@@ -182,18 +199,20 @@ def generate_model(data: dict) -> None:
     parents = [_ for _ in data.get("parents") or [] if _ not in ["rdfs:Class"]] or DEFAULT_PARENT
     file_name = f"{MODELS_DIR_PATH}/{_id}.py"
     to_import = set(parents) | {_ for _ in fields.values() for _ in _}
-    body = f"@dataclass\nclass {name}(%s):\n" % ", ".join(parents)
-    if fields:
-        for key, val in fields.items():
-            body += f"{TAB}{key}: %s | None\n" % " | ".join(val)
-    else:
-        body += f"{TAB}pass\n"
+    imports = "from dataclasses import dataclass\n\n"
+    imports += "\n".join(
+        f"import models.{camel_to_snake(_)} as {camel_to_snake(_)}" for _ in sorted(to_import.difference({name}))
+    )
+    body = generate_model_body(name=name, fields=fields, parents=parents, single_file=single_file)
+    return body, imports, file_name
+
+
+def generate_model(data: dict) -> None:
+    body, imports, file_name = get_model_file_data(data, single_file=False)
     write_model_file(
         file_name=file_name,
         body=body,
-        imports="from dataclasses import dataclass\n\n" + "\n".join(
-            f"from models.{camel_to_snake(_)} import {_}" for _ in sorted(to_import.difference({name}))
-        )
+        imports=imports
     )
 
 
@@ -213,11 +232,26 @@ def init_models_dir() -> None:
     generate_abstract_base()
 
 
-def generate_all_models(current_only: bool = DEFAULT_CURRENT_ONLY):
+def genealogy_to_code(genealogy: dict, data: dict, body: str):
+    body += "\n\n".join(get_model_file_data(data=data.pop(key), single_file=True)[0] for key in genealogy if key in data)
+    return body
+
+
+def generate_all_models(single_file: bool = True, current_only: bool = DEFAULT_CURRENT_ONLY):
     data = get_last_release_schema_definitions(current_only)[0]
     init_models_dir()
-    for key, val in data.items():
-        generate_model(val)
+    if single_file is False:
+        for key, val in data.items():
+            generate_model(val)
+        return
+    tree = utils.get_model_tree([v for k, v in data.items() if k != "rdfs:Clas"])
+    body = "\n\n".join(get_model_file_data(_.asdict(), True)[0] for _ in tree)
+    header = model_file_header()
+    imports = "from __future__ import annotations\nfrom dataclasses import dataclass\n\n" \
+              "from models.abstract_base import AbstractBase"
+    code = f"{header}\n{imports}\n\n{body}"
+    with open(SINGLE_MODELS_FILE, "w", encoding="utf-8") as _:
+        _.write(code)
 
 
 def save_schema_files(path: str, current_only: bool = DEFAULT_CURRENT_ONLY) -> None:
