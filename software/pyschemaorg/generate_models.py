@@ -16,12 +16,12 @@ MODELS_DIR_PATH: str = f"{utils.MODULE_PATH}/models"
 SINGLE_MODELS_FILE: str = f"{MODELS_DIR_PATH}/all_models.py"
 HTTPS_JSON: str = "schemaorg-%s-https.jsonld"
 BUILTINS_MAPPING: dict = {
-    "Boolean": bool,
-    "Date": datetime.date,
-    "DateTime": datetime.datetime,
-    "Number": float | int,
-    "Text": str,
-    "Time": datetime.time
+    "Boolean": "bool",
+    "Date": "datetime.date",
+    "DateTime": "datetime.datetime",
+    "Number": "float",
+    "Text": "str",
+    "Time": "datetime.time"
 }
 
 
@@ -76,7 +76,11 @@ def includes_helper(include: list[dict] | dict) -> list[str]:
 
 
 def id_cleaner(string: str) -> str:
-    return re.sub(r"^schema:(.*)", r"\1", string)
+    string = re.sub(r"^schema:(.*)", r"\1", string)
+    try:
+        return BUILTINS_MAPPING[string]
+    except KeyError:
+        return string
 
 
 def camel_to_snake(name: str) -> str:
@@ -220,7 +224,7 @@ def model_file_header() -> str:
     code = '# !/usr/bin/env python3\n# -*- coding: utf-8 -*-\n'
     code += f'# Auto-generated on {datetime.datetime.utcnow().isoformat()}\n'
     code += f'# For more info concerning Schema.org c.f. https://schema.org/\n'
-    code += f'# For more info concerning this script c.f. nikolai@nexup.com\n'
+    code += f'# For more info concerning this script c.f. https://github.com/n-vlahovic\n'
     return code
 
 
@@ -233,7 +237,10 @@ def init_models_dir() -> None:
 
 
 def genealogy_to_code(genealogy: dict, data: dict, body: str):
-    body += "\n\n".join(get_model_file_data(data=data.pop(key), single_file=True)[0] for key in genealogy if key in data)
+    body += "\n\n".join(get_model_file_data(
+        data=data.pop(key),
+        single_file=True
+    )[0] for key in genealogy if key in data)
     return body
 
 
@@ -246,9 +253,12 @@ def generate_all_models(single_file: bool = True, current_only: bool = DEFAULT_C
         return
     tree = utils.get_model_tree([v for k, v in data.items() if k != "rdfs:Clas"])
     tree = utils.clean_tree_genealogy(tree)
+    tree = [_ for _ in tree if _.id not in BUILTINS_MAPPING.values()]
     body = "\n\n".join(get_model_file_data(_.asdict(), True)[0] for _ in tree)
     header = model_file_header()
-    imports = "from __future__ import annotations\nfrom dataclasses import dataclass\n\n" \
+    imports = "from __future__ import annotations\n" \
+              "import datetime\n" \
+              "from dataclasses import dataclass\n\n" \
               "from models.abstract_base import AbstractBase"
     code = f"{header}\n{imports}\n\n\n{body}"
     with open(SINGLE_MODELS_FILE, "w", encoding="utf-8") as _:

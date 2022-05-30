@@ -1,35 +1,26 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Auto-generated on 2022-05-30T18:45:47.722746
+# Auto-generated on 2022-05-30T19:30:11.009357
 # For more info concerning Schema.org c.f. https://schema.org/
-# For more info concerning this script c.f. nikolai@nexup.com
+# For more info concerning this script c.f. https://github.com/n-vlahovic
 
 from __future__ import annotations
+import datetime
 from dataclasses import dataclass
 
 from models.abstract_base import AbstractBase
 
 
 @dataclass
-class Boolean(AbstractBase):
-    pass
-
-
-@dataclass
-class Time(AbstractBase):
-    pass
-
-
-@dataclass
 class Thing(AbstractBase):
     additionalType: URL | None = None
-    alternateName: Text | None = None
-    description: Text | None = None
-    disambiguatingDescription: Text | None = None
-    identifier: PropertyValue | Text | URL | None = None
+    alternateName: str | None = None
+    description: str | None = None
+    disambiguatingDescription: str | None = None
+    identifier: PropertyValue | URL | str | None = None
     image: ImageObject | URL | None = None
     mainEntityOfPage: CreativeWork | URL | None = None
-    name: Text | None = None
+    name: str | None = None
     potentialAction: Action | None = None
     sameAs: URL | None = None
     subjectOf: CreativeWork | Event | None = None
@@ -38,50 +29,50 @@ class Thing(AbstractBase):
 
 @dataclass
 class Person(Thing):
-    additionalName: Text | None = None
-    address: PostalAddress | Text | None = None
+    additionalName: str | None = None
+    address: PostalAddress | str | None = None
     affiliation: Organization | None = None
     alumniOf: EducationalOrganization | Organization | None = None
-    award: Text | None = None
-    awards: Text | None = None
-    birthDate: Date | None = None
+    award: str | None = None
+    awards: str | None = None
+    birthDate: datetime.date | None = None
     birthPlace: Place | None = None
     brand: Brand | Organization | None = None
-    callSign: Text | None = None
+    callSign: str | None = None
     children: Person | None = None
     colleague: Person | URL | None = None
     colleagues: Person | None = None
     contactPoint: ContactPoint | None = None
     contactPoints: ContactPoint | None = None
-    deathDate: Date | None = None
+    deathDate: datetime.date | None = None
     deathPlace: Place | None = None
-    duns: Text | None = None
-    email: Text | None = None
-    familyName: Text | None = None
-    faxNumber: Text | None = None
+    duns: str | None = None
+    email: str | None = None
+    familyName: str | None = None
+    faxNumber: str | None = None
     follows: Person | None = None
     funder: Organization | Person | None = None
     funding: Grant | None = None
-    gender: GenderType | Text | None = None
-    givenName: Text | None = None
-    globalLocationNumber: Text | None = None
+    gender: GenderType | str | None = None
+    givenName: str | None = None
+    globalLocationNumber: str | None = None
     hasCredential: EducationalOccupationalCredential | None = None
     hasOccupation: Occupation | None = None
     hasOfferCatalog: OfferCatalog | None = None
     hasPOS: Place | None = None
     height: Distance | QuantitativeValue | None = None
     homeLocation: ContactPoint | Place | None = None
-    honorificPrefix: Text | None = None
-    honorificSuffix: Text | None = None
+    honorificPrefix: str | None = None
+    honorificSuffix: str | None = None
     interactionStatistic: InteractionCounter | None = None
-    isicV4: Text | None = None
-    jobTitle: DefinedTerm | Text | None = None
+    isicV4: str | None = None
+    jobTitle: DefinedTerm | str | None = None
     knows: Person | None = None
-    knowsAbout: Text | Thing | URL | None = None
-    knowsLanguage: Language | Text | None = None
+    knowsAbout: Thing | URL | str | None = None
+    knowsLanguage: Language | str | None = None
     makesOffer: Offer | None = None
     memberOf: Organization | ProgramMembership | None = None
-    naics: Text | None = None
+    naics: str | None = None
     nationality: Country | None = None
     netWorth: MonetaryAmount | PriceSpecification | None = None
     owns: OwnershipInfo | Product | None = None
@@ -95,9 +86,9 @@ class Person(Thing):
     siblings: Person | None = None
     sponsor: Organization | Person | None = None
     spouse: Person | None = None
-    taxID: Text | None = None
-    telephone: Text | None = None
-    vatID: Text | None = None
+    taxID: str | None = None
+    telephone: str | None = None
+    vatID: str | None = None
     weight: QuantitativeValue | None = None
     workLocation: ContactPoint | Place | None = None
     worksFor: Organization | None = None
@@ -105,93 +96,93 @@ class Person(Thing):
 
 @dataclass
 class Taxon(Thing):
-    childTaxon: Taxon | Text | URL | None = None
+    childTaxon: Taxon | URL | str | None = None
     hasDefinedTerm: DefinedTerm | None = None
-    parentTaxon: Taxon | Text | URL | None = None
-    taxonRank: PropertyValue | Text | URL | None = None
+    parentTaxon: Taxon | URL | str | None = None
+    taxonRank: PropertyValue | URL | str | None = None
 
 
 @dataclass
 class CreativeWork(Thing):
     about: Thing | None = None
-    abstract: Text | None = None
-    accessMode: Text | None = None
+    abstract: str | None = None
+    accessMode: str | None = None
     accessModeSufficient: ItemList | None = None
-    accessibilityAPI: Text | None = None
-    accessibilityControl: Text | None = None
-    accessibilityFeature: Text | None = None
-    accessibilityHazard: Text | None = None
-    accessibilitySummary: Text | None = None
+    accessibilityAPI: str | None = None
+    accessibilityControl: str | None = None
+    accessibilityFeature: str | None = None
+    accessibilityHazard: str | None = None
+    accessibilitySummary: str | None = None
     accountablePerson: Person | None = None
     acquireLicensePage: CreativeWork | URL | None = None
     aggregateRating: AggregateRating | None = None
-    alternativeHeadline: Text | None = None
+    alternativeHeadline: str | None = None
     archivedAt: URL | WebPage | None = None
-    assesses: DefinedTerm | Text | None = None
+    assesses: DefinedTerm | str | None = None
     associatedMedia: MediaObject | None = None
     audience: Audience | None = None
     audio: AudioObject | Clip | MusicRecording | None = None
     author: Organization | Person | None = None
-    award: Text | None = None
-    awards: Text | None = None
+    award: str | None = None
+    awards: str | None = None
     character: Person | None = None
-    citation: CreativeWork | Text | None = None
+    citation: CreativeWork | str | None = None
     comment: Comment | None = None
     commentCount: Integer | None = None
-    conditionsOfAccess: Text | None = None
+    conditionsOfAccess: str | None = None
     contentLocation: Place | None = None
-    contentRating: Rating | Text | None = None
-    contentReferenceTime: DateTime | None = None
+    contentRating: Rating | str | None = None
+    contentReferenceTime: datetime.datetime | None = None
     contributor: Organization | Person | None = None
     copyrightHolder: Organization | Person | None = None
-    copyrightNotice: Text | None = None
-    copyrightYear: Number | None = None
-    correction: CorrectionComment | Text | URL | None = None
+    copyrightNotice: str | None = None
+    copyrightYear: float | None = None
+    correction: CorrectionComment | URL | str | None = None
     countryOfOrigin: Country | None = None
-    creativeWorkStatus: DefinedTerm | Text | None = None
+    creativeWorkStatus: DefinedTerm | str | None = None
     creator: Organization | Person | None = None
-    creditText: Text | None = None
-    dateCreated: Date | DateTime | None = None
-    dateModified: Date | DateTime | None = None
-    datePublished: Date | DateTime | None = None
+    creditText: str | None = None
+    dateCreated: datetime.date | datetime.datetime | None = None
+    dateModified: datetime.date | datetime.datetime | None = None
+    datePublished: datetime.date | datetime.datetime | None = None
     discussionUrl: URL | None = None
-    editEIDR: Text | URL | None = None
+    editEIDR: URL | str | None = None
     editor: Person | None = None
     educationalAlignment: AlignmentObject | None = None
-    educationalLevel: DefinedTerm | Text | URL | None = None
-    educationalUse: DefinedTerm | Text | None = None
+    educationalLevel: DefinedTerm | URL | str | None = None
+    educationalUse: DefinedTerm | str | None = None
     encoding: MediaObject | None = None
-    encodingFormat: Text | URL | None = None
+    encodingFormat: URL | str | None = None
     encodings: MediaObject | None = None
     exampleOfWork: CreativeWork | None = None
-    expires: Date | None = None
-    fileFormat: Text | URL | None = None
+    expires: datetime.date | None = None
+    fileFormat: URL | str | None = None
     funder: Organization | Person | None = None
     funding: Grant | None = None
-    genre: Text | URL | None = None
+    genre: URL | str | None = None
     hasPart: CreativeWork | None = None
-    headline: Text | None = None
-    inLanguage: Language | Text | None = None
+    headline: str | None = None
+    inLanguage: Language | str | None = None
     interactionStatistic: InteractionCounter | None = None
-    interactivityType: Text | None = None
+    interactivityType: str | None = None
     interpretedAsClaim: Claim | None = None
-    isAccessibleForFree: Boolean | None = None
+    isAccessibleForFree: bool | None = None
     isBasedOn: CreativeWork | Product | URL | None = None
     isBasedOnUrl: CreativeWork | Product | URL | None = None
-    isFamilyFriendly: Boolean | None = None
+    isFamilyFriendly: bool | None = None
     isPartOf: CreativeWork | URL | None = None
-    keywords: DefinedTerm | Text | URL | None = None
-    learningResourceType: DefinedTerm | Text | None = None
+    keywords: DefinedTerm | URL | str | None = None
+    learningResourceType: DefinedTerm | str | None = None
     license: CreativeWork | URL | None = None
     locationCreated: Place | None = None
     mainEntity: Thing | None = None
     maintainer: Organization | Person | None = None
-    material: Product | Text | URL | None = None
-    materialExtent: QuantitativeValue | Text | None = None
+    material: Product | URL | str | None = None
+    materialExtent: QuantitativeValue | str | None = None
     mentions: Thing | None = None
     offers: Demand | Offer | None = None
-    pattern: DefinedTerm | Text | None = None
-    position: Integer | Text | None = None
+    pattern: DefinedTerm | str | None = None
+    position: Integer | str | None = None
     producer: Organization | Person | None = None
     provider: Organization | Person | None = None
     publication: PublicationEvent | None = None
@@ -202,26 +193,26 @@ class CreativeWork(Thing):
     releasedEvent: PublicationEvent | None = None
     review: Review | None = None
     reviews: Review | None = None
-    schemaVersion: Text | URL | None = None
-    sdDatePublished: Date | None = None
+    schemaVersion: URL | str | None = None
+    sdDatePublished: datetime.date | None = None
     sdLicense: CreativeWork | URL | None = None
     sdPublisher: Organization | Person | None = None
-    size: DefinedTerm | QuantitativeValue | SizeSpecification | Text | None = None
+    size: DefinedTerm | QuantitativeValue | SizeSpecification | str | None = None
     sourceOrganization: Organization | None = None
     spatial: Place | None = None
     spatialCoverage: Place | None = None
     sponsor: Organization | Person | None = None
-    teaches: DefinedTerm | Text | None = None
-    temporal: DateTime | Text | None = None
-    temporalCoverage: DateTime | Text | URL | None = None
-    text: Text | None = None
+    teaches: DefinedTerm | str | None = None
+    temporal: datetime.datetime | str | None = None
+    temporalCoverage: URL | datetime.datetime | str | None = None
+    text: str | None = None
     thumbnailUrl: URL | None = None
     timeRequired: Duration | None = None
     translationOfWork: CreativeWork | None = None
     translator: Organization | Person | None = None
-    typicalAgeRange: Text | None = None
+    typicalAgeRange: str | None = None
     usageInfo: CreativeWork | URL | None = None
-    version: Number | Text | None = None
+    version: float | str | None = None
     video: Clip | VideoObject | None = None
     workExample: CreativeWork | None = None
     workTranslation: CreativeWork | None = None
@@ -232,53 +223,53 @@ class Product(Thing):
     additionalProperty: PropertyValue | None = None
     aggregateRating: AggregateRating | None = None
     audience: Audience | None = None
-    award: Text | None = None
-    awards: Text | None = None
+    award: str | None = None
+    awards: str | None = None
     brand: Brand | Organization | None = None
-    category: CategoryCode | PhysicalActivityCategory | Text | Thing | URL | None = None
-    color: Text | None = None
-    countryOfAssembly: Text | None = None
-    countryOfLastProcessing: Text | None = None
+    category: CategoryCode | PhysicalActivityCategory | Thing | URL | str | None = None
+    color: str | None = None
+    countryOfAssembly: str | None = None
+    countryOfLastProcessing: str | None = None
     countryOfOrigin: Country | None = None
     depth: Distance | QuantitativeValue | None = None
     funding: Grant | None = None
-    gtin: Text | None = None
-    gtin12: Text | None = None
-    gtin13: Text | None = None
-    gtin14: Text | None = None
-    gtin8: Text | None = None
+    gtin: str | None = None
+    gtin12: str | None = None
+    gtin13: str | None = None
+    gtin14: str | None = None
+    gtin8: str | None = None
     hasAdultConsideration: AdultOrientedEnumeration | None = None
     hasEnergyConsumptionDetails: EnergyConsumptionDetails | None = None
     hasMeasurement: QuantitativeValue | None = None
     hasMerchantReturnPolicy: MerchantReturnPolicy | None = None
     hasProductReturnPolicy: ProductReturnPolicy | None = None
     height: Distance | QuantitativeValue | None = None
-    inProductGroupWithID: Text | None = None
+    inProductGroupWithID: str | None = None
     isAccessoryOrSparePartFor: Product | None = None
     isConsumableFor: Product | None = None
-    isFamilyFriendly: Boolean | None = None
+    isFamilyFriendly: bool | None = None
     isRelatedTo: Product | Service | None = None
     isSimilarTo: Product | Service | None = None
     isVariantOf: ProductGroup | ProductModel | None = None
     itemCondition: OfferItemCondition | None = None
-    keywords: DefinedTerm | Text | URL | None = None
+    keywords: DefinedTerm | URL | str | None = None
     logo: ImageObject | URL | None = None
     manufacturer: Organization | None = None
-    material: Product | Text | URL | None = None
-    model: ProductModel | Text | None = None
-    mpn: Text | None = None
-    nsn: Text | None = None
+    material: Product | URL | str | None = None
+    model: ProductModel | str | None = None
+    mpn: str | None = None
+    nsn: str | None = None
     offers: Demand | Offer | None = None
-    pattern: DefinedTerm | Text | None = None
-    productID: Text | None = None
-    productionDate: Date | None = None
-    purchaseDate: Date | None = None
-    releaseDate: Date | None = None
+    pattern: DefinedTerm | str | None = None
+    productID: str | None = None
+    productionDate: datetime.date | None = None
+    purchaseDate: datetime.date | None = None
+    releaseDate: datetime.date | None = None
     review: Review | None = None
     reviews: Review | None = None
-    size: DefinedTerm | QuantitativeValue | SizeSpecification | Text | None = None
-    sku: Text | None = None
-    slogan: Text | None = None
+    size: DefinedTerm | QuantitativeValue | SizeSpecification | str | None = None
+    sku: str | None = None
+    slogan: str | None = None
     weight: QuantitativeValue | None = None
     width: Distance | QuantitativeValue | None = None
 
@@ -286,58 +277,58 @@ class Product(Thing):
 @dataclass
 class Organization(Thing):
     actionableFeedbackPolicy: CreativeWork | URL | None = None
-    address: PostalAddress | Text | None = None
+    address: PostalAddress | str | None = None
     aggregateRating: AggregateRating | None = None
     alumni: Person | None = None
-    areaServed: AdministrativeArea | GeoShape | Place | Text | None = None
-    award: Text | None = None
-    awards: Text | None = None
+    areaServed: AdministrativeArea | GeoShape | Place | str | None = None
+    award: str | None = None
+    awards: str | None = None
     brand: Brand | Organization | None = None
     contactPoint: ContactPoint | None = None
     contactPoints: ContactPoint | None = None
     correctionsPolicy: CreativeWork | URL | None = None
     department: Organization | None = None
-    dissolutionDate: Date | None = None
+    dissolutionDate: datetime.date | None = None
     diversityPolicy: CreativeWork | URL | None = None
     diversityStaffingReport: Article | URL | None = None
-    duns: Text | None = None
-    email: Text | None = None
+    duns: str | None = None
+    email: str | None = None
     employee: Person | None = None
     employees: Person | None = None
     ethicsPolicy: CreativeWork | URL | None = None
     event: Event | None = None
     events: Event | None = None
-    faxNumber: Text | None = None
+    faxNumber: str | None = None
     founder: Person | None = None
     founders: Person | None = None
-    foundingDate: Date | None = None
+    foundingDate: datetime.date | None = None
     foundingLocation: Place | None = None
     funder: Organization | Person | None = None
     funding: Grant | None = None
-    globalLocationNumber: Text | None = None
+    globalLocationNumber: str | None = None
     hasCredential: EducationalOccupationalCredential | None = None
     hasMerchantReturnPolicy: MerchantReturnPolicy | None = None
     hasOfferCatalog: OfferCatalog | None = None
     hasPOS: Place | None = None
     hasProductReturnPolicy: ProductReturnPolicy | None = None
     interactionStatistic: InteractionCounter | None = None
-    isicV4: Text | None = None
-    iso6523Code: Text | None = None
-    keywords: DefinedTerm | Text | URL | None = None
-    knowsAbout: Text | Thing | URL | None = None
-    knowsLanguage: Language | Text | None = None
-    legalName: Text | None = None
-    leiCode: Text | None = None
-    location: Place | PostalAddress | Text | VirtualLocation | None = None
+    isicV4: str | None = None
+    iso6523Code: str | None = None
+    keywords: DefinedTerm | URL | str | None = None
+    knowsAbout: Thing | URL | str | None = None
+    knowsLanguage: Language | str | None = None
+    legalName: str | None = None
+    leiCode: str | None = None
+    location: Place | PostalAddress | VirtualLocation | str | None = None
     logo: ImageObject | URL | None = None
     makesOffer: Offer | None = None
     member: Organization | Person | None = None
     memberOf: Organization | ProgramMembership | None = None
     members: Organization | Person | None = None
-    naics: Text | None = None
+    naics: str | None = None
     nonprofitStatus: NonprofitType | None = None
     numberOfEmployees: QuantitativeValue | None = None
-    ownershipFundingInfo: AboutPage | CreativeWork | Text | URL | None = None
+    ownershipFundingInfo: AboutPage | CreativeWork | URL | str | None = None
     owns: OwnershipInfo | Product | None = None
     parentOrganization: Organization | None = None
     publishingPrinciples: CreativeWork | URL | None = None
@@ -345,13 +336,13 @@ class Organization(Thing):
     reviews: Review | None = None
     seeks: Demand | None = None
     serviceArea: AdministrativeArea | GeoShape | Place | None = None
-    slogan: Text | None = None
+    slogan: str | None = None
     sponsor: Organization | Person | None = None
     subOrganization: Organization | None = None
-    taxID: Text | None = None
-    telephone: Text | None = None
+    taxID: str | None = None
+    telephone: str | None = None
     unnamedSourcesPolicy: CreativeWork | URL | None = None
-    vatID: Text | None = None
+    vatID: str | None = None
 
 
 @dataclass
@@ -365,18 +356,18 @@ class Event(Thing):
     composer: Organization | Person | None = None
     contributor: Organization | Person | None = None
     director: Person | None = None
-    doorTime: DateTime | Time | None = None
+    doorTime: datetime.datetime | datetime.time | None = None
     duration: Duration | None = None
-    endDate: Date | DateTime | None = None
+    endDate: datetime.date | datetime.datetime | None = None
     eventAttendanceMode: EventAttendanceModeEnumeration | None = None
     eventSchedule: Schedule | None = None
     eventStatus: EventStatusType | None = None
     funder: Organization | Person | None = None
     funding: Grant | None = None
-    inLanguage: Language | Text | None = None
-    isAccessibleForFree: Boolean | None = None
-    keywords: DefinedTerm | Text | URL | None = None
-    location: Place | PostalAddress | Text | VirtualLocation | None = None
+    inLanguage: Language | str | None = None
+    isAccessibleForFree: bool | None = None
+    keywords: DefinedTerm | URL | str | None = None
+    location: Place | PostalAddress | VirtualLocation | str | None = None
     maximumAttendeeCapacity: Integer | None = None
     maximumPhysicalAttendeeCapacity: Integer | None = None
     maximumVirtualAttendeeCapacity: Integer | None = None
@@ -384,17 +375,17 @@ class Event(Thing):
     organizer: Organization | Person | None = None
     performer: Organization | Person | None = None
     performers: Organization | Person | None = None
-    previousStartDate: Date | None = None
+    previousStartDate: datetime.date | None = None
     recordedIn: CreativeWork | None = None
     remainingAttendeeCapacity: Integer | None = None
     review: Review | None = None
     sponsor: Organization | Person | None = None
-    startDate: Date | DateTime | None = None
+    startDate: datetime.date | datetime.datetime | None = None
     subEvent: Event | None = None
     subEvents: Event | None = None
     superEvent: Event | None = None
     translator: Organization | Person | None = None
-    typicalAgeRange: Text | None = None
+    typicalAgeRange: str | None = None
     workFeatured: CreativeWork | None = None
     workPerformed: CreativeWork | None = None
 
@@ -404,7 +395,7 @@ class MedicalEntity(Thing):
     code: MedicalCode | None = None
     funding: Grant | None = None
     guideline: MedicalGuideline | None = None
-    legalStatus: DrugLegalStatus | MedicalEnumeration | Text | None = None
+    legalStatus: DrugLegalStatus | MedicalEnumeration | str | None = None
     medicineSystem: MedicineSystem | None = None
     recognizingAuthority: Organization | None = None
     relevantSpecialty: MedicalSpecialty | None = None
@@ -414,16 +405,16 @@ class MedicalEntity(Thing):
 @dataclass
 class Place(Thing):
     additionalProperty: PropertyValue | None = None
-    address: PostalAddress | Text | None = None
+    address: PostalAddress | str | None = None
     aggregateRating: AggregateRating | None = None
     amenityFeature: LocationFeatureSpecification | None = None
-    branchCode: Text | None = None
+    branchCode: str | None = None
     containedIn: Place | None = None
     containedInPlace: Place | None = None
     containsPlace: Place | None = None
     event: Event | None = None
     events: Event | None = None
-    faxNumber: Text | None = None
+    faxNumber: str | None = None
     geo: GeoCoordinates | GeoShape | None = None
     geoContains: GeospatialGeometry | Place | None = None
     geoCoveredBy: GeospatialGeometry | Place | None = None
@@ -435,28 +426,28 @@ class Place(Thing):
     geoOverlaps: GeospatialGeometry | Place | None = None
     geoTouches: GeospatialGeometry | Place | None = None
     geoWithin: GeospatialGeometry | Place | None = None
-    globalLocationNumber: Text | None = None
-    hasDriveThroughService: Boolean | None = None
+    globalLocationNumber: str | None = None
+    hasDriveThroughService: bool | None = None
     hasMap: Map | URL | None = None
-    isAccessibleForFree: Boolean | None = None
-    isicV4: Text | None = None
-    keywords: DefinedTerm | Text | URL | None = None
-    latitude: Number | Text | None = None
+    isAccessibleForFree: bool | None = None
+    isicV4: str | None = None
+    keywords: DefinedTerm | URL | str | None = None
+    latitude: float | str | None = None
     logo: ImageObject | URL | None = None
-    longitude: Number | Text | None = None
+    longitude: float | str | None = None
     map: URL | None = None
     maps: URL | None = None
     maximumAttendeeCapacity: Integer | None = None
     openingHoursSpecification: OpeningHoursSpecification | None = None
     photo: ImageObject | Photograph | None = None
     photos: ImageObject | Photograph | None = None
-    publicAccess: Boolean | None = None
+    publicAccess: bool | None = None
     review: Review | None = None
     reviews: Review | None = None
-    slogan: Text | None = None
-    smokingAllowed: Boolean | None = None
+    slogan: str | None = None
+    smokingAllowed: bool | None = None
     specialOpeningHoursSpecification: OpeningHoursSpecification | None = None
-    telephone: Text | None = None
+    telephone: str | None = None
     tourBookingPage: URL | None = None
 
 
@@ -464,15 +455,15 @@ class Place(Thing):
 class Action(Thing):
     actionStatus: ActionStatusType | None = None
     agent: Organization | Person | None = None
-    endTime: DateTime | Time | None = None
+    endTime: datetime.datetime | datetime.time | None = None
     error: Thing | None = None
     instrument: Thing | None = None
-    location: Place | PostalAddress | Text | VirtualLocation | None = None
+    location: Place | PostalAddress | VirtualLocation | str | None = None
     object: Thing | None = None
     participant: Organization | Person | None = None
     provider: Organization | Person | None = None
     result: Thing | None = None
-    startTime: DateTime | Time | None = None
+    startTime: datetime.datetime | datetime.time | None = None
     target: EntryPoint | None = None
 
 
@@ -485,12 +476,12 @@ class BioChemEntity(Thing):
     funding: Grant | None = None
     hasBioChemEntityPart: BioChemEntity | None = None
     hasMolecularFunction: DefinedTerm | PropertyValue | URL | None = None
-    hasRepresentation: PropertyValue | Text | URL | None = None
+    hasRepresentation: PropertyValue | URL | str | None = None
     isEncodedByBioChemEntity: Gene | None = None
     isInvolvedInBiologicalProcess: DefinedTerm | PropertyValue | URL | None = None
     isLocatedInSubcellularLocation: DefinedTerm | PropertyValue | URL | None = None
     isPartOfBioChemEntity: BioChemEntity | None = None
-    taxonomicRange: DefinedTerm | Taxon | Text | URL | None = None
+    taxonomicRange: DefinedTerm | Taxon | URL | str | None = None
 
 
 @dataclass
@@ -504,97 +495,77 @@ class StupidType(Thing):
 
 
 @dataclass
-class Date(AbstractBase):
-    pass
-
-
-@dataclass
-class DateTime(AbstractBase):
-    pass
-
-
-@dataclass
 class DataType(AbstractBase):
     pass
 
 
 @dataclass
-class Number(AbstractBase):
+class Integer(float):
     pass
 
 
 @dataclass
-class Integer(Number):
+class Float(float):
     pass
 
 
 @dataclass
-class Float(Number):
+class URL(str):
     pass
 
 
 @dataclass
-class Text(AbstractBase):
+class PronounceableText(str):
+    inLanguage: Language | str | None = None
+    phoneticText: str | None = None
+    speechToTextMarkup: str | None = None
+    textValue: str | None = None
+
+
+@dataclass
+class CssSelectorType(str):
     pass
 
 
 @dataclass
-class URL(Text):
-    pass
-
-
-@dataclass
-class PronounceableText(Text):
-    inLanguage: Language | Text | None = None
-    phoneticText: Text | None = None
-    speechToTextMarkup: Text | None = None
-    textValue: Text | None = None
-
-
-@dataclass
-class CssSelectorType(Text):
-    pass
-
-
-@dataclass
-class XPathType(Text):
+class XPathType(str):
     pass
 
 
 @dataclass
 class Accommodation(Place):
-    accommodationCategory: Text | None = None
+    accommodationCategory: str | None = None
     accommodationFloorPlan: FloorPlan | None = None
     amenityFeature: LocationFeatureSpecification | None = None
-    floorLevel: Text | None = None
+    floorLevel: str | None = None
     floorSize: QuantitativeValue | None = None
     leaseLength: Duration | QuantitativeValue | None = None
     numberOfBathroomsTotal: Integer | None = None
-    numberOfBedrooms: Number | QuantitativeValue | None = None
-    numberOfFullBathrooms: Number | None = None
-    numberOfPartialBathrooms: Number | None = None
-    numberOfRooms: Number | QuantitativeValue | None = None
-    permittedUsage: Text | None = None
-    petsAllowed: Boolean | Text | None = None
+    numberOfBedrooms: QuantitativeValue | float | None = None
+    numberOfFullBathrooms: float | None = None
+    numberOfPartialBathrooms: float | None = None
+    numberOfRooms: QuantitativeValue | float | None = None
+    permittedUsage: str | None = None
+    petsAllowed: bool | str | None = None
     tourBookingPage: URL | None = None
-    yearBuilt: Number | None = None
+    yearBuilt: float | None = None
 
 
 @dataclass
 class Apartment(Accommodation):
-    numberOfRooms: Number | QuantitativeValue | None = None
+    numberOfRooms: QuantitativeValue | float | None = None
     occupancy: QuantitativeValue | None = None
 
 
 @dataclass
 class House(Accommodation):
-    numberOfRooms: Number | QuantitativeValue | None = None
+    numberOfRooms: QuantitativeValue | float | None = None
 
 
 @dataclass
 class Suite(Accommodation):
-    bed: BedDetails | BedType | Text | None = None
-    numberOfRooms: Number | QuantitativeValue | None = None
+    bed: BedDetails | BedType | str | None = None
+    numberOfRooms: QuantitativeValue | float | None = None
     occupancy: QuantitativeValue | None = None
 
 
@@ -614,7 +585,7 @@ class MusicRecording(CreativeWork):
     duration: Duration | None = None
     inAlbum: MusicAlbum | None = None
     inPlaylist: MusicPlaylist | None = None
-    isrcCode: Text | None = None
+    isrcCode: str | None = None
     recordingOf: MusicComposition | None = None
 
 
@@ -623,82 +594,82 @@ class ParcelDelivery(Intangible):
     carrier: Organization | None = None
     deliveryAddress: PostalAddress | None = None
     deliveryStatus: DeliveryEvent | None = None
-    expectedArrivalFrom: Date | DateTime | None = None
-    expectedArrivalUntil: Date | DateTime | None = None
+    expectedArrivalFrom: datetime.date | datetime.datetime | None = None
+    expectedArrivalUntil: datetime.date | datetime.datetime | None = None
     hasDeliveryMethod: DeliveryMethod | None = None
     itemShipped: Product | None = None
     originAddress: PostalAddress | None = None
     partOfOrder: Order | None = None
     provider: Organization | Person | None = None
-    trackingNumber: Text | None = None
+    trackingNumber: str | None = None
     trackingUrl: URL | None = None
 
 
 @dataclass
 class Book(CreativeWork):
-    abridged: Boolean | None = None
-    bookEdition: Text | None = None
+    abridged: bool | None = None
+    bookEdition: str | None = None
     bookFormat: BookFormatType | None = None
     illustrator: Person | None = None
-    isbn: Text | None = None
+    isbn: str | None = None
     numberOfPages: Integer | None = None
 
 
 @dataclass
 class Dataset(CreativeWork):
     catalog: DataCatalog | None = None
-    datasetTimeInterval: DateTime | None = None
+    datasetTimeInterval: datetime.datetime | None = None
     distribution: DataDownload | None = None
     includedDataCatalog: DataCatalog | None = None
     includedInDataCatalog: DataCatalog | None = None
-    issn: Text | None = None
-    measurementTechnique: Text | URL | None = None
-    variableMeasured: PropertyValue | Text | None = None
-    variablesMeasured: PropertyValue | Text | None = None
+    issn: str | None = None
+    measurementTechnique: URL | str | None = None
+    variableMeasured: PropertyValue | str | None = None
+    variablesMeasured: PropertyValue | str | None = None
 
 
 @dataclass
 class DataFeed(Dataset):
-    dataFeedElement: DataFeedItem | Text | Thing | None = None
+    dataFeedElement: DataFeedItem | Thing | str | None = None
 
 
 @dataclass
 class MediaObject(CreativeWork):
     associatedArticle: NewsArticle | None = None
-    bitrate: Text | None = None
-    contentSize: Text | None = None
+    bitrate: str | None = None
+    contentSize: str | None = None
     contentUrl: URL | None = None
     duration: Duration | None = None
     embedUrl: URL | None = None
     encodesCreativeWork: CreativeWork | None = None
-    encodingFormat: Text | URL | None = None
-    endTime: DateTime | Time | None = None
+    encodingFormat: URL | str | None = None
+    endTime: datetime.datetime | datetime.time | None = None
     height: Distance | QuantitativeValue | None = None
-    ineligibleRegion: GeoShape | Place | Text | None = None
+    ineligibleRegion: GeoShape | Place | str | None = None
     interpretedAsClaim: Claim | None = None
-    playerType: Text | None = None
+    playerType: str | None = None
     productionCompany: Organization | None = None
     regionsAllowed: Place | None = None
-    requiresSubscription: Boolean | MediaSubscription | None = None
-    sha256: Text | None = None
-    startTime: DateTime | Time | None = None
-    uploadDate: Date | None = None
+    requiresSubscription: MediaSubscription | bool | None = None
+    sha256: str | None = None
+    startTime: datetime.datetime | datetime.time | None = None
+    uploadDate: datetime.date | None = None
     width: Distance | QuantitativeValue | None = None
 
 
 @dataclass
 class AudioObject(MediaObject):
-    caption: MediaObject | Text | None = None
-    embeddedTextCaption: Text | None = None
-    transcript: Text | None = None
+    caption: MediaObject | str | None = None
+    embeddedTextCaption: str | None = None
+    transcript: str | None = None
 
 
 @dataclass
 class ImageObject(MediaObject):
-    caption: MediaObject | Text | None = None
-    embeddedTextCaption: Text | None = None
-    exifData: PropertyValue | Text | None = None
-    representativeOfPage: Boolean | None = None
+    caption: MediaObject | str | None = None
+    embeddedTextCaption: str | None = None
+    exifData: PropertyValue | str | None = None
+    representativeOfPage: bool | None = None
     thumbnail: ImageObject | None = None
 
 
@@ -706,20 +677,20 @@ class ImageObject(MediaObject):
 class VideoObject(MediaObject):
     actor: Person | None = None
     actors: Person | None = None
-    caption: MediaObject | Text | None = None
+    caption: MediaObject | str | None = None
     director: Person | None = None
     directors: Person | None = None
-    embeddedTextCaption: Text | None = None
+    embeddedTextCaption: str | None = None
     musicBy: MusicGroup | Person | None = None
     thumbnail: ImageObject | None = None
-    transcript: Text | None = None
-    videoFrameSize: Text | None = None
-    videoQuality: Text | None = None
+    transcript: str | None = None
+    videoFrameSize: str | None = None
+    videoQuality: str | None = None
 
 
 @dataclass
 class d_3DModel(MediaObject):
-    isResizable: Boolean | None = None
+    isResizable: bool | None = None
 
 
 @dataclass
@@ -729,7 +700,7 @@ class MusicVideoObject(MediaObject):
 
 @dataclass
 class DataDownload(MediaObject):
-    measurementTechnique: Text | URL | None = None
+    measurementTechnique: URL | str | None = None
 
 
 @dataclass
@@ -746,47 +717,47 @@ class FundingScheme(Organization):
 class JobPosting(Intangible):
     applicantLocationRequirements: AdministrativeArea | None = None
     applicationContact: ContactPoint | None = None
-    baseSalary: MonetaryAmount | Number | PriceSpecification | None = None
-    benefits: Text | None = None
-    datePosted: Date | DateTime | None = None
-    directApply: Boolean | None = None
-    educationRequirements: EducationalOccupationalCredential | Text | None = None
-    eligibilityToWorkRequirement: Text | None = None
-    employerOverview: Text | None = None
-    employmentType: Text | None = None
+    baseSalary: MonetaryAmount | PriceSpecification | float | None = None
+    benefits: str | None = None
+    datePosted: datetime.date | datetime.datetime | None = None
+    directApply: bool | None = None
+    educationRequirements: EducationalOccupationalCredential | str | None = None
+    eligibilityToWorkRequirement: str | None = None
+    employerOverview: str | None = None
+    employmentType: str | None = None
     employmentUnit: Organization | None = None
-    estimatedSalary: MonetaryAmount | MonetaryAmountDistribution | Number | None = None
-    experienceInPlaceOfEducation: Boolean | None = None
-    experienceRequirements: OccupationalExperienceRequirements | Text | None = None
+    estimatedSalary: MonetaryAmount | MonetaryAmountDistribution | float | None = None
+    experienceInPlaceOfEducation: bool | None = None
+    experienceRequirements: OccupationalExperienceRequirements | str | None = None
     hiringOrganization: Organization | None = None
-    incentiveCompensation: Text | None = None
-    incentives: Text | None = None
-    industry: DefinedTerm | Text | None = None
-    jobBenefits: Text | None = None
-    jobImmediateStart: Boolean | None = None
+    incentiveCompensation: str | None = None
+    incentives: str | None = None
+    industry: DefinedTerm | str | None = None
+    jobBenefits: str | None = None
+    jobImmediateStart: bool | None = None
     jobLocation: Place | None = None
-    jobLocationType: Text | None = None
-    jobStartDate: Date | Text | None = None
-    occupationalCategory: CategoryCode | Text | None = None
-    physicalRequirement: DefinedTerm | Text | URL | None = None
-    qualifications: EducationalOccupationalCredential | Text | None = None
+    jobLocationType: str | None = None
+    jobStartDate: datetime.date | str | None = None
+    occupationalCategory: CategoryCode | str | None = None
+    physicalRequirement: DefinedTerm | URL | str | None = None
+    qualifications: EducationalOccupationalCredential | str | None = None
     relevantOccupation: Occupation | None = None
-    responsibilities: Text | None = None
-    salaryCurrency: Text | None = None
-    securityClearanceRequirement: Text | URL | None = None
-    sensoryRequirement: DefinedTerm | Text | URL | None = None
-    skills: DefinedTerm | Text | None = None
-    specialCommitments: Text | None = None
-    title: Text | None = None
+    responsibilities: str | None = None
+    salaryCurrency: str | None = None
+    securityClearanceRequirement: URL | str | None = None
+    sensoryRequirement: DefinedTerm | URL | str | None = None
+    skills: DefinedTerm | str | None = None
+    specialCommitments: str | None = None
+    title: str | None = None
     totalJobOpenings: Integer | None = None
-    validThrough: Date | DateTime | None = None
-    workHours: Text | None = None
+    validThrough: datetime.date | datetime.datetime | None = None
+    workHours: str | None = None
 
 
 @dataclass
 class MedicalOrganization(Organization):
-    healthPlanNetworkId: Text | None = None
-    isAcceptingNewPatients: Boolean | None = None
+    healthPlanNetworkId: str | None = None
+    isAcceptingNewPatients: bool | None = None
     medicalSpecialty: MedicalSpecialty | None = None
 
 
@@ -802,12 +773,12 @@ class VeterinaryCare(MedicalOrganization):
 
 @dataclass
 class MedicalProcedure(MedicalEntity):
-    bodyLocation: Text | None = None
-    followup: Text | None = None
-    howPerformed: Text | None = None
-    preparation: MedicalEntity | Text | None = None
+    bodyLocation: str | None = None
+    followup: str | None = None
+    howPerformed: str | None = None
+    preparation: MedicalEntity | str | None = None
     procedureType: MedicalProcedureType | None = None
-    status: EventStatusType | MedicalStudyStatus | Text | None = None
+    status: EventStatusType | MedicalStudyStatus | str | None = None
 
 
 @dataclass
@@ -829,79 +800,79 @@ class DiagnosticProcedure(MedicalProcedure):
 
 @dataclass
 class SoftwareApplication(CreativeWork):
-    applicationCategory: Text | URL | None = None
-    applicationSubCategory: Text | URL | None = None
-    applicationSuite: Text | None = None
-    availableOnDevice: Text | None = None
-    countriesNotSupported: Text | None = None
-    countriesSupported: Text | None = None
-    device: Text | None = None
+    applicationCategory: URL | str | None = None
+    applicationSubCategory: URL | str | None = None
+    applicationSuite: str | None = None
+    availableOnDevice: str | None = None
+    countriesNotSupported: str | None = None
+    countriesSupported: str | None = None
+    device: str | None = None
     downloadUrl: URL | None = None
-    featureList: Text | URL | None = None
-    fileSize: Text | None = None
+    featureList: URL | str | None = None
+    fileSize: str | None = None
     installUrl: URL | None = None
-    memoryRequirements: Text | URL | None = None
-    operatingSystem: Text | None = None
-    permissions: Text | None = None
-    processorRequirements: Text | None = None
-    releaseNotes: Text | URL | None = None
-    requirements: Text | URL | None = None
+    memoryRequirements: URL | str | None = None
+    operatingSystem: str | None = None
+    permissions: str | None = None
+    processorRequirements: str | None = None
+    releaseNotes: URL | str | None = None
+    requirements: URL | str | None = None
     screenshot: ImageObject | URL | None = None
     softwareAddOn: SoftwareApplication | None = None
     softwareHelp: CreativeWork | None = None
-    softwareRequirements: Text | URL | None = None
-    softwareVersion: Text | None = None
-    storageRequirements: Text | URL | None = None
+    softwareRequirements: URL | str | None = None
+    softwareVersion: str | None = None
+    storageRequirements: URL | str | None = None
     supportingData: DataFeed | None = None
 
 
 @dataclass
 class WebApplication(SoftwareApplication):
-    browserRequirements: Text | None = None
+    browserRequirements: str | None = None
 
 
 @dataclass
 class MobileApplication(SoftwareApplication):
-    carrierRequirements: Text | None = None
+    carrierRequirements: str | None = None
 
 
 @dataclass
 class MerchantReturnPolicy(Intangible):
     additionalProperty: PropertyValue | None = None
-    applicableCountry: Country | Text | None = None
+    applicableCountry: Country | str | None = None
     customerRemorseReturnFees: ReturnFeesEnumeration | None = None
     customerRemorseReturnLabelSource: ReturnLabelSourceEnumeration | None = None
     customerRemorseReturnShippingFeesAmount: MonetaryAmount | None = None
-    inStoreReturnsOffered: Boolean | None = None
+    inStoreReturnsOffered: bool | None = None
     itemCondition: OfferItemCondition | None = None
     itemDefectReturnFees: ReturnFeesEnumeration | None = None
     itemDefectReturnLabelSource: ReturnLabelSourceEnumeration | None = None
     itemDefectReturnShippingFeesAmount: MonetaryAmount | None = None
-    merchantReturnDays: Date | DateTime | Integer | None = None
+    merchantReturnDays: Integer | datetime.date | datetime.datetime | None = None
     merchantReturnLink: URL | None = None
     refundType: RefundTypeEnumeration | None = None
-    restockingFee: MonetaryAmount | Number | None = None
+    restockingFee: MonetaryAmount | float | None = None
     returnFees: ReturnFeesEnumeration | None = None
     returnLabelSource: ReturnLabelSourceEnumeration | None = None
     returnMethod: ReturnMethodEnumeration | None = None
     returnPolicyCategory: MerchantReturnEnumeration | None = None
-    returnPolicyCountry: Country | Text | None = None
+    returnPolicyCountry: Country | str | None = None
     returnPolicySeasonalOverride: MerchantReturnPolicySeasonalOverride | None = None
     returnShippingFeesAmount: MonetaryAmount | None = None
 
 
 @dataclass
 class MerchantReturnPolicySeasonalOverride(Intangible):
-    endDate: Date | DateTime | None = None
-    merchantReturnDays: Date | DateTime | Integer | None = None
+    endDate: datetime.date | datetime.datetime | None = None
+    merchantReturnDays: Integer | datetime.date | datetime.datetime | None = None
     returnPolicyCategory: MerchantReturnEnumeration | None = None
-    startDate: Date | DateTime | None = None
+    startDate: datetime.date | datetime.datetime | None = None
 
 
 @dataclass
 class WebPage(CreativeWork):
-    breadcrumb: BreadcrumbList | Text | None = None
-    lastReviewed: Date | None = None
+    breadcrumb: BreadcrumbList | str | None = None
+    lastReviewed: datetime.date | None = None
     mainContentOfPage: WebPageElement | None = None
     primaryImageOfPage: ImageObject | None = None
     relatedLink: URL | None = None
@@ -934,7 +905,7 @@ class CheckoutPage(WebPage):
 
 @dataclass
 class RealEstateListing(WebPage):
-    datePosted: Date | DateTime | None = None
+    datePosted: datetime.date | datetime.datetime | None = None
     leaseLength: Duration | QuantitativeValue | None = None
 
 
@@ -960,7 +931,7 @@ class ProfilePage(WebPage):
 
 @dataclass
 class MedicalWebPage(WebPage):
-    aspect: Text | None = None
+    aspect: str | None = None
     medicalAudience: MedicalAudience | MedicalAudienceType | None = None
 
 
@@ -976,29 +947,29 @@ class Festival(Event):
 
 @dataclass
 class Invoice(Intangible):
-    accountId: Text | None = None
+    accountId: str | None = None
     billingPeriod: Duration | None = None
     broker: Organization | Person | None = None
-    category: CategoryCode | PhysicalActivityCategory | Text | Thing | URL | None = None
-    confirmationNumber: Text | None = None
+    category: CategoryCode | PhysicalActivityCategory | Thing | URL | str | None = None
+    confirmationNumber: str | None = None
     customer: Organization | Person | None = None
     minimumPaymentDue: MonetaryAmount | PriceSpecification | None = None
-    paymentDue: DateTime | None = None
-    paymentDueDate: Date | DateTime | None = None
+    paymentDue: datetime.datetime | None = None
+    paymentDueDate: datetime.date | datetime.datetime | None = None
     paymentMethod: PaymentMethod | None = None
-    paymentMethodId: Text | None = None
-    paymentStatus: PaymentStatusType | Text | None = None
+    paymentMethodId: str | None = None
+    paymentStatus: PaymentStatusType | str | None = None
     provider: Organization | Person | None = None
     referencesOrder: Order | None = None
-    scheduledPaymentDate: Date | None = None
+    scheduledPaymentDate: datetime.date | None = None
     totalPaymentDue: MonetaryAmount | PriceSpecification | None = None
 
 
 @dataclass
 class HealthPlanNetwork(Intangible):
-    healthPlanCostSharing: Boolean | None = None
-    healthPlanNetworkId: Text | None = None
-    healthPlanNetworkTier: Text | None = None
+    healthPlanCostSharing: bool | None = None
+    healthPlanNetworkId: str | None = None
+    healthPlanNetworkTier: str | None = None
 
 
 @dataclass
@@ -1006,7 +977,7 @@ class SportsEvent(Event):
     awayTeam: Person | SportsTeam | None = None
     competitor: Person | SportsTeam | None = None
     homeTeam: Person | SportsTeam | None = None
-    sport: Text | URL | None = None
+    sport: URL | str | None = None
 
 
 @dataclass
@@ -1024,39 +995,39 @@ class EnergyConsumptionDetails(Intangible):
 
 @dataclass
 class HealthPlanCostSharingSpecification(Intangible):
-    healthPlanCoinsuranceOption: Text | None = None
-    healthPlanCoinsuranceRate: Number | None = None
+    healthPlanCoinsuranceOption: str | None = None
+    healthPlanCoinsuranceRate: float | None = None
     healthPlanCopay: PriceSpecification | None = None
-    healthPlanCopayOption: Text | None = None
-    healthPlanPharmacyCategory: Text | None = None
+    healthPlanCopayOption: str | None = None
+    healthPlanPharmacyCategory: str | None = None
 
 
 @dataclass
 class EducationEvent(Event):
-    assesses: DefinedTerm | Text | None = None
-    educationalLevel: DefinedTerm | Text | URL | None = None
-    teaches: DefinedTerm | Text | None = None
+    assesses: DefinedTerm | str | None = None
+    educationalLevel: DefinedTerm | URL | str | None = None
+    teaches: DefinedTerm | str | None = None
 
 
 @dataclass
 class LearningResource(CreativeWork):
-    assesses: DefinedTerm | Text | None = None
-    competencyRequired: DefinedTerm | Text | URL | None = None
+    assesses: DefinedTerm | str | None = None
+    competencyRequired: DefinedTerm | URL | str | None = None
     educationalAlignment: AlignmentObject | None = None
-    educationalLevel: DefinedTerm | Text | URL | None = None
-    educationalUse: DefinedTerm | Text | None = None
-    learningResourceType: DefinedTerm | Text | None = None
-    teaches: DefinedTerm | Text | None = None
+    educationalLevel: DefinedTerm | URL | str | None = None
+    educationalUse: DefinedTerm | str | None = None
+    learningResourceType: DefinedTerm | str | None = None
+    teaches: DefinedTerm | str | None = None
 
 
 @dataclass
 class Course(LearningResource):
-    courseCode: Text | None = None
-    coursePrerequisites: AlignmentObject | Course | Text | None = None
-    educationalCredentialAwarded: EducationalOccupationalCredential | Text | URL | None = None
+    courseCode: str | None = None
+    coursePrerequisites: AlignmentObject | Course | str | None = None
+    educationalCredentialAwarded: EducationalOccupationalCredential | URL | str | None = None
     hasCourseInstance: CourseInstance | None = None
     numberOfCredits: Integer | StructuredValue | None = None
-    occupationalCredentialAwarded: EducationalOccupationalCredential | Text | URL | None = None
+    occupationalCredentialAwarded: EducationalOccupationalCredential | URL | str | None = None
 
 
 @dataclass
@@ -1083,7 +1054,7 @@ class ExerciseAction(PlayAction):
     exerciseCourse: Place | None = None
     exercisePlan: ExercisePlan | None = None
     exerciseRelatedDiet: Diet | None = None
-    exerciseType: Text | None = None
+    exerciseType: str | None = None
     fromLocation: Place | None = None
     opponent: Person | None = None
     sportsActivityLocation: SportsActivityLocation | None = None
@@ -1095,34 +1066,34 @@ class ExerciseAction(PlayAction):
 @dataclass
 class Reservation(Intangible):
     bookingAgent: Organization | Person | None = None
-    bookingTime: DateTime | None = None
+    bookingTime: datetime.datetime | None = None
     broker: Organization | Person | None = None
-    modifiedTime: DateTime | None = None
-    priceCurrency: Text | None = None
+    modifiedTime: datetime.datetime | None = None
+    priceCurrency: str | None = None
     programMembershipUsed: ProgramMembership | None = None
     provider: Organization | Person | None = None
     reservationFor: Thing | None = None
-    reservationId: Text | None = None
+    reservationId: str | None = None
     reservationStatus: ReservationStatusType | None = None
     reservedTicket: Ticket | None = None
-    totalPrice: Number | PriceSpecification | Text | None = None
+    totalPrice: PriceSpecification | float | str | None = None
     underName: Organization | Person | None = None
 
 
 @dataclass
 class FlightReservation(Reservation):
-    boardingGroup: Text | None = None
-    passengerPriorityStatus: QualitativeValue | Text | None = None
-    passengerSequenceNumber: Text | None = None
-    securityScreening: Text | None = None
+    boardingGroup: str | None = None
+    passengerPriorityStatus: QualitativeValue | str | None = None
+    passengerSequenceNumber: str | None = None
+    securityScreening: str | None = None
 
 
 @dataclass
 class LodgingReservation(Reservation):
-    checkinTime: DateTime | Time | None = None
-    checkoutTime: DateTime | Time | None = None
-    lodgingUnitDescription: Text | None = None
-    lodgingUnitType: QualitativeValue | Text | None = None
+    checkinTime: datetime.datetime | datetime.time | None = None
+    checkoutTime: datetime.datetime | datetime.time | None = None
+    lodgingUnitDescription: str | None = None
+    lodgingUnitType: QualitativeValue | str | None = None
     numAdults: Integer | QuantitativeValue | None = None
     numChildren: Integer | QuantitativeValue | None = None
 
@@ -1136,14 +1107,14 @@ class BoatReservation(Reservation):
 class TaxiReservation(Reservation):
     partySize: Integer | QuantitativeValue | None = None
     pickupLocation: Place | None = None
-    pickupTime: DateTime | None = None
+    pickupTime: datetime.datetime | None = None
 
 
 @dataclass
 class FoodEstablishmentReservation(Reservation):
-    endTime: DateTime | Time | None = None
+    endTime: datetime.datetime | datetime.time | None = None
     partySize: Integer | QuantitativeValue | None = None
-    startTime: DateTime | Time | None = None
+    startTime: datetime.datetime | datetime.time | None = None
 
 
 @dataclass
@@ -1159,9 +1130,9 @@ class ReservationPackage(Reservation):
 @dataclass
 class RentalCarReservation(Reservation):
     dropoffLocation: Place | None = None
-    dropoffTime: DateTime | None = None
+    dropoffTime: datetime.datetime | None = None
     pickupLocation: Place | None = None
-    pickupTime: DateTime | None = None
+    pickupTime: datetime.datetime | None = None
 
 
 @dataclass
@@ -1177,56 +1148,56 @@ class EventReservation(Reservation):
 @dataclass
 class Vehicle(Product):
     accelerationTime: QuantitativeValue | None = None
-    bodyType: QualitativeValue | Text | URL | None = None
-    callSign: Text | None = None
+    bodyType: QualitativeValue | URL | str | None = None
+    callSign: str | None = None
     cargoVolume: QuantitativeValue | None = None
-    dateVehicleFirstRegistered: Date | None = None
-    driveWheelConfiguration: DriveWheelConfigurationValue | Text | None = None
-    emissionsCO2: Number | None = None
+    dateVehicleFirstRegistered: datetime.date | None = None
+    driveWheelConfiguration: DriveWheelConfigurationValue | str | None = None
+    emissionsCO2: float | None = None
     fuelCapacity: QuantitativeValue | None = None
     fuelConsumption: QuantitativeValue | None = None
     fuelEfficiency: QuantitativeValue | None = None
-    fuelType: QualitativeValue | Text | URL | None = None
-    knownVehicleDamages: Text | None = None
-    meetsEmissionStandard: QualitativeValue | Text | URL | None = None
+    fuelType: QualitativeValue | URL | str | None = None
+    knownVehicleDamages: str | None = None
+    meetsEmissionStandard: QualitativeValue | URL | str | None = None
     mileageFromOdometer: QuantitativeValue | None = None
-    modelDate: Date | None = None
-    numberOfAirbags: Number | Text | None = None
-    numberOfAxles: Number | QuantitativeValue | None = None
-    numberOfDoors: Number | QuantitativeValue | None = None
-    numberOfForwardGears: Number | QuantitativeValue | None = None
-    numberOfPreviousOwners: Number | QuantitativeValue | None = None
+    modelDate: datetime.date | None = None
+    numberOfAirbags: float | str | None = None
+    numberOfAxles: QuantitativeValue | float | None = None
+    numberOfDoors: QuantitativeValue | float | None = None
+    numberOfForwardGears: QuantitativeValue | float | None = None
+    numberOfPreviousOwners: QuantitativeValue | float | None = None
     payload: QuantitativeValue | None = None
-    productionDate: Date | None = None
-    purchaseDate: Date | None = None
-    seatingCapacity: Number | QuantitativeValue | None = None
+    productionDate: datetime.date | None = None
+    purchaseDate: datetime.date | None = None
+    seatingCapacity: QuantitativeValue | float | None = None
     speed: QuantitativeValue | None = None
     steeringPosition: SteeringPositionValue | None = None
     stupidProperty: QuantitativeValue | None = None
     tongueWeight: QuantitativeValue | None = None
     trailerWeight: QuantitativeValue | None = None
-    vehicleConfiguration: Text | None = None
+    vehicleConfiguration: str | None = None
     vehicleEngine: EngineSpecification | None = None
-    vehicleIdentificationNumber: Text | None = None
-    vehicleInteriorColor: Text | None = None
-    vehicleInteriorType: Text | None = None
-    vehicleModelDate: Date | None = None
-    vehicleSeatingCapacity: Number | QuantitativeValue | None = None
-    vehicleSpecialUsage: CarUsageType | Text | None = None
-    vehicleTransmission: QualitativeValue | Text | URL | None = None
+    vehicleIdentificationNumber: str | None = None
+    vehicleInteriorColor: str | None = None
+    vehicleInteriorType: str | None = None
+    vehicleModelDate: datetime.date | None = None
+    vehicleSeatingCapacity: QuantitativeValue | float | None = None
+    vehicleSpecialUsage: CarUsageType | str | None = None
+    vehicleTransmission: QualitativeValue | URL | str | None = None
     weightTotal: QuantitativeValue | None = None
     wheelbase: QuantitativeValue | None = None
 
 
 @dataclass
 class Car(Vehicle):
-    acrissCode: Text | None = None
+    acrissCode: str | None = None
     roofLoad: QuantitativeValue | None = None
 
 
 @dataclass
 class BusOrCoach(Vehicle):
-    acrissCode: Text | None = None
+    acrissCode: str | None = None
     roofLoad: QuantitativeValue | None = None
 
 
@@ -1242,27 +1213,27 @@ class Motorcycle(Vehicle):
 
 @dataclass
 class EducationalOccupationalProgram(Intangible):
-    applicationDeadline: Date | None = None
-    applicationStartDate: Date | None = None
+    applicationDeadline: datetime.date | None = None
+    applicationStartDate: datetime.date | None = None
     dayOfWeek: DayOfWeek | None = None
-    educationalCredentialAwarded: EducationalOccupationalCredential | Text | URL | None = None
-    educationalProgramMode: Text | URL | None = None
-    endDate: Date | DateTime | None = None
-    financialAidEligible: DefinedTerm | Text | None = None
+    educationalCredentialAwarded: EducationalOccupationalCredential | URL | str | None = None
+    educationalProgramMode: URL | str | None = None
+    endDate: datetime.date | datetime.datetime | None = None
+    financialAidEligible: DefinedTerm | str | None = None
     hasCourse: Course | None = None
     maximumEnrollment: Integer | None = None
     numberOfCredits: Integer | StructuredValue | None = None
-    occupationalCategory: CategoryCode | Text | None = None
-    occupationalCredentialAwarded: EducationalOccupationalCredential | Text | URL | None = None
+    occupationalCategory: CategoryCode | str | None = None
+    occupationalCredentialAwarded: EducationalOccupationalCredential | URL | str | None = None
     offers: Demand | Offer | None = None
-    programPrerequisites: AlignmentObject | Course | EducationalOccupationalCredential | Text | None = None
-    programType: DefinedTerm | Text | None = None
+    programPrerequisites: AlignmentObject | Course | EducationalOccupationalCredential | str | None = None
+    programType: DefinedTerm | str | None = None
     provider: Organization | Person | None = None
     salaryUponCompletion: MonetaryAmountDistribution | None = None
-    startDate: Date | DateTime | None = None
+    startDate: datetime.date | datetime.datetime | None = None
     termDuration: Duration | None = None
-    termsPerYear: Number | None = None
-    timeOfDay: Text | None = None
+    termsPerYear: float | None = None
+    timeOfDay: str | None = None
     timeToComplete: Duration | None = None
     trainingSalary: MonetaryAmountDistribution | None = None
     typicalCreditsPerTerm: Integer | StructuredValue | None = None
@@ -1270,15 +1241,15 @@ class EducationalOccupationalProgram(Intangible):
 
 @dataclass
 class WorkBasedProgram(EducationalOccupationalProgram):
-    occupationalCategory: CategoryCode | Text | None = None
+    occupationalCategory: CategoryCode | str | None = None
     trainingSalary: MonetaryAmountDistribution | None = None
 
 
 @dataclass
 class EducationalOccupationalCredential(CreativeWork):
-    competencyRequired: DefinedTerm | Text | URL | None = None
-    credentialCategory: DefinedTerm | Text | URL | None = None
-    educationalLevel: DefinedTerm | Text | URL | None = None
+    competencyRequired: DefinedTerm | URL | str | None = None
+    credentialCategory: DefinedTerm | URL | str | None = None
+    educationalLevel: DefinedTerm | URL | str | None = None
     recognizedBy: Organization | None = None
     validFor: Duration | None = None
     validIn: AdministrativeArea | None = None
@@ -1290,49 +1261,49 @@ class Offer(Intangible):
     addOn: Offer | None = None
     advanceBookingRequirement: QuantitativeValue | None = None
     aggregateRating: AggregateRating | None = None
-    areaServed: AdministrativeArea | GeoShape | Place | Text | None = None
+    areaServed: AdministrativeArea | GeoShape | Place | str | None = None
     availability: ItemAvailability | None = None
-    availabilityEnds: Date | DateTime | Time | None = None
-    availabilityStarts: Date | DateTime | Time | None = None
+    availabilityEnds: datetime.date | datetime.datetime | datetime.time | None = None
+    availabilityStarts: datetime.date | datetime.datetime | datetime.time | None = None
     availableAtOrFrom: Place | None = None
     availableDeliveryMethod: DeliveryMethod | None = None
     businessFunction: BusinessFunction | None = None
-    category: CategoryCode | PhysicalActivityCategory | Text | Thing | URL | None = None
+    category: CategoryCode | PhysicalActivityCategory | Thing | URL | str | None = None
     deliveryLeadTime: QuantitativeValue | None = None
     eligibleCustomerType: BusinessEntityType | None = None
     eligibleDuration: QuantitativeValue | None = None
     eligibleQuantity: QuantitativeValue | None = None
-    eligibleRegion: GeoShape | Place | Text | None = None
+    eligibleRegion: GeoShape | Place | str | None = None
     eligibleTransactionVolume: PriceSpecification | None = None
-    gtin: Text | None = None
-    gtin12: Text | None = None
-    gtin13: Text | None = None
-    gtin14: Text | None = None
-    gtin8: Text | None = None
+    gtin: str | None = None
+    gtin12: str | None = None
+    gtin13: str | None = None
+    gtin14: str | None = None
+    gtin8: str | None = None
     hasAdultConsideration: AdultOrientedEnumeration | None = None
     hasMeasurement: QuantitativeValue | None = None
     hasMerchantReturnPolicy: MerchantReturnPolicy | None = None
     includesObject: TypeAndQuantityNode | None = None
-    ineligibleRegion: GeoShape | Place | Text | None = None
+    ineligibleRegion: GeoShape | Place | str | None = None
     inventoryLevel: QuantitativeValue | None = None
-    isFamilyFriendly: Boolean | None = None
+    isFamilyFriendly: bool | None = None
     itemCondition: OfferItemCondition | None = None
     itemOffered: AggregateOffer | CreativeWork | Event | MenuItem | Product | Service | Trip | None = None
     leaseLength: Duration | QuantitativeValue | None = None
-    mpn: Text | None = None
+    mpn: str | None = None
     offeredBy: Organization | Person | None = None
-    price: Number | Text | None = None
-    priceCurrency: Text | None = None
+    price: float | str | None = None
+    priceCurrency: str | None = None
     priceSpecification: PriceSpecification | None = None
-    priceValidUntil: Date | None = None
+    priceValidUntil: datetime.date | None = None
     review: Review | None = None
     reviews: Review | None = None
     seller: Organization | Person | None = None
-    serialNumber: Text | None = None
+    serialNumber: str | None = None
     shippingDetails: OfferShippingDetails | None = None
-    sku: Text | None = None
-    validFrom: Date | DateTime | None = None
-    validThrough: Date | DateTime | None = None
+    sku: str | None = None
+    validFrom: datetime.date | datetime.datetime | None = None
+    validThrough: datetime.date | datetime.datetime | None = None
     warranty: WarrantyPromise | None = None
 
 
@@ -1343,8 +1314,8 @@ class OfferForLease(Offer):
 
 @dataclass
 class AggregateOffer(Offer):
-    highPrice: Number | Text | None = None
-    lowPrice: Number | Text | None = None
+    highPrice: float | str | None = None
+    lowPrice: float | str | None = None
     offerCount: Integer | None = None
     offers: Demand | Offer | None = None
 
@@ -1360,9 +1331,9 @@ class Permit(Intangible):
     issuedThrough: Service | None = None
     permitAudience: Audience | None = None
     validFor: Duration | None = None
-    validFrom: Date | DateTime | None = None
+    validFrom: datetime.date | datetime.datetime | None = None
     validIn: AdministrativeArea | None = None
-    validUntil: Date | None = None
+    validUntil: datetime.date | None = None
 
 
 @dataclass
@@ -1373,11 +1344,11 @@ class GovernmentPermit(Permit):
 @dataclass
 class SoftwareSourceCode(CreativeWork):
     codeRepository: URL | None = None
-    codeSampleType: Text | None = None
-    programmingLanguage: ComputerLanguage | Text | None = None
-    runtime: Text | None = None
-    runtimePlatform: Text | None = None
-    sampleType: Text | None = None
+    codeSampleType: str | None = None
+    programmingLanguage: ComputerLanguage | str | None = None
+    runtime: str | None = None
+    runtimePlatform: str | None = None
+    sampleType: str | None = None
     targetProduct: SoftwareApplication | None = None
 
 
@@ -1386,57 +1357,57 @@ class Brand(Intangible):
     aggregateRating: AggregateRating | None = None
     logo: ImageObject | URL | None = None
     review: Review | None = None
-    slogan: Text | None = None
+    slogan: str | None = None
 
 
 @dataclass
 class Occupation(Intangible):
-    educationRequirements: EducationalOccupationalCredential | Text | None = None
-    estimatedSalary: MonetaryAmount | MonetaryAmountDistribution | Number | None = None
-    experienceRequirements: OccupationalExperienceRequirements | Text | None = None
+    educationRequirements: EducationalOccupationalCredential | str | None = None
+    estimatedSalary: MonetaryAmount | MonetaryAmountDistribution | float | None = None
+    experienceRequirements: OccupationalExperienceRequirements | str | None = None
     occupationLocation: AdministrativeArea | None = None
-    occupationalCategory: CategoryCode | Text | None = None
-    qualifications: EducationalOccupationalCredential | Text | None = None
-    responsibilities: Text | None = None
-    skills: DefinedTerm | Text | None = None
+    occupationalCategory: CategoryCode | str | None = None
+    qualifications: EducationalOccupationalCredential | str | None = None
+    responsibilities: str | None = None
+    skills: DefinedTerm | str | None = None
 
 
 @dataclass
 class HowTo(CreativeWork):
-    estimatedCost: MonetaryAmount | Text | None = None
+    estimatedCost: MonetaryAmount | str | None = None
     performTime: Duration | None = None
     prepTime: Duration | None = None
-    step: CreativeWork | HowToSection | HowToStep | Text | None = None
-    steps: CreativeWork | ItemList | Text | None = None
-    supply: HowToSupply | Text | None = None
-    tool: HowToTool | Text | None = None
+    step: CreativeWork | HowToSection | HowToStep | str | None = None
+    steps: CreativeWork | ItemList | str | None = None
+    supply: HowToSupply | str | None = None
+    tool: HowToTool | str | None = None
     totalTime: Duration | None = None
-    yield_: QuantitativeValue | Text | None = None
+    yield_: QuantitativeValue | str | None = None
 
 
 @dataclass
 class Recipe(HowTo):
     cookTime: Duration | None = None
-    cookingMethod: Text | None = None
-    ingredients: Text | None = None
+    cookingMethod: str | None = None
+    ingredients: str | None = None
     nutrition: NutritionInformation | None = None
-    recipeCategory: Text | None = None
-    recipeCuisine: Text | None = None
-    recipeIngredient: Text | None = None
-    recipeInstructions: CreativeWork | ItemList | Text | None = None
-    recipeYield: QuantitativeValue | Text | None = None
+    recipeCategory: str | None = None
+    recipeCuisine: str | None = None
+    recipeIngredient: str | None = None
+    recipeInstructions: CreativeWork | ItemList | str | None = None
+    recipeYield: QuantitativeValue | str | None = None
     suitableForDiet: RestrictedDiet | None = None
 
 
 @dataclass
 class ActionAccessSpecification(Intangible):
-    availabilityEnds: Date | DateTime | Time | None = None
-    availabilityStarts: Date | DateTime | Time | None = None
-    category: CategoryCode | PhysicalActivityCategory | Text | Thing | URL | None = None
-    eligibleRegion: GeoShape | Place | Text | None = None
+    availabilityEnds: datetime.date | datetime.datetime | datetime.time | None = None
+    availabilityStarts: datetime.date | datetime.datetime | datetime.time | None = None
+    category: CategoryCode | PhysicalActivityCategory | Thing | URL | str | None = None
+    eligibleRegion: GeoShape | Place | str | None = None
     expectsAcceptanceOf: Offer | None = None
-    ineligibleRegion: GeoShape | Place | Text | None = None
-    requiresSubscription: Boolean | MediaSubscription | None = None
+    ineligibleRegion: GeoShape | Place | str | None = None
+    requiresSubscription: MediaSubscription | bool | None = None
 
 
 @dataclass
@@ -1447,7 +1418,7 @@ class ConsumeAction(Action):
 
 @dataclass
 class PlayGameAction(ConsumeAction):
-    gameAvailabilityType: GameAvailabilityEnumeration | Text | None = None
+    gameAvailabilityType: GameAvailabilityEnumeration | str | None = None
 
 
 @dataclass
@@ -1506,20 +1477,20 @@ class NewsMediaOrganization(Organization):
     masthead: CreativeWork | URL | None = None
     missionCoveragePrioritiesPolicy: CreativeWork | URL | None = None
     noBylinesPolicy: CreativeWork | URL | None = None
-    ownershipFundingInfo: AboutPage | CreativeWork | Text | URL | None = None
+    ownershipFundingInfo: AboutPage | CreativeWork | URL | str | None = None
     unnamedSourcesPolicy: CreativeWork | URL | None = None
     verificationFactCheckingPolicy: CreativeWork | URL | None = None
 
 
 @dataclass
 class Ticket(Intangible):
-    dateIssued: Date | DateTime | None = None
+    dateIssued: datetime.date | datetime.datetime | None = None
     issuedBy: Organization | None = None
-    priceCurrency: Text | None = None
-    ticketNumber: Text | None = None
-    ticketToken: Text | URL | None = None
+    priceCurrency: str | None = None
+    ticketNumber: str | None = None
+    ticketToken: URL | str | None = None
     ticketedSeat: Seat | None = None
-    totalPrice: Number | PriceSpecification | Text | None = None
+    totalPrice: PriceSpecification | float | str | None = None
     underName: Organization | Person | None = None
 
 
@@ -1527,9 +1498,9 @@ class Ticket(Intangible):
 class Message(CreativeWork):
     bccRecipient: ContactPoint | Organization | Person | None = None
     ccRecipient: ContactPoint | Organization | Person | None = None
-    dateRead: Date | DateTime | None = None
-    dateReceived: DateTime | None = None
-    dateSent: DateTime | None = None
+    dateRead: datetime.date | datetime.datetime | None = None
+    dateReceived: datetime.datetime | None = None
+    dateSent: datetime.datetime | None = None
     messageAttachment: CreativeWork | None = None
     recipient: Audience | ContactPoint | Organization | Person | None = None
     sender: Audience | Organization | Person | None = None
@@ -1545,10 +1516,10 @@ class EmailMessage(Message):
 class Demand(Intangible):
     acceptedPaymentMethod: LoanOrCredit | PaymentMethod | None = None
     advanceBookingRequirement: QuantitativeValue | None = None
-    areaServed: AdministrativeArea | GeoShape | Place | Text | None = None
+    areaServed: AdministrativeArea | GeoShape | Place | str | None = None
     availability: ItemAvailability | None = None
-    availabilityEnds: Date | DateTime | Time | None = None
-    availabilityStarts: Date | DateTime | Time | None = None
+    availabilityEnds: datetime.date | datetime.datetime | datetime.time | None = None
+    availabilityStarts: datetime.date | datetime.datetime | datetime.time | None = None
     availableAtOrFrom: Place | None = None
     availableDeliveryMethod: DeliveryMethod | None = None
     businessFunction: BusinessFunction | None = None
@@ -1556,50 +1527,50 @@ class Demand(Intangible):
     eligibleCustomerType: BusinessEntityType | None = None
     eligibleDuration: QuantitativeValue | None = None
     eligibleQuantity: QuantitativeValue | None = None
-    eligibleRegion: GeoShape | Place | Text | None = None
+    eligibleRegion: GeoShape | Place | str | None = None
     eligibleTransactionVolume: PriceSpecification | None = None
-    gtin: Text | None = None
-    gtin12: Text | None = None
-    gtin13: Text | None = None
-    gtin14: Text | None = None
-    gtin8: Text | None = None
+    gtin: str | None = None
+    gtin12: str | None = None
+    gtin13: str | None = None
+    gtin14: str | None = None
+    gtin8: str | None = None
     includesObject: TypeAndQuantityNode | None = None
-    ineligibleRegion: GeoShape | Place | Text | None = None
+    ineligibleRegion: GeoShape | Place | str | None = None
     inventoryLevel: QuantitativeValue | None = None
     itemCondition: OfferItemCondition | None = None
     itemOffered: AggregateOffer | CreativeWork | Event | MenuItem | Product | Service | Trip | None = None
-    mpn: Text | None = None
+    mpn: str | None = None
     priceSpecification: PriceSpecification | None = None
     seller: Organization | Person | None = None
-    serialNumber: Text | None = None
-    sku: Text | None = None
-    validFrom: Date | DateTime | None = None
-    validThrough: Date | DateTime | None = None
+    serialNumber: str | None = None
+    sku: str | None = None
+    validFrom: datetime.date | datetime.datetime | None = None
+    validThrough: datetime.date | datetime.datetime | None = None
     warranty: WarrantyPromise | None = None
 
 
 @dataclass
 class Schedule(Intangible):
-    byDay: DayOfWeek | Text | None = None
+    byDay: DayOfWeek | str | None = None
     byMonth: Integer | None = None
     byMonthDay: Integer | None = None
     byMonthWeek: Integer | None = None
     duration: Duration | None = None
-    endDate: Date | DateTime | None = None
-    endTime: DateTime | Time | None = None
-    exceptDate: Date | DateTime | None = None
+    endDate: datetime.date | datetime.datetime | None = None
+    endTime: datetime.datetime | datetime.time | None = None
+    exceptDate: datetime.date | datetime.datetime | None = None
     repeatCount: Integer | None = None
-    repeatFrequency: Duration | Text | None = None
-    scheduleTimezone: Text | None = None
-    startDate: Date | DateTime | None = None
-    startTime: DateTime | Time | None = None
+    repeatFrequency: Duration | str | None = None
+    scheduleTimezone: str | None = None
+    startDate: datetime.date | datetime.datetime | None = None
+    startTime: datetime.datetime | datetime.time | None = None
 
 
 @dataclass
 class MedicalGuideline(MedicalEntity):
     evidenceLevel: MedicalEvidenceLevel | None = None
-    evidenceOrigin: Text | None = None
-    guidelineDate: Date | None = None
+    evidenceOrigin: str | None = None
+    guidelineDate: datetime.date | None = None
     guidelineSubject: MedicalEntity | None = None
 
 
@@ -1610,18 +1581,18 @@ class MedicalGuidelineContraindication(MedicalGuideline):
 
 @dataclass
 class MedicalGuidelineRecommendation(MedicalGuideline):
-    recommendationStrength: Text | None = None
+    recommendationStrength: str | None = None
 
 
 @dataclass
 class Airline(Organization):
     boardingPolicy: BoardingPolicyType | None = None
-    iataCode: Text | None = None
+    iataCode: str | None = None
 
 
 @dataclass
 class MathSolver(CreativeWork):
-    mathExpression: SolveMathAction | Text | None = None
+    mathExpression: SolveMathAction | str | None = None
 
 
 @dataclass
@@ -1629,12 +1600,12 @@ class MusicComposition(CreativeWork):
     composer: Organization | Person | None = None
     firstPerformance: Event | None = None
     includedComposition: MusicComposition | None = None
-    iswcCode: Text | None = None
+    iswcCode: str | None = None
     lyricist: Person | None = None
     lyrics: CreativeWork | None = None
     musicArrangement: MusicComposition | None = None
-    musicCompositionForm: Text | None = None
-    musicalKey: Text | None = None
+    musicCompositionForm: str | None = None
+    musicalKey: str | None = None
     recordedAs: MusicRecording | None = None
 
 
@@ -1653,10 +1624,10 @@ class SpeakableSpecification(Intangible):
 
 @dataclass
 class AlignmentObject(Intangible):
-    alignmentType: Text | None = None
-    educationalFramework: Text | None = None
-    targetDescription: Text | None = None
-    targetName: Text | None = None
+    alignmentType: str | None = None
+    educationalFramework: str | None = None
+    targetDescription: str | None = None
+    targetName: str | None = None
     targetUrl: URL | None = None
 
 
@@ -1670,23 +1641,23 @@ class Order(Intangible):
     acceptedOffer: Offer | None = None
     billingAddress: PostalAddress | None = None
     broker: Organization | Person | None = None
-    confirmationNumber: Text | None = None
+    confirmationNumber: str | None = None
     customer: Organization | Person | None = None
-    discount: Number | Text | None = None
-    discountCode: Text | None = None
-    discountCurrency: Text | None = None
-    isGift: Boolean | None = None
+    discount: float | str | None = None
+    discountCode: str | None = None
+    discountCurrency: str | None = None
+    isGift: bool | None = None
     merchant: Organization | Person | None = None
-    orderDate: Date | DateTime | None = None
+    orderDate: datetime.date | datetime.datetime | None = None
     orderDelivery: ParcelDelivery | None = None
-    orderNumber: Text | None = None
+    orderNumber: str | None = None
     orderStatus: OrderStatus | None = None
     orderedItem: OrderItem | Product | Service | None = None
     partOfInvoice: Invoice | None = None
-    paymentDue: DateTime | None = None
-    paymentDueDate: Date | DateTime | None = None
+    paymentDue: datetime.datetime | None = None
+    paymentDueDate: datetime.date | datetime.datetime | None = None
     paymentMethod: PaymentMethod | None = None
-    paymentMethodId: Text | None = None
+    paymentMethodId: str | None = None
     paymentUrl: URL | None = None
     seller: Organization | Person | None = None
 
@@ -1694,26 +1665,26 @@ class Order(Intangible):
 @dataclass
 class OrderItem(Intangible):
     orderDelivery: ParcelDelivery | None = None
-    orderItemNumber: Text | None = None
+    orderItemNumber: str | None = None
     orderItemStatus: OrderStatus | None = None
-    orderQuantity: Number | None = None
+    orderQuantity: float | None = None
     orderedItem: OrderItem | Product | Service | None = None
 
 
 @dataclass
 class MedicalDevice(MedicalEntity):
     adverseOutcome: MedicalEntity | None = None
-    contraindication: MedicalContraindication | Text | None = None
-    postOp: Text | None = None
-    preOp: Text | None = None
-    procedure: Text | None = None
+    contraindication: MedicalContraindication | str | None = None
+    postOp: str | None = None
+    preOp: str | None = None
+    procedure: str | None = None
     seriousAdverseOutcome: MedicalEntity | None = None
 
 
 @dataclass
 class AnatomicalStructure(MedicalEntity):
-    associatedPathophysiology: Text | None = None
-    bodyLocation: Text | None = None
+    associatedPathophysiology: str | None = None
+    bodyLocation: str | None = None
     connectedTo: AnatomicalStructure | None = None
     diagram: ImageObject | None = None
     partOfSystem: AnatomicalSystem | None = None
@@ -1735,7 +1706,7 @@ class Muscle(AnatomicalStructure):
     antagonist: Muscle | None = None
     bloodSupply: Vessel | None = None
     insertion: AnatomicalStructure | None = None
-    muscleAction: Text | None = None
+    muscleAction: str | None = None
     nerve: Nerve | None = None
 
 
@@ -1746,9 +1717,9 @@ class Vessel(AnatomicalStructure):
 
 @dataclass
 class Joint(AnatomicalStructure):
-    biomechnicalClass: Text | None = None
-    functionalClass: MedicalEntity | Text | None = None
-    structuralClass: Text | None = None
+    biomechnicalClass: str | None = None
+    functionalClass: MedicalEntity | str | None = None
+    structuralClass: str | None = None
 
 
 @dataclass
@@ -1772,23 +1743,23 @@ class Review(CreativeWork):
     associatedMediaReview: Review | None = None
     associatedReview: Review | None = None
     itemReviewed: Thing | None = None
-    negativeNotes: ItemList | ListItem | Text | WebContent | None = None
-    positiveNotes: ItemList | ListItem | Text | WebContent | None = None
-    reviewAspect: Text | None = None
-    reviewBody: Text | None = None
+    negativeNotes: ItemList | ListItem | WebContent | str | None = None
+    positiveNotes: ItemList | ListItem | WebContent | str | None = None
+    reviewAspect: str | None = None
+    reviewBody: str | None = None
     reviewRating: Rating | None = None
 
 
 @dataclass
 class MediaReview(Review):
     mediaAuthenticityCategory: MediaManipulationRatingEnumeration | None = None
-    originalMediaContextDescription: Text | None = None
+    originalMediaContextDescription: str | None = None
     originalMediaLink: MediaObject | URL | WebPage | None = None
 
 
 @dataclass
 class Recommendation(Review):
-    category: CategoryCode | PhysicalActivityCategory | Text | Thing | URL | None = None
+    category: CategoryCode | PhysicalActivityCategory | Thing | URL | str | None = None
 
 
 @dataclass
@@ -1798,7 +1769,7 @@ class CriticReview(Review):
 
 @dataclass
 class ClaimReview(Review):
-    claimReviewed: Text | None = None
+    claimReviewed: str | None = None
 
 
 @dataclass
@@ -1816,14 +1787,14 @@ class ProgramMembership(Intangible):
     hostingOrganization: Organization | None = None
     member: Organization | Person | None = None
     members: Organization | Person | None = None
-    membershipNumber: Text | None = None
-    membershipPointsEarned: Number | QuantitativeValue | None = None
-    programName: Text | None = None
+    membershipNumber: str | None = None
+    membershipPointsEarned: QuantitativeValue | float | None = None
+    programName: str | None = None
 
 
 @dataclass
 class ServiceChannel(Intangible):
-    availableLanguage: Language | Text | None = None
+    availableLanguage: Language | str | None = None
     processingTime: Duration | None = None
     providesService: Service | None = None
     serviceLocation: Place | None = None
@@ -1835,26 +1806,26 @@ class ServiceChannel(Intangible):
 
 @dataclass
 class Role(Intangible):
-    endDate: Date | DateTime | None = None
-    namedPosition: Text | URL | None = None
-    roleName: Text | URL | None = None
-    startDate: Date | DateTime | None = None
+    endDate: datetime.date | datetime.datetime | None = None
+    namedPosition: URL | str | None = None
+    roleName: URL | str | None = None
+    startDate: datetime.date | datetime.datetime | None = None
 
 
 @dataclass
 class PerformanceRole(Role):
-    characterName: Text | None = None
+    characterName: str | None = None
 
 
 @dataclass
 class OrganizationRole(Role):
-    numberedPosition: Number | None = None
+    numberedPosition: float | None = None
 
 
 @dataclass
 class LinkRole(Role):
-    inLanguage: Language | Text | None = None
-    linkRelationship: Text | None = None
+    inLanguage: Language | str | None = None
+    linkRelationship: str | None = None
 
 
 @dataclass
@@ -1866,15 +1837,15 @@ class NGO(Organization):
 class Clip(CreativeWork):
     actor: Person | None = None
     actors: Person | None = None
-    clipNumber: Integer | Text | None = None
+    clipNumber: Integer | str | None = None
     director: Person | None = None
     directors: Person | None = None
-    endOffset: HyperTocEntry | Number | None = None
+    endOffset: HyperTocEntry | float | None = None
     musicBy: MusicGroup | Person | None = None
     partOfEpisode: Episode | None = None
     partOfSeason: CreativeWorkSeason | None = None
     partOfSeries: CreativeWorkSeries | None = None
-    startOffset: HyperTocEntry | Number | None = None
+    startOffset: HyperTocEntry | float | None = None
 
 
 @dataclass
@@ -1899,7 +1870,7 @@ class RadioClip(Clip):
 
 @dataclass
 class SeekToAction(Action):
-    startOffset: HyperTocEntry | Number | None = None
+    startOffset: HyperTocEntry | float | None = None
 
 
 @dataclass
@@ -1911,10 +1882,10 @@ class MedicalCause(MedicalEntity):
 class DrugCost(MedicalEntity):
     applicableLocation: AdministrativeArea | None = None
     costCategory: DrugCostCategory | None = None
-    costCurrency: Text | None = None
-    costOrigin: Text | None = None
-    costPerUnit: Number | QualitativeValue | Text | None = None
-    drugUnit: Text | None = None
+    costCurrency: str | None = None
+    costOrigin: str | None = None
+    costPerUnit: QualitativeValue | float | str | None = None
+    drugUnit: str | None = None
 
 
 @dataclass
@@ -1926,7 +1897,7 @@ class MusicPlaylist(CreativeWork):
 
 @dataclass
 class MusicRelease(MusicPlaylist):
-    catalogNumber: Text | None = None
+    catalogNumber: str | None = None
     creditedTo: Organization | Person | None = None
     duration: Duration | None = None
     musicReleaseFormat: MusicReleaseFormatType | None = None
@@ -1944,41 +1915,41 @@ class MusicAlbum(MusicPlaylist):
 
 @dataclass
 class TouristAttraction(Place):
-    availableLanguage: Language | Text | None = None
-    touristType: Audience | Text | None = None
+    availableLanguage: Language | str | None = None
+    touristType: Audience | str | None = None
 
 
 @dataclass
 class TouristDestination(Place):
     includesAttraction: TouristAttraction | None = None
-    touristType: Audience | Text | None = None
+    touristType: Audience | str | None = None
 
 
 @dataclass
 class PropertyValueSpecification(Intangible):
-    defaultValue: Text | Thing | None = None
-    maxValue: Number | None = None
-    minValue: Number | None = None
-    multipleValues: Boolean | None = None
-    readonlyValue: Boolean | None = None
-    stepValue: Number | None = None
-    valueMaxLength: Number | None = None
-    valueMinLength: Number | None = None
-    valueName: Text | None = None
-    valuePattern: Text | None = None
-    valueRequired: Boolean | None = None
+    defaultValue: Thing | str | None = None
+    maxValue: float | None = None
+    minValue: float | None = None
+    multipleValues: bool | None = None
+    readonlyValue: bool | None = None
+    stepValue: float | None = None
+    valueMaxLength: float | None = None
+    valueMinLength: float | None = None
+    valueName: str | None = None
+    valuePattern: str | None = None
+    valueRequired: bool | None = None
 
 
 @dataclass
 class Service(Intangible):
     aggregateRating: AggregateRating | None = None
-    areaServed: AdministrativeArea | GeoShape | Place | Text | None = None
+    areaServed: AdministrativeArea | GeoShape | Place | str | None = None
     audience: Audience | None = None
     availableChannel: ServiceChannel | None = None
-    award: Text | None = None
+    award: str | None = None
     brand: Brand | Organization | None = None
     broker: Organization | Person | None = None
-    category: CategoryCode | PhysicalActivityCategory | Text | Thing | URL | None = None
+    category: CategoryCode | PhysicalActivityCategory | Thing | URL | str | None = None
     hasOfferCatalog: OfferCatalog | None = None
     hoursAvailable: OpeningHoursSpecification | None = None
     isRelatedTo: Product | Service | None = None
@@ -1987,21 +1958,21 @@ class Service(Intangible):
     offers: Demand | Offer | None = None
     produces: Thing | None = None
     provider: Organization | Person | None = None
-    providerMobility: Text | None = None
+    providerMobility: str | None = None
     review: Review | None = None
     serviceArea: AdministrativeArea | GeoShape | Place | None = None
     serviceAudience: Audience | None = None
     serviceOutput: Thing | None = None
-    serviceType: GovernmentBenefitsType | Text | None = None
-    slogan: Text | None = None
-    termsOfService: Text | URL | None = None
+    serviceType: GovernmentBenefitsType | str | None = None
+    slogan: str | None = None
+    termsOfService: URL | str | None = None
 
 
 @dataclass
 class FinancialProduct(Service):
-    annualPercentageRate: Number | QuantitativeValue | None = None
-    feesAndCommissionsSpecification: Text | URL | None = None
-    interestRate: Number | QuantitativeValue | None = None
+    annualPercentageRate: QuantitativeValue | float | None = None
+    feesAndCommissionsSpecification: URL | str | None = None
+    interestRate: QuantitativeValue | float | None = None
 
 
 @dataclass
@@ -2018,15 +1989,15 @@ class TaxiService(Service):
 class BroadcastService(Service):
     area: Place | None = None
     broadcastAffiliateOf: Organization | None = None
-    broadcastDisplayName: Text | None = None
-    broadcastFrequency: BroadcastFrequencySpecification | Text | None = None
-    broadcastTimezone: Text | None = None
+    broadcastDisplayName: str | None = None
+    broadcastFrequency: BroadcastFrequencySpecification | str | None = None
+    broadcastTimezone: str | None = None
     broadcaster: Organization | None = None
-    callSign: Text | None = None
+    callSign: str | None = None
     hasBroadcastChannel: BroadcastChannel | None = None
-    inLanguage: Language | Text | None = None
+    inLanguage: Language | str | None = None
     parentService: BroadcastService | None = None
-    videoFormat: Text | None = None
+    videoFormat: str | None = None
 
 
 @dataclass
@@ -2036,7 +2007,7 @@ class WebAPI(Service):
 
 @dataclass
 class GovernmentService(Service):
-    jurisdiction: AdministrativeArea | Text | None = None
+    jurisdiction: AdministrativeArea | str | None = None
     serviceOperator: Organization | None = None
 
 
@@ -2057,9 +2028,9 @@ class ShortStory(CreativeWork):
 
 @dataclass
 class DeliveryEvent(Event):
-    accessCode: Text | None = None
-    availableFrom: DateTime | None = None
-    availableThrough: DateTime | None = None
+    accessCode: str | None = None
+    availableFrom: datetime.datetime | None = None
+    availableThrough: datetime.datetime | None = None
     hasDeliveryMethod: DeliveryMethod | None = None
 
 
@@ -2067,14 +2038,14 @@ class DeliveryEvent(Event):
 class CreativeWorkSeason(CreativeWork):
     actor: Person | None = None
     director: Person | None = None
-    endDate: Date | DateTime | None = None
+    endDate: datetime.date | datetime.datetime | None = None
     episode: Episode | None = None
     episodes: Episode | None = None
     numberOfEpisodes: Integer | None = None
     partOfSeries: CreativeWorkSeries | None = None
     productionCompany: Organization | None = None
-    seasonNumber: Integer | Text | None = None
-    startDate: Date | DateTime | None = None
+    seasonNumber: Integer | str | None = None
+    startDate: datetime.date | datetime.datetime | None = None
     trailer: VideoObject | None = None
 
 
@@ -2101,26 +2072,26 @@ class DanceEvent(Event):
 
 @dataclass
 class HealthPlanFormulary(Intangible):
-    healthPlanCostSharing: Boolean | None = None
-    healthPlanDrugTier: Text | None = None
-    offersPrescriptionByMail: Boolean | None = None
+    healthPlanCostSharing: bool | None = None
+    healthPlanDrugTier: str | None = None
+    offersPrescriptionByMail: bool | None = None
 
 
 @dataclass
 class Legislation(CreativeWork):
-    jurisdiction: AdministrativeArea | Text | None = None
+    jurisdiction: AdministrativeArea | str | None = None
     legislationApplies: Legislation | None = None
     legislationChanges: Legislation | None = None
     legislationConsolidates: Legislation | None = None
-    legislationDate: Date | None = None
-    legislationDateVersion: Date | None = None
-    legislationIdentifier: Text | URL | None = None
-    legislationJurisdiction: AdministrativeArea | Text | None = None
+    legislationDate: datetime.date | None = None
+    legislationDateVersion: datetime.date | None = None
+    legislationIdentifier: URL | str | None = None
+    legislationJurisdiction: AdministrativeArea | str | None = None
     legislationLegalForce: LegalForceStatus | None = None
     legislationPassedBy: Organization | Person | None = None
     legislationResponsible: Organization | Person | None = None
     legislationTransposes: Legislation | None = None
-    legislationType: CategoryCode | Text | None = None
+    legislationType: CategoryCode | str | None = None
 
 
 @dataclass
@@ -2130,15 +2101,15 @@ class LegislationObject(Legislation, MediaObject):
 
 @dataclass
 class DataFeedItem(Intangible):
-    dateCreated: Date | DateTime | None = None
-    dateDeleted: Date | DateTime | None = None
-    dateModified: Date | DateTime | None = None
+    dateCreated: datetime.date | datetime.datetime | None = None
+    dateDeleted: datetime.date | datetime.datetime | None = None
+    dateModified: datetime.date | datetime.datetime | None = None
     item: Thing | None = None
 
 
 @dataclass
 class Corporation(Organization):
-    tickerSymbol: Text | None = None
+    tickerSymbol: str | None = None
 
 
 @dataclass
@@ -2153,7 +2124,7 @@ class Episode(CreativeWork):
     director: Person | None = None
     directors: Person | None = None
     duration: Duration | None = None
-    episodeNumber: Integer | Text | None = None
+    episodeNumber: Integer | str | None = None
     musicBy: MusicGroup | Person | None = None
     partOfSeason: CreativeWorkSeason | None = None
     partOfSeries: CreativeWorkSeries | None = None
@@ -2165,8 +2136,8 @@ class Episode(CreativeWork):
 class TVEpisode(Episode):
     countryOfOrigin: Country | None = None
     partOfTVSeries: TVSeries | None = None
-    subtitleLanguage: Language | Text | None = None
-    titleEIDR: Text | URL | None = None
+    subtitleLanguage: Language | str | None = None
+    titleEIDR: URL | str | None = None
 
 
 @dataclass
@@ -2181,18 +2152,18 @@ class PodcastEpisode(Episode):
 
 @dataclass
 class VisualArtwork(CreativeWork):
-    artEdition: Integer | Text | None = None
-    artMedium: Text | URL | None = None
-    artform: Text | URL | None = None
+    artEdition: Integer | str | None = None
+    artMedium: URL | str | None = None
+    artform: URL | str | None = None
     artist: Person | None = None
-    artworkSurface: Text | URL | None = None
+    artworkSurface: URL | str | None = None
     colorist: Person | None = None
     depth: Distance | QuantitativeValue | None = None
     height: Distance | QuantitativeValue | None = None
     inker: Person | None = None
     letterer: Person | None = None
     penciler: Person | None = None
-    surface: Text | URL | None = None
+    surface: URL | str | None = None
     width: Distance | QuantitativeValue | None = None
 
 
@@ -2203,8 +2174,8 @@ class CoverArt(VisualArtwork):
 
 @dataclass
 class ItemList(Intangible):
-    itemListElement: ListItem | Text | Thing | None = None
-    itemListOrder: ItemListOrderType | Text | None = None
+    itemListElement: ListItem | Thing | str | None = None
+    itemListOrder: ItemListOrderType | str | None = None
     numberOfItems: Integer | None = None
 
 
@@ -2221,8 +2192,8 @@ class OfferCatalog(ItemList):
 @dataclass
 class SpecialAnnouncement(CreativeWork):
     announcementLocation: CivicStructure | LocalBusiness | None = None
-    category: CategoryCode | PhysicalActivityCategory | Text | Thing | URL | None = None
-    datePosted: Date | DateTime | None = None
+    category: CategoryCode | PhysicalActivityCategory | Thing | URL | str | None = None
+    datePosted: datetime.date | datetime.datetime | None = None
     diseasePreventionInfo: URL | WebContent | None = None
     diseaseSpreadStatistics: Dataset | Observation | URL | WebContent | None = None
     gettingTestedInfo: URL | WebContent | None = None
@@ -2252,8 +2223,8 @@ class GeospatialGeometry(Intangible):
 @dataclass
 class ProductGroup(Product):
     hasVariant: Product | None = None
-    productGroupID: Text | None = None
-    variesBy: DefinedTerm | Text | None = None
+    productGroupID: str | None = None
+    variesBy: DefinedTerm | str | None = None
 
 
 @dataclass
@@ -2265,11 +2236,11 @@ class FloorPlan(Intangible):
     numberOfAccommodationUnits: QuantitativeValue | None = None
     numberOfAvailableAccommodationUnits: QuantitativeValue | None = None
     numberOfBathroomsTotal: Integer | None = None
-    numberOfBedrooms: Number | QuantitativeValue | None = None
-    numberOfFullBathrooms: Number | None = None
-    numberOfPartialBathrooms: Number | None = None
-    numberOfRooms: Number | QuantitativeValue | None = None
-    petsAllowed: Boolean | Text | None = None
+    numberOfBedrooms: QuantitativeValue | float | None = None
+    numberOfFullBathrooms: float | None = None
+    numberOfPartialBathrooms: float | None = None
+    numberOfRooms: QuantitativeValue | float | None = None
+    petsAllowed: bool | str | None = None
 
 
 @dataclass
@@ -2282,8 +2253,8 @@ class Movie(CreativeWork):
     duration: Duration | None = None
     musicBy: MusicGroup | Person | None = None
     productionCompany: Organization | None = None
-    subtitleLanguage: Language | Text | None = None
-    titleEIDR: Text | URL | None = None
+    subtitleLanguage: Language | str | None = None
+    titleEIDR: URL | str | None = None
     trailer: VideoObject | None = None
 
 
@@ -2291,19 +2262,19 @@ class Movie(CreativeWork):
 class HealthInsurancePlan(Intangible):
     benefitsSummaryUrl: URL | None = None
     contactPoint: ContactPoint | None = None
-    healthPlanDrugOption: Text | None = None
-    healthPlanDrugTier: Text | None = None
-    healthPlanId: Text | None = None
+    healthPlanDrugOption: str | None = None
+    healthPlanDrugTier: str | None = None
+    healthPlanId: str | None = None
     healthPlanMarketingUrl: URL | None = None
     includesHealthPlanFormulary: HealthPlanFormulary | None = None
     includesHealthPlanNetwork: HealthPlanNetwork | None = None
-    usesHealthPlanIdStandard: Text | URL | None = None
+    usesHealthPlanIdStandard: URL | str | None = None
 
 
 @dataclass
 class Trip(Intangible):
-    arrivalTime: DateTime | Time | None = None
-    departureTime: DateTime | Time | None = None
+    arrivalTime: datetime.datetime | datetime.time | None = None
+    departureTime: datetime.datetime | datetime.time | None = None
     itinerary: ItemList | Place | None = None
     offers: Demand | Offer | None = None
     partOfTrip: Trip | None = None
@@ -2313,36 +2284,36 @@ class Trip(Intangible):
 
 @dataclass
 class Flight(Trip):
-    aircraft: Text | Vehicle | None = None
+    aircraft: Vehicle | str | None = None
     arrivalAirport: Airport | None = None
-    arrivalGate: Text | None = None
-    arrivalTerminal: Text | None = None
+    arrivalGate: str | None = None
+    arrivalTerminal: str | None = None
     boardingPolicy: BoardingPolicyType | None = None
     carrier: Organization | None = None
     departureAirport: Airport | None = None
-    departureGate: Text | None = None
-    departureTerminal: Text | None = None
-    estimatedFlightDuration: Duration | Text | None = None
-    flightDistance: Distance | Text | None = None
-    flightNumber: Text | None = None
-    mealService: Text | None = None
+    departureGate: str | None = None
+    departureTerminal: str | None = None
+    estimatedFlightDuration: Duration | str | None = None
+    flightDistance: Distance | str | None = None
+    flightNumber: str | None = None
+    mealService: str | None = None
     seller: Organization | Person | None = None
-    webCheckinTime: DateTime | None = None
+    webCheckinTime: datetime.datetime | None = None
 
 
 @dataclass
 class TrainTrip(Trip):
-    arrivalPlatform: Text | None = None
+    arrivalPlatform: str | None = None
     arrivalStation: TrainStation | None = None
-    departurePlatform: Text | None = None
+    departurePlatform: str | None = None
     departureStation: TrainStation | None = None
-    trainName: Text | None = None
-    trainNumber: Text | None = None
+    trainName: str | None = None
+    trainNumber: str | None = None
 
 
 @dataclass
 class TouristTrip(Trip):
-    touristType: Audience | Text | None = None
+    touristType: Audience | str | None = None
 
 
 @dataclass
@@ -2354,8 +2325,8 @@ class BoatTrip(Trip):
 @dataclass
 class BusTrip(Trip):
     arrivalBusStop: BusStation | BusStop | None = None
-    busName: Text | None = None
-    busNumber: Text | None = None
+    busName: str | None = None
+    busNumber: str | None = None
     departureBusStop: BusStation | BusStop | None = None
 
 
@@ -2369,26 +2340,26 @@ class MedicalCondition(MedicalEntity):
     associatedAnatomy: AnatomicalStructure | AnatomicalSystem | SuperficialAnatomy | None = None
     differentialDiagnosis: DDxElement | None = None
     drug: Drug | None = None
-    epidemiology: Text | None = None
-    expectedPrognosis: Text | None = None
-    naturalProgression: Text | None = None
-    pathophysiology: Text | None = None
-    possibleComplication: Text | None = None
+    epidemiology: str | None = None
+    expectedPrognosis: str | None = None
+    naturalProgression: str | None = None
+    pathophysiology: str | None = None
+    possibleComplication: str | None = None
     possibleTreatment: MedicalTherapy | None = None
     primaryPrevention: MedicalTherapy | None = None
     riskFactor: MedicalRiskFactor | None = None
     secondaryPrevention: MedicalTherapy | None = None
     signOrSymptom: MedicalSignOrSymptom | None = None
     stage: MedicalConditionStage | None = None
-    status: EventStatusType | MedicalStudyStatus | Text | None = None
+    status: EventStatusType | MedicalStudyStatus | str | None = None
     typicalTest: MedicalTest | None = None
 
 
 @dataclass
 class InfectiousDisease(MedicalCondition):
-    infectiousAgent: Text | None = None
+    infectiousAgent: str | None = None
     infectiousAgentClass: InfectiousAgentClass | None = None
-    transmissionMethod: Text | None = None
+    transmissionMethod: str | None = None
 
 
 @dataclass
@@ -2414,7 +2385,7 @@ class SubscribeAction(InteractAction):
 @dataclass
 class CommunicateAction(InteractAction):
     about: Thing | None = None
-    inLanguage: Language | Text | None = None
+    inLanguage: Language | str | None = None
     language: Language | None = None
     recipient: Audience | ContactPoint | Organization | Person | None = None
 
@@ -2460,7 +2431,7 @@ class ProductModel(Product):
 class MedicalStudy(MedicalEntity):
     healthCondition: MedicalCondition | None = None
     sponsor: Organization | Person | None = None
-    status: EventStatusType | MedicalStudyStatus | Text | None = None
+    status: EventStatusType | MedicalStudyStatus | str | None = None
     studyLocation: AdministrativeArea | None = None
     studySubject: MedicalEntity | None = None
 
@@ -2483,12 +2454,12 @@ class LandmarksOrHistoricalBuildings(Place):
 @dataclass
 class DefinedTerm(Intangible):
     inDefinedTermSet: DefinedTermSet | URL | None = None
-    termCode: Text | None = None
+    termCode: str | None = None
 
 
 @dataclass
 class CategoryCode(DefinedTerm):
-    codeValue: Text | None = None
+    codeValue: str | None = None
     inCodeSet: CategoryCodeSet | URL | None = None
 
 
@@ -2496,7 +2467,7 @@ class CategoryCode(DefinedTerm):
 class HyperTocEntry(CreativeWork):
     associatedMedia: MediaObject | None = None
     tocContinuation: HyperTocEntry | None = None
-    utterances: Text | None = None
+    utterances: str | None = None
 
 
 @dataclass
@@ -2507,7 +2478,7 @@ class MedicalRiskFactor(MedicalEntity):
 @dataclass
 class MedicalTest(MedicalEntity):
     affectedBy: Drug | None = None
-    normalRange: MedicalEnumeration | Text | None = None
+    normalRange: MedicalEnumeration | str | None = None
     signDetected: MedicalSign | None = None
     usedToDiagnose: MedicalCondition | None = None
     usesDevice: MedicalDevice | None = None
@@ -2515,7 +2486,7 @@ class MedicalTest(MedicalEntity):
 
 @dataclass
 class PathologyTest(MedicalTest):
-    tissueSample: Text | None = None
+    tissueSample: str | None = None
 
 
 @dataclass
@@ -2611,8 +2582,8 @@ class VideoGame(Game, SoftwareApplication):
     cheatCode: CreativeWork | None = None
     director: Person | None = None
     directors: Person | None = None
-    gameEdition: Text | None = None
-    gamePlatform: Text | Thing | URL | None = None
+    gameEdition: str | None = None
+    gamePlatform: Thing | URL | str | None = None
     gameServer: GameServer | None = None
     gameTip: CreativeWork | None = None
     musicBy: MusicGroup | Person | None = None
@@ -2623,12 +2594,12 @@ class VideoGame(Game, SoftwareApplication):
 @dataclass
 class EntryPoint(Intangible):
     actionApplication: SoftwareApplication | None = None
-    actionPlatform: DigitalPlatformEnumeration | Text | URL | None = None
+    actionPlatform: DigitalPlatformEnumeration | URL | str | None = None
     application: SoftwareApplication | None = None
-    contentType: Text | None = None
-    encodingType: Text | None = None
-    httpMethod: Text | None = None
-    urlTemplate: Text | None = None
+    contentType: str | None = None
+    encodingType: str | None = None
+    httpMethod: str | None = None
+    urlTemplate: str | None = None
 
 
 @dataclass
@@ -2673,10 +2644,10 @@ class Property(Intangible):
 
 @dataclass
 class BroadcastChannel(Intangible):
-    broadcastChannelId: Text | None = None
-    broadcastFrequency: BroadcastFrequencySpecification | Text | None = None
-    broadcastServiceTier: Text | None = None
-    genre: Text | URL | None = None
+    broadcastChannelId: str | None = None
+    broadcastFrequency: BroadcastFrequencySpecification | str | None = None
+    broadcastServiceTier: str | None = None
+    genre: URL | str | None = None
     inBroadcastLineup: CableOrSatelliteService | None = None
     providesBroadcastService: BroadcastService | None = None
 
@@ -2693,7 +2664,7 @@ class TelevisionChannel(BroadcastChannel):
 
 @dataclass
 class CivicStructure(Place):
-    openingHours: Text | None = None
+    openingHours: str | None = None
 
 
 @dataclass
@@ -2703,8 +2674,8 @@ class RVPark(CivicStructure):
 
 @dataclass
 class Airport(CivicStructure):
-    iataCode: Text | None = None
-    icaoCode: Text | None = None
+    iataCode: str | None = None
+    icaoCode: str | None = None
 
 
 @dataclass
@@ -2829,20 +2800,20 @@ class ResearchOrganization(Organization):
 
 @dataclass
 class SearchAction(Action):
-    query: Text | None = None
+    query: str | None = None
 
 
 @dataclass
 class BedDetails(Intangible):
-    numberOfBeds: Number | None = None
-    typeOfBed: BedType | Text | None = None
+    numberOfBeds: float | None = None
+    typeOfBed: BedType | str | None = None
 
 
 @dataclass
 class ListItem(Intangible):
     item: Thing | None = None
     nextItem: ListItem | None = None
-    position: Integer | Text | None = None
+    position: Integer | str | None = None
     previousItem: ListItem | None = None
 
 
@@ -2853,19 +2824,19 @@ class HowToDirection(CreativeWork, ListItem):
     duringMedia: MediaObject | URL | None = None
     performTime: Duration | None = None
     prepTime: Duration | None = None
-    supply: HowToSupply | Text | None = None
-    tool: HowToTool | Text | None = None
+    supply: HowToSupply | str | None = None
+    tool: HowToTool | str | None = None
     totalTime: Duration | None = None
 
 
 @dataclass
 class HowToItem(ListItem):
-    requiredQuantity: Number | QuantitativeValue | Text | None = None
+    requiredQuantity: QuantitativeValue | float | str | None = None
 
 
 @dataclass
 class HowToSection(CreativeWork, ItemList, ListItem):
-    steps: CreativeWork | ItemList | Text | None = None
+    steps: CreativeWork | ItemList | str | None = None
 
 
 @dataclass
@@ -2893,7 +2864,7 @@ class MenuItem(Intangible):
 
 @dataclass
 class WebSite(CreativeWork):
-    issn: Text | None = None
+    issn: str | None = None
 
 
 @dataclass
@@ -2903,23 +2874,23 @@ class Quotation(CreativeWork):
 
 @dataclass
 class Article(CreativeWork):
-    articleBody: Text | None = None
-    articleSection: Text | None = None
-    backstory: CreativeWork | Text | None = None
-    pageEnd: Integer | Text | None = None
-    pageStart: Integer | Text | None = None
-    pagination: Text | None = None
+    articleBody: str | None = None
+    articleSection: str | None = None
+    backstory: CreativeWork | str | None = None
+    pageEnd: Integer | str | None = None
+    pageStart: Integer | str | None = None
+    pagination: str | None = None
     speakable: SpeakableSpecification | URL | None = None
     wordCount: Integer | None = None
 
 
 @dataclass
 class NewsArticle(Article):
-    dateline: Text | None = None
-    printColumn: Text | None = None
-    printEdition: Text | None = None
-    printPage: Text | None = None
-    printSection: Text | None = None
+    dateline: str | None = None
+    printColumn: str | None = None
+    printEdition: str | None = None
+    printPage: str | None = None
+    printSection: str | None = None
 
 
 @dataclass
@@ -2929,13 +2900,13 @@ class SocialMediaPosting(Article):
 
 @dataclass
 class Report(Article):
-    reportNumber: Text | None = None
+    reportNumber: str | None = None
 
 
 @dataclass
 class TechArticle(Article):
-    dependencies: Text | None = None
-    proficiencyLevel: Text | None = None
+    dependencies: str | None = None
+    proficiencyLevel: str | None = None
 
 
 @dataclass
@@ -2955,17 +2926,17 @@ class ScholarlyArticle(Article):
 
 @dataclass
 class Chapter(CreativeWork):
-    pageEnd: Integer | Text | None = None
-    pageStart: Integer | Text | None = None
-    pagination: Text | None = None
+    pageEnd: Integer | str | None = None
+    pageStart: Integer | str | None = None
+    pagination: str | None = None
 
 
 @dataclass
 class PublicationIssue(CreativeWork):
-    issueNumber: Integer | Text | None = None
-    pageEnd: Integer | Text | None = None
-    pageStart: Integer | Text | None = None
-    pagination: Text | None = None
+    issueNumber: Integer | str | None = None
+    pageEnd: Integer | str | None = None
+    pageStart: Integer | str | None = None
+    pagination: str | None = None
 
 
 @dataclass
@@ -2975,15 +2946,15 @@ class ComicIssue(PublicationIssue):
     inker: Person | None = None
     letterer: Person | None = None
     penciler: Person | None = None
-    variantCover: Text | None = None
+    variantCover: str | None = None
 
 
 @dataclass
 class PublicationVolume(CreativeWork):
-    pageEnd: Integer | Text | None = None
-    pageStart: Integer | Text | None = None
-    pagination: Text | None = None
-    volumeNumber: Integer | Text | None = None
+    pageEnd: Integer | str | None = None
+    pageStart: Integer | str | None = None
+    pagination: str | None = None
+    volumeNumber: Integer | str | None = None
 
 
 @dataclass
@@ -2991,7 +2962,7 @@ class Observation(Intangible):
     marginOfError: QuantitativeValue | None = None
     measuredProperty: Property | None = None
     measuredValue: DataType | None = None
-    observationDate: DateTime | None = None
+    observationDate: datetime.datetime | None = None
     observedNode: StatisticalPopulation | None = None
 
 
@@ -3003,7 +2974,7 @@ class MedicalRiskEstimator(MedicalEntity):
 
 @dataclass
 class MedicalRiskScore(MedicalRiskEstimator):
-    algorithm: Text | None = None
+    algorithm: str | None = None
 
 
 @dataclass
@@ -3013,8 +2984,8 @@ class MedicalRiskCalculator(MedicalRiskEstimator):
 
 @dataclass
 class ScreeningEvent(Event):
-    subtitleLanguage: Language | Text | None = None
-    videoFormat: Text | None = None
+    subtitleLanguage: Language | str | None = None
+    videoFormat: str | None = None
     workPresented: Movie | None = None
 
 
@@ -3061,29 +3032,29 @@ class Statement(CreativeWork):
 
 @dataclass
 class Seat(Intangible):
-    seatNumber: Text | None = None
-    seatRow: Text | None = None
-    seatSection: Text | None = None
-    seatingType: QualitativeValue | Text | None = None
+    seatNumber: str | None = None
+    seatRow: str | None = None
+    seatSection: str | None = None
+    seatingType: QualitativeValue | str | None = None
 
 
 @dataclass
 class Audience(Intangible):
-    audienceType: Text | None = None
+    audienceType: str | None = None
     geographicArea: AdministrativeArea | None = None
 
 
 @dataclass
 class PeopleAudience(Audience):
     healthCondition: MedicalCondition | None = None
-    requiredGender: Text | None = None
+    requiredGender: str | None = None
     requiredMaxAge: Integer | None = None
     requiredMinAge: Integer | None = None
     suggestedAge: QuantitativeValue | None = None
-    suggestedGender: GenderType | Text | None = None
-    suggestedMaxAge: Number | None = None
+    suggestedGender: GenderType | str | None = None
+    suggestedMaxAge: float | None = None
     suggestedMeasurement: QuantitativeValue | None = None
-    suggestedMinAge: Number | None = None
+    suggestedMinAge: float | None = None
 
 
 @dataclass
@@ -3095,7 +3066,7 @@ class BusinessAudience(Audience):
 
 @dataclass
 class EducationalAudience(Audience):
-    educationalRole: Text | None = None
+    educationalRole: str | None = None
 
 
 @dataclass
@@ -3113,29 +3084,29 @@ class Gene(BioChemEntity):
     alternativeOf: Gene | None = None
     encodesBioChemEntity: BioChemEntity | None = None
     expressedIn: AnatomicalStructure | AnatomicalSystem | BioChemEntity | DefinedTerm | None = None
-    hasBioPolymerSequence: Text | None = None
+    hasBioPolymerSequence: str | None = None
 
 
 @dataclass
 class BroadcastFrequencySpecification(Intangible):
-    broadcastFrequencyValue: Number | QuantitativeValue | None = None
-    broadcastSignalModulation: QualitativeValue | Text | None = None
-    broadcastSubChannel: Text | None = None
+    broadcastFrequencyValue: QuantitativeValue | float | None = None
+    broadcastSignalModulation: QualitativeValue | str | None = None
+    broadcastSubChannel: str | None = None
 
 
 @dataclass
 class SolveMathAction(Action):
-    eduQuestionType: Text | None = None
+    eduQuestionType: str | None = None
 
 
 @dataclass
 class IndividualProduct(Product):
-    serialNumber: Text | None = None
+    serialNumber: str | None = None
 
 
 @dataclass
 class AnatomicalSystem(MedicalEntity):
-    associatedPathophysiology: Text | None = None
+    associatedPathophysiology: str | None = None
     comprisedOf: AnatomicalStructure | AnatomicalSystem | None = None
     relatedCondition: MedicalCondition | None = None
     relatedStructure: AnatomicalStructure | None = None
@@ -3144,11 +3115,11 @@ class AnatomicalSystem(MedicalEntity):
 
 @dataclass
 class SuperficialAnatomy(MedicalEntity):
-    associatedPathophysiology: Text | None = None
+    associatedPathophysiology: str | None = None
     relatedAnatomy: AnatomicalStructure | AnatomicalSystem | None = None
     relatedCondition: MedicalCondition | None = None
     relatedTherapy: MedicalTherapy | None = None
-    significance: Text | None = None
+    significance: str | None = None
 
 
 @dataclass
@@ -3202,7 +3173,7 @@ class QualitativeValue(Enumeration):
     lesser: QualitativeValue | None = None
     lesserOrEqual: QualitativeValue | None = None
     nonEqual: QualitativeValue | None = None
-    valueReference: DefinedTerm | Enumeration | MeasurementTypeEnumeration | PropertyValue | QualitativeValue | QuantitativeValue | StructuredValue | Text | None = None
+    valueReference: DefinedTerm | Enumeration | MeasurementTypeEnumeration | PropertyValue | QualitativeValue | QuantitativeValue | StructuredValue | str | None = None
 
 
 @dataclass
@@ -3454,64 +3425,64 @@ class Grant(Intangible):
 
 @dataclass
 class MonetaryGrant(Grant):
-    amount: MonetaryAmount | Number | None = None
+    amount: MonetaryAmount | float | None = None
     funder: Organization | Person | None = None
 
 
 @dataclass
 class Substance(MedicalEntity):
-    activeIngredient: Text | None = None
+    activeIngredient: str | None = None
     maximumIntake: MaximumDoseSchedule | None = None
 
 
 @dataclass
 class DietarySupplement(Substance):
-    activeIngredient: Text | None = None
-    isProprietary: Boolean | None = None
-    legalStatus: DrugLegalStatus | MedicalEnumeration | Text | None = None
+    activeIngredient: str | None = None
+    isProprietary: bool | None = None
+    legalStatus: DrugLegalStatus | MedicalEnumeration | str | None = None
     manufacturer: Organization | None = None
     maximumIntake: MaximumDoseSchedule | None = None
-    mechanismOfAction: Text | None = None
-    nonProprietaryName: Text | None = None
-    proprietaryName: Text | None = None
+    mechanismOfAction: str | None = None
+    nonProprietaryName: str | None = None
+    proprietaryName: str | None = None
     recommendedIntake: RecommendedDoseSchedule | None = None
-    safetyConsideration: Text | None = None
-    targetPopulation: Text | None = None
+    safetyConsideration: str | None = None
+    targetPopulation: str | None = None
 
 
 @dataclass
 class Drug(Substance):
-    activeIngredient: Text | None = None
-    administrationRoute: Text | None = None
-    alcoholWarning: Text | None = None
+    activeIngredient: str | None = None
+    administrationRoute: str | None = None
+    alcoholWarning: str | None = None
     availableStrength: DrugStrength | None = None
-    breastfeedingWarning: Text | None = None
-    clincalPharmacology: Text | None = None
-    clinicalPharmacology: Text | None = None
-    dosageForm: Text | None = None
+    breastfeedingWarning: str | None = None
+    clincalPharmacology: str | None = None
+    clinicalPharmacology: str | None = None
+    dosageForm: str | None = None
     doseSchedule: DoseSchedule | None = None
     drugClass: DrugClass | None = None
-    drugUnit: Text | None = None
-    foodWarning: Text | None = None
+    drugUnit: str | None = None
+    foodWarning: str | None = None
     includedInHealthInsurancePlan: HealthInsurancePlan | None = None
     interactingDrug: Drug | None = None
-    isAvailableGenerically: Boolean | None = None
-    isProprietary: Boolean | None = None
+    isAvailableGenerically: bool | None = None
+    isProprietary: bool | None = None
     labelDetails: URL | None = None
-    legalStatus: DrugLegalStatus | MedicalEnumeration | Text | None = None
+    legalStatus: DrugLegalStatus | MedicalEnumeration | str | None = None
     manufacturer: Organization | None = None
     maximumIntake: MaximumDoseSchedule | None = None
-    mechanismOfAction: Text | None = None
-    nonProprietaryName: Text | None = None
-    overdosage: Text | None = None
+    mechanismOfAction: str | None = None
+    nonProprietaryName: str | None = None
+    overdosage: str | None = None
     pregnancyCategory: DrugPregnancyCategory | None = None
-    pregnancyWarning: Text | None = None
+    pregnancyWarning: str | None = None
     prescribingInfo: URL | None = None
-    prescriptionStatus: DrugPrescriptionStatus | Text | None = None
-    proprietaryName: Text | None = None
+    prescriptionStatus: DrugPrescriptionStatus | str | None = None
+    proprietaryName: str | None = None
     relatedDrug: Drug | None = None
-    rxcui: Text | None = None
-    warning: Text | URL | None = None
+    rxcui: str | None = None
+    warning: URL | str | None = None
 
 
 @dataclass
@@ -3552,7 +3523,7 @@ class WPFooter(WebPageElement):
 
 @dataclass
 class PublicationEvent(Event):
-    free: Boolean | None = None
+    free: bool | None = None
     publishedBy: Organization | Person | None = None
     publishedOn: BroadcastService | None = None
 
@@ -3560,9 +3531,9 @@ class PublicationEvent(Event):
 @dataclass
 class BroadcastEvent(PublicationEvent):
     broadcastOfEvent: Event | None = None
-    isLiveBroadcast: Boolean | None = None
-    subtitleLanguage: Language | Text | None = None
-    videoFormat: Text | None = None
+    isLiveBroadcast: bool | None = None
+    subtitleLanguage: Language | str | None = None
+    videoFormat: str | None = None
 
 
 @dataclass
@@ -3574,22 +3545,22 @@ class OnDemandEvent(PublicationEvent):
 class Blog(CreativeWork):
     blogPost: BlogPosting | None = None
     blogPosts: BlogPosting | None = None
-    issn: Text | None = None
+    issn: str | None = None
 
 
 @dataclass
 class Guide(CreativeWork):
-    reviewAspect: Text | None = None
+    reviewAspect: str | None = None
 
 
 @dataclass
 class Rating(Intangible):
     author: Organization | Person | None = None
-    bestRating: Number | Text | None = None
-    ratingExplanation: Text | None = None
-    ratingValue: Number | Text | None = None
-    reviewAspect: Text | None = None
-    worstRating: Number | Text | None = None
+    bestRating: float | str | None = None
+    ratingExplanation: str | None = None
+    ratingValue: float | str | None = None
+    reviewAspect: str | None = None
+    worstRating: float | str | None = None
 
 
 @dataclass
@@ -3611,7 +3582,7 @@ class OrganizeAction(Action):
 
 @dataclass
 class PlanAction(OrganizeAction):
-    scheduledTime: DateTime | None = None
+    scheduledTime: datetime.datetime | None = None
 
 
 @dataclass
@@ -3632,20 +3603,20 @@ class ApplyAction(OrganizeAction):
 @dataclass
 class MolecularEntity(BioChemEntity):
     chemicalRole: DefinedTerm | None = None
-    inChI: Text | None = None
-    inChIKey: Text | None = None
-    iupacName: Text | None = None
-    molecularFormula: Text | None = None
-    molecularWeight: QuantitativeValue | Text | None = None
-    monoisotopicMolecularWeight: QuantitativeValue | Text | None = None
+    inChI: str | None = None
+    inChIKey: str | None = None
+    iupacName: str | None = None
+    molecularFormula: str | None = None
+    molecularWeight: QuantitativeValue | str | None = None
+    monoisotopicMolecularWeight: QuantitativeValue | str | None = None
     potentialUse: DefinedTerm | None = None
-    smiles: Text | None = None
+    smiles: str | None = None
 
 
 @dataclass
 class CourseInstance(Event):
-    courseMode: Text | URL | None = None
-    courseWorkload: Text | None = None
+    courseMode: URL | str | None = None
+    courseWorkload: str | None = None
     instructor: Person | None = None
 
 
@@ -3670,7 +3641,7 @@ class Answer(Comment):
 class Question(Comment):
     acceptedAnswer: Answer | ItemList | None = None
     answerCount: Integer | None = None
-    eduQuestionType: Text | None = None
+    eduQuestionType: str | None = None
     suggestedAnswer: Answer | ItemList | None = None
 
 
@@ -3682,13 +3653,13 @@ class Play(CreativeWork):
 @dataclass
 class ArchiveComponent(CreativeWork):
     holdingArchive: ArchiveOrganization | None = None
-    itemLocation: Place | PostalAddress | Text | None = None
+    itemLocation: Place | PostalAddress | str | None = None
 
 
 @dataclass
 class DataCatalog(CreativeWork):
     dataset: Dataset | None = None
-    measurementTechnique: Text | URL | None = None
+    measurementTechnique: URL | str | None = None
 
 
 @dataclass
@@ -3713,7 +3684,7 @@ class LoseAction(AchieveAction):
 
 @dataclass
 class Protein(BioChemEntity):
-    hasBioPolymerSequence: Text | None = None
+    hasBioPolymerSequence: str | None = None
 
 
 @dataclass
@@ -3780,42 +3751,42 @@ class StructuredValue(Intangible):
 
 @dataclass
 class CDCPMDRecord(StructuredValue):
-    cvdCollectionDate: DateTime | Text | None = None
-    cvdFacilityCounty: Text | None = None
-    cvdFacilityId: Text | None = None
-    cvdNumBeds: Number | None = None
-    cvdNumBedsOcc: Number | None = None
-    cvdNumC19Died: Number | None = None
-    cvdNumC19HOPats: Number | None = None
-    cvdNumC19HospPats: Number | None = None
-    cvdNumC19MechVentPats: Number | None = None
-    cvdNumC19OFMechVentPats: Number | None = None
-    cvdNumC19OverflowPats: Number | None = None
-    cvdNumICUBeds: Number | None = None
-    cvdNumICUBedsOcc: Number | None = None
-    cvdNumTotBeds: Number | None = None
-    cvdNumVent: Number | None = None
-    cvdNumVentUse: Number | None = None
-    datePosted: Date | DateTime | None = None
+    cvdCollectionDate: datetime.datetime | str | None = None
+    cvdFacilityCounty: str | None = None
+    cvdFacilityId: str | None = None
+    cvdNumBeds: float | None = None
+    cvdNumBedsOcc: float | None = None
+    cvdNumC19Died: float | None = None
+    cvdNumC19HOPats: float | None = None
+    cvdNumC19HospPats: float | None = None
+    cvdNumC19MechVentPats: float | None = None
+    cvdNumC19OFMechVentPats: float | None = None
+    cvdNumC19OverflowPats: float | None = None
+    cvdNumICUBeds: float | None = None
+    cvdNumICUBedsOcc: float | None = None
+    cvdNumTotBeds: float | None = None
+    cvdNumVent: float | None = None
+    cvdNumVentUse: float | None = None
+    datePosted: datetime.date | datetime.datetime | None = None
 
 
 @dataclass
 class PriceSpecification(StructuredValue):
     eligibleQuantity: QuantitativeValue | None = None
     eligibleTransactionVolume: PriceSpecification | None = None
-    maxPrice: Number | None = None
-    minPrice: Number | None = None
-    price: Number | Text | None = None
-    priceCurrency: Text | None = None
-    validFrom: Date | DateTime | None = None
-    validThrough: Date | DateTime | None = None
-    valueAddedTaxIncluded: Boolean | None = None
+    maxPrice: float | None = None
+    minPrice: float | None = None
+    price: float | str | None = None
+    priceCurrency: str | None = None
+    validFrom: datetime.date | datetime.datetime | None = None
+    validThrough: datetime.date | datetime.datetime | None = None
+    valueAddedTaxIncluded: bool | None = None
 
 
 @dataclass
 class ShippingDeliveryTime(StructuredValue):
     businessDays: OpeningHoursSpecification | None = None
-    cutoffTime: Time | None = None
+    cutoffTime: datetime.time | None = None
     handlingTime: QuantitativeValue | None = None
     transitTime: QuantitativeValue | None = None
 
@@ -3823,108 +3794,108 @@ class ShippingDeliveryTime(StructuredValue):
 @dataclass
 class QuantitativeValueDistribution(StructuredValue):
     duration: Duration | None = None
-    median: Number | None = None
-    percentile10: Number | None = None
-    percentile25: Number | None = None
-    percentile75: Number | None = None
-    percentile90: Number | None = None
+    median: float | None = None
+    percentile10: float | None = None
+    percentile25: float | None = None
+    percentile75: float | None = None
+    percentile90: float | None = None
 
 
 @dataclass
 class DeliveryTimeSettings(StructuredValue):
     deliveryTime: ShippingDeliveryTime | None = None
-    isUnlabelledFallback: Boolean | None = None
+    isUnlabelledFallback: bool | None = None
     shippingDestination: DefinedRegion | None = None
-    transitTimeLabel: Text | None = None
+    transitTimeLabel: str | None = None
 
 
 @dataclass
 class OfferShippingDetails(StructuredValue):
     deliveryTime: ShippingDeliveryTime | None = None
-    doesNotShip: Boolean | None = None
+    doesNotShip: bool | None = None
     shippingDestination: DefinedRegion | None = None
-    shippingLabel: Text | None = None
+    shippingLabel: str | None = None
     shippingRate: MonetaryAmount | None = None
     shippingSettingsLink: URL | None = None
-    transitTimeLabel: Text | None = None
+    transitTimeLabel: str | None = None
 
 
 @dataclass
 class ShippingRateSettings(StructuredValue):
-    doesNotShip: Boolean | None = None
+    doesNotShip: bool | None = None
     freeShippingThreshold: DeliveryChargeSpecification | MonetaryAmount | None = None
-    isUnlabelledFallback: Boolean | None = None
+    isUnlabelledFallback: bool | None = None
     shippingDestination: DefinedRegion | None = None
-    shippingLabel: Text | None = None
+    shippingLabel: str | None = None
     shippingRate: MonetaryAmount | None = None
 
 
 @dataclass
 class ContactPoint(StructuredValue):
-    areaServed: AdministrativeArea | GeoShape | Place | Text | None = None
-    availableLanguage: Language | Text | None = None
+    areaServed: AdministrativeArea | GeoShape | Place | str | None = None
+    availableLanguage: Language | str | None = None
     contactOption: ContactPointOption | None = None
-    contactType: Text | None = None
-    email: Text | None = None
-    faxNumber: Text | None = None
+    contactType: str | None = None
+    email: str | None = None
+    faxNumber: str | None = None
     hoursAvailable: OpeningHoursSpecification | None = None
-    productSupported: Product | Text | None = None
+    productSupported: Product | str | None = None
     serviceArea: AdministrativeArea | GeoShape | Place | None = None
-    telephone: Text | None = None
+    telephone: str | None = None
 
 
 @dataclass
 class PropertyValue(StructuredValue):
-    maxValue: Number | None = None
-    measurementTechnique: Text | URL | None = None
-    minValue: Number | None = None
-    propertyID: Text | URL | None = None
-    unitCode: Text | URL | None = None
-    unitText: Text | None = None
-    value: Boolean | Number | StructuredValue | Text | None = None
-    valueReference: DefinedTerm | Enumeration | MeasurementTypeEnumeration | PropertyValue | QualitativeValue | QuantitativeValue | StructuredValue | Text | None = None
+    maxValue: float | None = None
+    measurementTechnique: URL | str | None = None
+    minValue: float | None = None
+    propertyID: URL | str | None = None
+    unitCode: URL | str | None = None
+    unitText: str | None = None
+    value: StructuredValue | bool | float | str | None = None
+    valueReference: DefinedTerm | Enumeration | MeasurementTypeEnumeration | PropertyValue | QualitativeValue | QuantitativeValue | StructuredValue | str | None = None
 
 
 @dataclass
 class QuantitativeValue(StructuredValue):
     additionalProperty: PropertyValue | None = None
-    maxValue: Number | None = None
-    minValue: Number | None = None
-    unitCode: Text | URL | None = None
-    unitText: Text | None = None
-    value: Boolean | Number | StructuredValue | Text | None = None
-    valueReference: DefinedTerm | Enumeration | MeasurementTypeEnumeration | PropertyValue | QualitativeValue | QuantitativeValue | StructuredValue | Text | None = None
+    maxValue: float | None = None
+    minValue: float | None = None
+    unitCode: URL | str | None = None
+    unitText: str | None = None
+    value: StructuredValue | bool | float | str | None = None
+    valueReference: DefinedTerm | Enumeration | MeasurementTypeEnumeration | PropertyValue | QualitativeValue | QuantitativeValue | StructuredValue | str | None = None
 
 
 @dataclass
 class DefinedRegion(StructuredValue):
-    addressCountry: Country | Text | None = None
-    addressRegion: Text | None = None
-    postalCode: Text | None = None
-    postalCodePrefix: Text | None = None
+    addressCountry: Country | str | None = None
+    addressRegion: str | None = None
+    postalCode: str | None = None
+    postalCodePrefix: str | None = None
     postalCodeRange: PostalCodeRangeSpecification | None = None
 
 
 @dataclass
 class GeoCoordinates(StructuredValue):
-    address: PostalAddress | Text | None = None
-    addressCountry: Country | Text | None = None
-    elevation: Number | Text | None = None
-    latitude: Number | Text | None = None
-    longitude: Number | Text | None = None
-    postalCode: Text | None = None
+    address: PostalAddress | str | None = None
+    addressCountry: Country | str | None = None
+    elevation: float | str | None = None
+    latitude: float | str | None = None
+    longitude: float | str | None = None
+    postalCode: str | None = None
 
 
 @dataclass
 class GeoShape(StructuredValue):
-    address: PostalAddress | Text | None = None
-    addressCountry: Country | Text | None = None
-    box: Text | None = None
-    circle: Text | None = None
-    elevation: Number | Text | None = None
-    line: Text | None = None
-    polygon: Text | None = None
-    postalCode: Text | None = None
+    address: PostalAddress | str | None = None
+    addressCountry: Country | str | None = None
+    box: str | None = None
+    circle: str | None = None
+    elevation: float | str | None = None
+    line: str | None = None
+    polygon: str | None = None
+    postalCode: str | None = None
 
 
 @dataclass
@@ -3936,7 +3907,7 @@ class NutritionInformation(StructuredValue):
     fiberContent: Mass | None = None
     proteinContent: Mass | None = None
     saturatedFatContent: Mass | None = None
-    servingSize: Text | None = None
+    servingSize: str | None = None
     sodiumContent: Mass | None = None
     sugarContent: Mass | None = None
     transFatContent: Mass | None = None
@@ -3946,63 +3917,63 @@ class NutritionInformation(StructuredValue):
 @dataclass
 class OwnershipInfo(StructuredValue):
     acquiredFrom: Organization | Person | None = None
-    ownedFrom: DateTime | None = None
-    ownedThrough: DateTime | None = None
+    ownedFrom: datetime.datetime | None = None
+    ownedThrough: datetime.datetime | None = None
     typeOfGood: Product | Service | None = None
 
 
 @dataclass
 class DatedMoneySpecification(StructuredValue):
-    amount: MonetaryAmount | Number | None = None
-    currency: Text | None = None
-    endDate: Date | DateTime | None = None
-    startDate: Date | DateTime | None = None
+    amount: MonetaryAmount | float | None = None
+    currency: str | None = None
+    endDate: datetime.date | datetime.datetime | None = None
+    startDate: datetime.date | datetime.datetime | None = None
 
 
 @dataclass
 class OpeningHoursSpecification(StructuredValue):
-    closes: Time | None = None
+    closes: datetime.time | None = None
     dayOfWeek: DayOfWeek | None = None
-    opens: Time | None = None
-    validFrom: Date | DateTime | None = None
-    validThrough: Date | DateTime | None = None
+    opens: datetime.time | None = None
+    validFrom: datetime.date | datetime.datetime | None = None
+    validThrough: datetime.date | datetime.datetime | None = None
 
 
 @dataclass
 class RepaymentSpecification(StructuredValue):
-    downPayment: MonetaryAmount | Number | None = None
+    downPayment: MonetaryAmount | float | None = None
     earlyPrepaymentPenalty: MonetaryAmount | None = None
     loanPaymentAmount: MonetaryAmount | None = None
-    loanPaymentFrequency: Number | None = None
-    numberOfLoanPayments: Number | None = None
+    loanPaymentFrequency: float | None = None
+    numberOfLoanPayments: float | None = None
 
 
 @dataclass
 class MonetaryAmount(StructuredValue):
-    currency: Text | None = None
-    maxValue: Number | None = None
-    minValue: Number | None = None
-    validFrom: Date | DateTime | None = None
-    validThrough: Date | DateTime | None = None
-    value: Boolean | Number | StructuredValue | Text | None = None
+    currency: str | None = None
+    maxValue: float | None = None
+    minValue: float | None = None
+    validFrom: datetime.date | datetime.datetime | None = None
+    validThrough: datetime.date | datetime.datetime | None = None
+    value: StructuredValue | bool | float | str | None = None
 
 
 @dataclass
 class TypeAndQuantityNode(StructuredValue):
-    amountOfThisGood: Number | None = None
+    amountOfThisGood: float | None = None
     businessFunction: BusinessFunction | None = None
     typeOfGood: Product | Service | None = None
-    unitCode: Text | URL | None = None
-    unitText: Text | None = None
+    unitCode: URL | str | None = None
+    unitText: str | None = None
 
 
 @dataclass
 class InteractionCounter(StructuredValue):
-    endTime: DateTime | Time | None = None
+    endTime: datetime.datetime | datetime.time | None = None
     interactionService: SoftwareApplication | WebSite | None = None
     interactionType: Action | None = None
-    location: Place | PostalAddress | Text | VirtualLocation | None = None
-    startTime: DateTime | Time | None = None
+    location: Place | PostalAddress | VirtualLocation | str | None = None
+    startTime: datetime.datetime | datetime.time | None = None
     userInteractionCount: Integer | None = None
 
 
@@ -4010,22 +3981,22 @@ class InteractionCounter(StructuredValue):
 class EngineSpecification(StructuredValue):
     engineDisplacement: QuantitativeValue | None = None
     enginePower: QuantitativeValue | None = None
-    engineType: QualitativeValue | Text | URL | None = None
-    fuelType: QualitativeValue | Text | URL | None = None
+    engineType: QualitativeValue | URL | str | None = None
+    fuelType: QualitativeValue | URL | str | None = None
     torque: QuantitativeValue | None = None
 
 
 @dataclass
 class ExchangeRateSpecification(StructuredValue):
-    currency: Text | None = None
+    currency: str | None = None
     currentExchangeRate: UnitPriceSpecification | None = None
-    exchangeRateSpread: MonetaryAmount | Number | None = None
+    exchangeRateSpread: MonetaryAmount | float | None = None
 
 
 @dataclass
 class PostalCodeRangeSpecification(StructuredValue):
-    postalCodeBegin: Text | None = None
-    postalCodeEnd: Text | None = None
+    postalCodeBegin: str | None = None
+    postalCodeEnd: str | None = None
 
 
 @dataclass
@@ -4042,8 +4013,8 @@ class TransferAction(Action):
 
 @dataclass
 class MoneyTransfer(TransferAction):
-    amount: MonetaryAmount | Number | None = None
-    beneficiaryBank: BankOrCreditUnion | Text | None = None
+    amount: MonetaryAmount | float | None = None
+    beneficiaryBank: BankOrCreditUnion | str | None = None
 
 
 @dataclass
@@ -4107,8 +4078,8 @@ class GatedResidenceCommunity(Residence):
 class ApartmentComplex(Residence):
     numberOfAccommodationUnits: QuantitativeValue | None = None
     numberOfAvailableAccommodationUnits: QuantitativeValue | None = None
-    numberOfBedrooms: Number | QuantitativeValue | None = None
-    petsAllowed: Boolean | Text | None = None
+    numberOfBedrooms: QuantitativeValue | float | None = None
+    petsAllowed: bool | str | None = None
     tourBookingPage: URL | None = None
 
 
@@ -4124,19 +4095,19 @@ class LifestyleModification(MedicalEntity):
 
 @dataclass
 class Diet(CreativeWork, LifestyleModification):
-    dietFeatures: Text | None = None
+    dietFeatures: str | None = None
     endorsers: Organization | Person | None = None
-    expertConsiderations: Text | None = None
-    physiologicalBenefits: Text | None = None
-    risks: Text | None = None
+    expertConsiderations: str | None = None
+    physiologicalBenefits: str | None = None
+    risks: str | None = None
 
 
 @dataclass
 class PhysicalActivity(LifestyleModification):
     associatedAnatomy: AnatomicalStructure | AnatomicalSystem | SuperficialAnatomy | None = None
-    category: CategoryCode | PhysicalActivityCategory | Text | Thing | URL | None = None
-    epidemiology: Text | None = None
-    pathophysiology: Text | None = None
+    category: CategoryCode | PhysicalActivityCategory | Thing | URL | str | None = None
+    epidemiology: str | None = None
+    pathophysiology: str | None = None
 
 
 @dataclass
@@ -4151,19 +4122,19 @@ class Season(CreativeWork):
 
 @dataclass
 class SportsOrganization(Organization):
-    sport: Text | URL | None = None
+    sport: URL | str | None = None
 
 
 @dataclass
 class SportsTeam(SportsOrganization):
     athlete: Person | None = None
     coach: Person | None = None
-    gender: GenderType | Text | None = None
+    gender: GenderType | str | None = None
 
 
 @dataclass
 class Thesis(CreativeWork):
-    inSupportOf: Text | None = None
+    inSupportOf: str | None = None
 
 
 @dataclass
@@ -4193,8 +4164,8 @@ class IgnoreAction(AssessAction):
 
 @dataclass
 class ChooseAction(AssessAction):
-    actionOption: Text | Thing | None = None
-    option: Text | Thing | None = None
+    actionOption: Thing | str | None = None
+    option: Thing | str | None = None
 
 
 @dataclass
@@ -4214,9 +4185,9 @@ class Series(Intangible):
 
 @dataclass
 class CreativeWorkSeries(CreativeWork, Series):
-    endDate: Date | DateTime | None = None
-    issn: Text | None = None
-    startDate: Date | DateTime | None = None
+    endDate: datetime.date | datetime.datetime | None = None
+    issn: str | None = None
+    startDate: datetime.date | datetime.datetime | None = None
 
 
 @dataclass
@@ -4236,8 +4207,8 @@ class MusicEvent(Event):
 
 @dataclass
 class TradeAction(Action):
-    price: Number | Text | None = None
-    priceCurrency: Text | None = None
+    price: float | str | None = None
+    priceCurrency: str | None = None
     priceSpecification: PriceSpecification | None = None
 
 
@@ -4292,12 +4263,12 @@ class PreOrderAction(TradeAction):
 
 @dataclass
 class OccupationalExperienceRequirements(Intangible):
-    monthsOfExperience: Number | None = None
+    monthsOfExperience: float | None = None
 
 
 @dataclass
 class ChemicalSubstance(BioChemEntity):
-    chemicalComposition: Text | None = None
+    chemicalComposition: str | None = None
     chemicalRole: DefinedTerm | None = None
     potentialUse: DefinedTerm | None = None
 
@@ -4427,7 +4398,7 @@ class PerformingGroup(Organization):
 class MusicGroup(PerformingGroup):
     album: MusicAlbum | None = None
     albums: MusicAlbum | None = None
-    genre: Text | URL | None = None
+    genre: URL | str | None = None
     musicGroupMember: Person | None = None
     track: ItemList | MusicRecording | None = None
     tracks: MusicRecording | None = None
@@ -4477,7 +4448,7 @@ class PhotographAction(CreateAction):
 
 @dataclass
 class WriteAction(CreateAction):
-    inLanguage: Language | Text | None = None
+    inLanguage: Language | str | None = None
     language: Language | None = None
 
 
@@ -4498,19 +4469,19 @@ class MedicalIntangible(MedicalEntity):
 
 @dataclass
 class DoseSchedule(MedicalIntangible):
-    doseUnit: Text | None = None
-    doseValue: Number | QualitativeValue | None = None
-    frequency: Text | None = None
-    targetPopulation: Text | None = None
+    doseUnit: str | None = None
+    doseValue: QualitativeValue | float | None = None
+    frequency: str | None = None
+    targetPopulation: str | None = None
 
 
 @dataclass
 class DrugStrength(MedicalIntangible):
-    activeIngredient: Text | None = None
+    activeIngredient: str | None = None
     availableIn: AdministrativeArea | None = None
     maximumIntake: MaximumDoseSchedule | None = None
-    strengthUnit: Text | None = None
-    strengthValue: Number | None = None
+    strengthUnit: str | None = None
+    strengthValue: float | None = None
 
 
 @dataclass
@@ -4520,14 +4491,14 @@ class DrugLegalStatus(MedicalIntangible):
 
 @dataclass
 class MedicalCode(CategoryCode, MedicalIntangible):
-    codeValue: Text | None = None
-    codingSystem: Text | None = None
+    codeValue: str | None = None
+    codingSystem: str | None = None
 
 
 @dataclass
 class MedicalConditionStage(MedicalIntangible):
-    stageAsNumber: Number | None = None
-    subStageSuffix: Text | None = None
+    stageAsNumber: float | None = None
+    subStageSuffix: str | None = None
 
 
 @dataclass
@@ -4608,8 +4579,8 @@ class UserPlusOnes(UserInteraction):
 
 @dataclass
 class UserComments(UserInteraction):
-    commentText: Text | None = None
-    commentTime: Date | DateTime | None = None
+    commentText: str | None = None
+    commentTime: datetime.date | datetime.datetime | None = None
     creator: Organization | Person | None = None
     discusses: CreativeWork | None = None
     replyToUrl: URL | None = None
@@ -4673,10 +4644,10 @@ class Sculpture(CreativeWork):
 @dataclass
 class LocalBusiness(Organization, Place):
     branchOf: Organization | None = None
-    currenciesAccepted: Text | None = None
-    openingHours: Text | None = None
-    paymentAccepted: Text | None = None
-    priceRange: Text | None = None
+    currenciesAccepted: str | None = None
+    openingHours: str | None = None
+    paymentAccepted: str | None = None
+    priceRange: str | None = None
 
 
 @dataclass
@@ -4696,10 +4667,10 @@ class TravelAgency(LocalBusiness):
 
 @dataclass
 class FoodEstablishment(LocalBusiness):
-    acceptsReservations: Boolean | Text | URL | None = None
-    hasMenu: Menu | Text | URL | None = None
-    menu: Menu | Text | URL | None = None
-    servesCuisine: Text | None = None
+    acceptsReservations: URL | bool | str | None = None
+    hasMenu: Menu | URL | str | None = None
+    menu: Menu | URL | str | None = None
+    servesCuisine: str | None = None
     starRating: Rating | None = None
 
 
@@ -4732,11 +4703,11 @@ class HealthAndBeautyBusiness(LocalBusiness):
 class LodgingBusiness(LocalBusiness):
     amenityFeature: LocationFeatureSpecification | None = None
     audience: Audience | None = None
-    availableLanguage: Language | Text | None = None
-    checkinTime: DateTime | Time | None = None
-    checkoutTime: DateTime | Time | None = None
-    numberOfRooms: Number | QuantitativeValue | None = None
-    petsAllowed: Boolean | Text | None = None
+    availableLanguage: Language | str | None = None
+    checkinTime: datetime.datetime | datetime.time | None = None
+    checkoutTime: datetime.datetime | datetime.time | None = None
+    numberOfRooms: QuantitativeValue | float | None = None
+    petsAllowed: bool | str | None = None
     starRating: Rating | None = None
 
 
@@ -4747,7 +4718,7 @@ class AutomotiveBusiness(LocalBusiness):
 
 @dataclass
 class FinancialService(LocalBusiness):
-    feesAndCommissionsSpecification: Text | URL | None = None
+    feesAndCommissionsSpecification: URL | str | None = None
 
 
 @dataclass
@@ -4837,13 +4808,13 @@ class TouristInformationCenter(LocalBusiness):
 
 @dataclass
 class HotelRoom(Room):
-    bed: BedDetails | BedType | Text | None = None
+    bed: BedDetails | BedType | str | None = None
     occupancy: QuantitativeValue | None = None
 
 
 @dataclass
 class SingleFamilyResidence(House):
-    numberOfRooms: Number | QuantitativeValue | None = None
+    numberOfRooms: QuantitativeValue | float | None = None
     occupancy: QuantitativeValue | None = None
 
 
@@ -4885,7 +4856,7 @@ class Audiobook(AudioObject, Book):
 
 @dataclass
 class MedicalTherapy(TherapeuticProcedure):
-    contraindication: MedicalContraindication | Text | None = None
+    contraindication: MedicalContraindication | str | None = None
     duplicateTherapy: MedicalTherapy | None = None
     seriousAdverseOutcome: MedicalEntity | None = None
 
@@ -4957,13 +4928,13 @@ class Vein(Vessel):
 
 @dataclass
 class EmployeeRole(OrganizationRole):
-    baseSalary: MonetaryAmount | Number | PriceSpecification | None = None
-    salaryCurrency: Text | None = None
+    baseSalary: MonetaryAmount | PriceSpecification | float | None = None
+    salaryCurrency: str | None = None
 
 
 @dataclass
 class InvestmentOrDeposit(FinancialProduct):
-    amount: MonetaryAmount | Number | None = None
+    amount: MonetaryAmount | float | None = None
 
 
 @dataclass
@@ -4985,7 +4956,7 @@ class CurrencyConversionService(FinancialProduct):
 class BankAccount(FinancialProduct):
     accountMinimumInflow: MonetaryAmount | None = None
     accountOverdraftLimit: MonetaryAmount | None = None
-    bankAccountType: Text | URL | None = None
+    bankAccountType: URL | str | None = None
 
 
 @dataclass
@@ -4995,20 +4966,20 @@ class DepositAccount(BankAccount, InvestmentOrDeposit):
 
 @dataclass
 class LoanOrCredit(FinancialProduct):
-    amount: MonetaryAmount | Number | None = None
-    currency: Text | None = None
+    amount: MonetaryAmount | float | None = None
+    currency: str | None = None
     gracePeriod: Duration | None = None
     loanRepaymentForm: RepaymentSpecification | None = None
     loanTerm: QuantitativeValue | None = None
-    loanType: Text | URL | None = None
-    recourseLoan: Boolean | None = None
-    renegotiableLoan: Boolean | None = None
-    requiredCollateral: Text | Thing | None = None
+    loanType: URL | str | None = None
+    recourseLoan: bool | None = None
+    renegotiableLoan: bool | None = None
+    requiredCollateral: Thing | str | None = None
 
 
 @dataclass
 class MortgageLoan(LoanOrCredit):
-    domiciledMortgage: Boolean | None = None
+    domiciledMortgage: bool | None = None
     loanMortgageMandateAmount: MonetaryAmount | None = None
 
 
@@ -5055,7 +5026,7 @@ class InformAction(CommunicateAction):
 
 @dataclass
 class RsvpAction(InformAction):
-    additionalNumberOfGuests: Number | None = None
+    additionalNumberOfGuests: float | None = None
     comment: Comment | None = None
     rsvpResponse: RsvpResponseType | None = None
 
@@ -5187,7 +5158,7 @@ class DefenceEstablishment(GovernmentBuilding):
 
 @dataclass
 class HowToSupply(HowToItem):
-    estimatedCost: MonetaryAmount | Text | None = None
+    estimatedCost: MonetaryAmount | str | None = None
 
 
 @dataclass
@@ -5197,16 +5168,16 @@ class HowToTool(HowToItem):
 
 @dataclass
 class MedicalScholarlyArticle(ScholarlyArticle):
-    publicationType: Text | None = None
+    publicationType: str | None = None
 
 
 @dataclass
 class APIReference(TechArticle):
-    assembly: Text | None = None
-    assemblyVersion: Text | None = None
-    executableLibraryName: Text | None = None
-    programmingModel: Text | None = None
-    targetPlatform: Text | None = None
+    assembly: str | None = None
+    assemblyVersion: str | None = None
+    executableLibraryName: str | None = None
+    programmingModel: str | None = None
+    targetPlatform: str | None = None
 
 
 @dataclass
@@ -5236,8 +5207,8 @@ class BlogPosting(SocialMediaPosting):
 
 @dataclass
 class LiveBlogPosting(BlogPosting):
-    coverageEndTime: DateTime | None = None
-    coverageStartTime: DateTime | None = None
+    coverageEndTime: datetime.datetime | None = None
+    coverageStartTime: datetime.datetime | None = None
     liveBlogUpdate: BlogPosting | None = None
 
 
@@ -5258,8 +5229,8 @@ class ReviewNewsArticle(CriticReview, NewsArticle):
 
 @dataclass
 class ParentAudience(PeopleAudience):
-    childMaxAge: Number | None = None
-    childMinAge: Number | None = None
+    childMaxAge: float | None = None
+    childMinAge: float | None = None
 
 
 @dataclass
@@ -5327,10 +5298,10 @@ class MedicalEvidenceLevel(MedicalEnumeration):
 @dataclass
 class SizeSpecification(QualitativeValue):
     hasMeasurement: QuantitativeValue | None = None
-    sizeGroup: SizeGroupEnumeration | Text | None = None
-    sizeSystem: SizeSystemEnumeration | Text | None = None
+    sizeGroup: SizeGroupEnumeration | str | None = None
+    sizeSystem: SizeSystemEnumeration | str | None = None
     suggestedAge: QuantitativeValue | None = None
-    suggestedGender: GenderType | Text | None = None
+    suggestedGender: GenderType | str | None = None
     suggestedMeasurement: QuantitativeValue | None = None
 
 
@@ -5461,10 +5432,10 @@ class PhysicalExam(MedicalEnumeration, MedicalProcedure):
 
 @dataclass
 class PaymentCard(FinancialProduct, PaymentMethod):
-    cashBack: Boolean | Number | None = None
-    contactlessPayment: Boolean | None = None
+    cashBack: bool | float | None = None
+    contactlessPayment: bool | None = None
     floorLimit: MonetaryAmount | None = None
-    monthlyMinimumRepaymentAmount: MonetaryAmount | Number | None = None
+    monthlyMinimumRepaymentAmount: MonetaryAmount | float | None = None
 
 
 @dataclass
@@ -5519,51 +5490,51 @@ class ScheduleAction(PlanAction):
 
 @dataclass
 class PostalAddress(ContactPoint):
-    addressCountry: Country | Text | None = None
-    addressLocality: Text | None = None
-    addressRegion: Text | None = None
-    postOfficeBoxNumber: Text | None = None
-    postalCode: Text | None = None
-    streetAddress: Text | None = None
+    addressCountry: Country | str | None = None
+    addressLocality: str | None = None
+    addressRegion: str | None = None
+    postOfficeBoxNumber: str | None = None
+    postalCode: str | None = None
+    streetAddress: str | None = None
 
 
 @dataclass
 class CompoundPriceSpecification(PriceSpecification):
     priceComponent: UnitPriceSpecification | None = None
-    priceType: PriceTypeEnumeration | Text | None = None
+    priceType: PriceTypeEnumeration | str | None = None
 
 
 @dataclass
 class GeoCircle(GeoShape):
     geoMidpoint: GeoCoordinates | None = None
-    geoRadius: Distance | Number | Text | None = None
+    geoRadius: Distance | float | str | None = None
 
 
 @dataclass
 class UnitPriceSpecification(PriceSpecification):
-    billingDuration: Duration | Number | QuantitativeValue | None = None
-    billingIncrement: Number | None = None
-    billingStart: Number | None = None
+    billingDuration: Duration | QuantitativeValue | float | None = None
+    billingIncrement: float | None = None
+    billingStart: float | None = None
     priceComponentType: PriceComponentTypeEnumeration | None = None
-    priceType: PriceTypeEnumeration | Text | None = None
+    priceType: PriceTypeEnumeration | str | None = None
     referenceQuantity: QuantitativeValue | None = None
-    unitCode: Text | URL | None = None
-    unitText: Text | None = None
+    unitCode: URL | str | None = None
+    unitText: str | None = None
 
 
 @dataclass
 class LocationFeatureSpecification(PropertyValue):
     hoursAvailable: OpeningHoursSpecification | None = None
-    validFrom: Date | DateTime | None = None
-    validThrough: Date | DateTime | None = None
+    validFrom: datetime.date | datetime.datetime | None = None
+    validThrough: datetime.date | datetime.datetime | None = None
 
 
 @dataclass
 class DeliveryChargeSpecification(PriceSpecification):
     appliesToDeliveryMethod: DeliveryMethod | None = None
-    areaServed: AdministrativeArea | GeoShape | Place | Text | None = None
-    eligibleRegion: GeoShape | Place | Text | None = None
-    ineligibleRegion: GeoShape | Place | Text | None = None
+    areaServed: AdministrativeArea | GeoShape | Place | str | None = None
+    eligibleRegion: GeoShape | Place | str | None = None
+    ineligibleRegion: GeoShape | Place | str | None = None
 
 
 @dataclass
@@ -5574,18 +5545,18 @@ class PaymentChargeSpecification(PriceSpecification):
 
 @dataclass
 class MonetaryAmountDistribution(QuantitativeValueDistribution):
-    currency: Text | None = None
+    currency: str | None = None
 
 
 @dataclass
 class ExercisePlan(CreativeWork, PhysicalActivity):
     activityDuration: Duration | QuantitativeValue | None = None
-    activityFrequency: QuantitativeValue | Text | None = None
-    additionalVariable: Text | None = None
-    exerciseType: Text | None = None
-    intensity: QuantitativeValue | Text | None = None
-    repetitions: Number | QuantitativeValue | None = None
-    restPeriods: QuantitativeValue | Text | None = None
+    activityFrequency: QuantitativeValue | str | None = None
+    additionalVariable: str | None = None
+    exerciseType: str | None = None
+    intensity: QuantitativeValue | str | None = None
+    repetitions: QuantitativeValue | float | None = None
+    restPeriods: QuantitativeValue | str | None = None
     workload: Energy | QuantitativeValue | None = None
 
 
@@ -5655,7 +5626,7 @@ class VideoGameSeries(CreativeWorkSeries):
     episodes: Episode | None = None
     gameItem: Thing | None = None
     gameLocation: Place | PostalAddress | URL | None = None
-    gamePlatform: Text | Thing | URL | None = None
+    gamePlatform: Thing | URL | str | None = None
     musicBy: MusicGroup | Person | None = None
     numberOfEpisodes: Integer | None = None
     numberOfPlayers: QuantitativeValue | None = None
@@ -6244,7 +6215,7 @@ class Campground(CivicStructure, LodgingBusiness):
 
 @dataclass
 class MovieTheater(CivicStructure, EntertainmentBusiness):
-    screenCount: Number | None = None
+    screenCount: float | None = None
 
 
 @dataclass
