@@ -245,11 +245,12 @@ def generate_all_models(single_file: bool = True, current_only: bool = DEFAULT_C
             generate_model(val)
         return
     tree = utils.get_model_tree([v for k, v in data.items() if k != "rdfs:Clas"])
+    tree = utils.clean_tree_genealogy(tree)
     body = "\n\n".join(get_model_file_data(_.asdict(), True)[0] for _ in tree)
     header = model_file_header()
     imports = "from __future__ import annotations\nfrom dataclasses import dataclass\n\n" \
               "from models.abstract_base import AbstractBase"
-    code = f"{header}\n{imports}\n\n{body}"
+    code = f"{header}\n{imports}\n\n\n{body}"
     with open(SINGLE_MODELS_FILE, "w", encoding="utf-8") as _:
         _.write(code)
 

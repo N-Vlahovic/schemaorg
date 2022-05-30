@@ -32,8 +32,14 @@ class Node:
     def __eq__(self, other: Node) -> bool:
         return self.id == (other if isinstance(other, str) else other.id)
 
+    def __hash__(self):
+        return self.id.__hash__()
+
     def asdict(self) -> dict:
         return asdict(self) | {"name": self.id}
+
+    def remove_parent(self, parent: Node | str) -> None:
+        self.parents.pop(self.parents.index(parent))
 
 
 def get_model_nodes(data: Iterable[dict]) -> list[Node]:
@@ -68,4 +74,22 @@ def get_model_tree(data: Iterable[dict]) -> list[Node]:
             nodes.append(n)
             print(n)
         nodes = sorted(nodes, key=lambda _: len([_ for _ in _.parents if _ not in tree]))
+    return tree
+
+
+def get_children_recur(start: Node, tree: list[Node], res: set = None) -> set:
+    res = res or set()
+    res |= set(start.children)
+    for _ in set(start.children):
+        res |= get_children_recur(tree[tree.index(_)], tree, res)
+    return res
+
+
+def clean_tree_genealogy(tree: list[Node]) -> list[Node]:
+    for node in tree:
+        for parent in node.parents:
+            parent = tree[tree.index(parent)]
+            if set(node.parents).difference({parent}) & get_children_recur(parent, tree):
+                print("popping", parent)
+                node.remove_parent(parent)
     return tree
